@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"os"
 
 	"github.com/anthropics/anthropic-sdk-go"
@@ -18,34 +17,57 @@ func main() {
 	}
 
 	key := os.Getenv("ANTHROPIC_API_KEY")
+	model := os.Getenv("MODEL")
+	if model == "" {
+		model = "claude-opus-5"
+	}
 
 	client := anthropic.NewClient(
 		option.WithAPIKey(key),
 	)
 
-	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
-		MaxTokens: 1024,
-		Messages: []anthropic.MessageParam{
-			anthropic.NewUserMessage(
-				anthropic.NewTextBlock(
-					"What are quaternions in one sentence?",
-				),
-			),
-		},
-		Model: anthropic.ModelClaudeOpus5,
-	})
-	if err != nil {
-		panic(err)
+	prompts := []string{
+		"What are quaternions in one sentence?",
+		"Write another sentence.",
 	}
 
-	printResponse(message)
+	messages := []anthropic.MessageParam{}
+
+	for _, prompt := range prompts {
+		messages = addUserMessage(messages, prompt)
+
+		message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+			MaxTokens: 1024,
+			Messages:  messages,
+			Model:     model,
+		})
+		if err != nil {
+			panic(err)
+		}
+
+		responseText := getResponse(message)
+		println(responseText)
+
+		messages = addAssistantMessage(messages, responseText)
+	}
 }
 
-// printResponse prints the response from the API to the console.
-func printResponse(response *anthropic.Message) {
+// getResponse returns the response from the API to the console.
+func getResponse(response *anthropic.Message) string {
 	for _, block := range response.Content {
 		if textBlock, ok := block.AsAny().(anthropic.TextBlock); ok {
-			fmt.Println(textBlock.Text)
+			return textBlock.Text
 		}
 	}
+	return ""
+}
+
+func addUserMessage(messages []anthropic.MessageParam, text string) []anthropic.MessageParam {
+	messages = append(messages, anthropic.NewUserMessage(anthropic.NewTextBlock(text)))
+	return messages
+}
+
+func addAssistantMessage(messages []anthropic.MessageParam, text string) []anthropic.MessageParam {
+	messages = append(messages, anthropic.NewAssistantMessage(anthropic.NewTextBlock(text)))
+	return messages
 }
