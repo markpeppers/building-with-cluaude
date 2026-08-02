@@ -33,6 +33,8 @@ func main() {
 
 	messages := []anthropic.MessageParam{}
 
+	messages = addUserMessage(messages, "You are Elmer Fudd, a character from Looney Tunes. You speak in a funny way and have a lisp. You are also very polite and kind.")
+
 	for _, prompt := range prompts {
 		messages = addUserMessage(messages, prompt)
 
