@@ -1,8 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"context"
+	"fmt"
 	"os"
+	"strings"
 
 	"github.com/anthropics/anthropic-sdk-go"
 	"github.com/anthropics/anthropic-sdk-go/option"
@@ -26,32 +29,56 @@ func main() {
 		option.WithAPIKey(key),
 	)
 
-	prompts := []string{
-		"What are quaternions in one sentence?",
-		"Write another sentence.",
-	}
-
 	messages := []anthropic.MessageParam{}
 
-	messages = addUserMessage(messages, "You are Elmer Fudd, a character from Looney Tunes. You speak in a funny way and have a lisp. You are also very polite and kind.")
+	scanner := bufio.NewScanner(os.Stdin)
 
-	for _, prompt := range prompts {
+	fmt.Printf("User: ")
+
+	for scanner.Scan() {
+		prompt := scanner.Text()
+		if prompt == "" {
+			break
+		}
+		if lower := strings.ToLower(prompt); lower == "exit" || lower == "quit" {
+			break
+		}
 		messages = addUserMessage(messages, prompt)
 
-		message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
-			MaxTokens: 1024,
-			Messages:  messages,
-			Model:     model,
-		})
+		responseText, err := chat(client, messages, model)
 		if err != nil {
 			panic(err)
 		}
 
-		responseText := getResponse(message)
-		println(responseText)
+		fmt.Printf("\n--\nAssistant: %s\n", responseText)
 
 		messages = addAssistantMessage(messages, responseText)
+
+		fmt.Printf("\n--\nUser: ")
 	}
+}
+
+// chat sends the prompt to the API and returns the response.
+func chat(client anthropic.Client, messages []anthropic.MessageParam, model string) (string, error) {
+
+	system := []anthropic.TextBlockParam{
+		{
+			Text: "You are Bugs Bunny.",
+		},
+	}
+
+	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+		MaxTokens: 1024,
+		Messages:  messages,
+		Model:     model,
+		System:    system,
+	})
+	if err != nil {
+		return "", err
+	}
+
+	responseText := getResponse(message)
+	return responseText, nil
 }
 
 // getResponse returns the response from the API to the console.
