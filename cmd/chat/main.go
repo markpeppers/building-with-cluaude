@@ -9,6 +9,7 @@ import (
 
 	"github.com/anthropics/anthropic-sdk-go"
 	"github.com/anthropics/anthropic-sdk-go/option"
+	"github.com/anthropics/anthropic-sdk-go/packages/param"
 	"github.com/joho/godotenv"
 )
 
@@ -31,6 +32,12 @@ func main() {
 
 	messages := []anthropic.MessageParam{}
 
+	system := []anthropic.TextBlockParam{
+		{
+			Text: "You are a Python engineer that writes very concise code",
+		},
+	}
+
 	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Printf("User: ")
@@ -45,7 +52,7 @@ func main() {
 		}
 		messages = addUserMessage(messages, prompt)
 
-		responseText, err := chat(client, messages, model)
+		responseText, err := chat(client, messages, model, system)
 		if err != nil {
 			panic(err)
 		}
@@ -59,19 +66,22 @@ func main() {
 }
 
 // chat sends the prompt to the API and returns the response.
-func chat(client anthropic.Client, messages []anthropic.MessageParam, model string) (string, error) {
+func chat(
+	client anthropic.Client,
+	messages []anthropic.MessageParam,
+	model string,
+	system []anthropic.TextBlockParam,
+) (string, error) {
 
-	system := []anthropic.TextBlockParam{
-		{
-			Text: "You are Bugs Bunny.",
-		},
-	}
+	var temp param.Opt[float64]
+	temp.Value = 1.0
 
 	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
-		MaxTokens: 1024,
-		Messages:  messages,
-		Model:     model,
-		System:    system,
+		MaxTokens:   1024,
+		Messages:    messages,
+		Model:       model,
+		System:      system,
+		Temperature: temp,
 	})
 	if err != nil {
 		return "", err
