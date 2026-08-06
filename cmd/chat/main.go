@@ -10,6 +10,7 @@ import (
 	"github.com/anthropics/anthropic-sdk-go"
 	"github.com/anthropics/anthropic-sdk-go/option"
 	"github.com/anthropics/anthropic-sdk-go/packages/param"
+	"github.com/anthropics/anthropic-sdk-go/packages/ssestream"
 	"github.com/joho/godotenv"
 )
 
@@ -32,11 +33,7 @@ func main() {
 
 	messages := []anthropic.MessageParam{}
 
-	system := []anthropic.TextBlockParam{
-		{
-			Text: "You are a Python engineer that writes very concise code",
-		},
-	}
+	system := []anthropic.TextBlockParam{}
 
 	scanner := bufio.NewScanner(os.Stdin)
 
@@ -47,19 +44,28 @@ func main() {
 		if prompt == "" {
 			break
 		}
-		if lower := strings.ToLower(prompt); lower == "exit" || lower == "quit" {
+		if lower := strings.ToLower(prompt); lower == "exit" || lower == "quit" || lower == "q" {
 			break
 		}
 		messages = addUserMessage(messages, prompt)
 
-		responseText, err := chat(client, messages, model, system)
+		stream := chat(client, messages, model, system)
 		if err != nil {
 			panic(err)
 		}
 
-		fmt.Printf("\n--\nAssistant: %s\n", responseText)
+		fmt.Printf("\n--\nAssistant: ")
+		response := ""
+		for stream.Next() {
+			data := stream.Current()
+			if stream.Err() != nil {
+				panic(stream.Err())
+			}
+			fmt.Printf("%s", data.Delta.Text)
+			response = response + data.Delta.Text
+		}
 
-		messages = addAssistantMessage(messages, responseText)
+		messages = addAssistantMessage(messages, response)
 
 		fmt.Printf("\n--\nUser: ")
 	}
@@ -71,27 +77,24 @@ func chat(
 	messages []anthropic.MessageParam,
 	model string,
 	system []anthropic.TextBlockParam,
-) (string, error) {
+) *ssestream.Stream[anthropic.MessageStreamEventUnion] {
 
 	var temp param.Opt[float64]
 	temp.Value = 1.0
 
-	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+	messageStream := client.Messages.NewStreaming(context.TODO(), anthropic.MessageNewParams{
 		MaxTokens:   1024,
 		Messages:    messages,
 		Model:       model,
 		System:      system,
 		Temperature: temp,
 	})
-	if err != nil {
-		return "", err
-	}
 
-	responseText := getResponse(message)
-	return responseText, nil
+	return messageStream
 }
 
 // getResponse returns the response from the API to the console.
+// Not needed for streaming, but useful for testing.
 func getResponse(response *anthropic.Message) string {
 	for _, block := range response.Content {
 		if textBlock, ok := block.AsAny().(anthropic.TextBlock); ok {
