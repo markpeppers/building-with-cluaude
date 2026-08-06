@@ -34,7 +34,6 @@ func main() {
 
 	prompt := "Generate a very short event bridge rule as json."
 	messages = addUserMessage(messages, prompt)
-	messages = addAssistantMessage(messages, "```json")
 
 	response, err := chat(client, messages, model, system)
 	if err != nil {
@@ -53,16 +52,40 @@ func chat(
 ) (string, error) {
 
 	var temp param.Opt[float64]
-	temp.Value = 1.0
+	temp.Value = 0.0
 
 	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
-		MaxTokens:     1024,
-		Messages:      messages,
-		Model:         model,
-		System:        system,
-		Temperature:   temp,
-		StopSequences: []string{"```"},
-	})
+		MaxTokens:   1024,
+		Messages:    messages,
+		Model:       model,
+		System:      system,
+		Temperature: temp,
+		OutputConfig: anthropic.OutputConfigParam{
+			Format: anthropic.JSONOutputFormatParam{
+				Schema: map[string]any{
+					"type": "object",
+					"properties": map[string]any{
+						"source":      map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
+						"detail-type": map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
+						"detail": map[string]any{
+							"type": "object",
+							"properties": map[string]any{
+								"state": map[string]any{
+									"type":  "array",
+									"items": map[string]any{"type": "string"},
+								},
+							},
+							"required":             []string{"state"},
+							"additionalProperties": false,
+						},
+					},
+					"required":             []string{"source", "detail-type", "detail"},
+					"additionalProperties": false,
+				},
+			},
+		},
+	},
+	)
 	if err != nil {
 		return "", err
 	}
