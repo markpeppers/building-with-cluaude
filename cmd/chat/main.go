@@ -1,16 +1,13 @@
 package main
 
 import (
-	"bufio"
 	"context"
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/anthropics/anthropic-sdk-go"
 	"github.com/anthropics/anthropic-sdk-go/option"
 	"github.com/anthropics/anthropic-sdk-go/packages/param"
-	"github.com/anthropics/anthropic-sdk-go/packages/ssestream"
 	"github.com/joho/godotenv"
 )
 
@@ -35,40 +32,16 @@ func main() {
 
 	system := []anthropic.TextBlockParam{}
 
-	scanner := bufio.NewScanner(os.Stdin)
+	prompt := "Generate a very short event bridge rule as json."
+	messages = addUserMessage(messages, prompt)
+	messages = addAssistantMessage(messages, "```json")
 
-	fmt.Printf("User: ")
-
-	for scanner.Scan() {
-		prompt := scanner.Text()
-		if prompt == "" {
-			break
-		}
-		if lower := strings.ToLower(prompt); lower == "exit" || lower == "quit" || lower == "q" {
-			break
-		}
-		messages = addUserMessage(messages, prompt)
-
-		stream := chat(client, messages, model, system)
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Printf("\n--\nAssistant: ")
-		response := ""
-		for stream.Next() {
-			data := stream.Current()
-			if stream.Err() != nil {
-				panic(stream.Err())
-			}
-			fmt.Printf("%s", data.Delta.Text)
-			response = response + data.Delta.Text
-		}
-
-		messages = addAssistantMessage(messages, response)
-
-		fmt.Printf("\n--\nUser: ")
+	response, err := chat(client, messages, model, system)
+	if err != nil {
+		panic(err)
 	}
+
+	fmt.Printf("%s", response)
 }
 
 // chat sends the prompt to the API and returns the response.
@@ -77,20 +50,25 @@ func chat(
 	messages []anthropic.MessageParam,
 	model string,
 	system []anthropic.TextBlockParam,
-) *ssestream.Stream[anthropic.MessageStreamEventUnion] {
+) (string, error) {
 
 	var temp param.Opt[float64]
 	temp.Value = 1.0
 
-	messageStream := client.Messages.NewStreaming(context.TODO(), anthropic.MessageNewParams{
-		MaxTokens:   1024,
-		Messages:    messages,
-		Model:       model,
-		System:      system,
-		Temperature: temp,
+	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
+		MaxTokens:     1024,
+		Messages:      messages,
+		Model:         model,
+		System:        system,
+		Temperature:   temp,
+		StopSequences: []string{"```"},
 	})
+	if err != nil {
+		return "", err
+	}
 
-	return messageStream
+	response := getResponse(message)
+	return response, nil
 }
 
 // getResponse returns the response from the API to the console.
