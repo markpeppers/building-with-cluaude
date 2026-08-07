@@ -32,8 +32,9 @@ func main() {
 
 	system := []anthropic.TextBlockParam{}
 
-	prompt := "Generate a very short event bridge rule as json."
+	prompt := "Generate three different sample AWS CLI commands. Each should be very short."
 	messages = addUserMessage(messages, prompt)
+	messages = addAssistantMessage(messages, "Here are all three commands in a single block without any comments:\n```bash")
 
 	response, err := chat(client, messages, model, system)
 	if err != nil {
@@ -55,35 +56,12 @@ func chat(
 	temp.Value = 0.0
 
 	message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
-		MaxTokens:   1024,
-		Messages:    messages,
-		Model:       model,
-		System:      system,
-		Temperature: temp,
-		OutputConfig: anthropic.OutputConfigParam{
-			Format: anthropic.JSONOutputFormatParam{
-				Schema: map[string]any{
-					"type": "object",
-					"properties": map[string]any{
-						"source":      map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
-						"detail-type": map[string]any{"type": "array", "items": map[string]any{"type": "string"}},
-						"detail": map[string]any{
-							"type": "object",
-							"properties": map[string]any{
-								"state": map[string]any{
-									"type":  "array",
-									"items": map[string]any{"type": "string"},
-								},
-							},
-							"required":             []string{"state"},
-							"additionalProperties": false,
-						},
-					},
-					"required":             []string{"source", "detail-type", "detail"},
-					"additionalProperties": false,
-				},
-			},
-		},
+		MaxTokens:     1024,
+		Messages:      messages,
+		Model:         model,
+		System:        system,
+		Temperature:   temp,
+		StopSequences: []string{"```"},
 	},
 	)
 	if err != nil {
