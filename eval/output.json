@@ -1,0 +1,65 @@
+[
+  {
+    "output": "# Marathon Training Nutrition Plan\n\n## Daily Calorie Target\n**~2,800-3,200 calories** (depending on training intensity/volume)\n- BMR: ~1,700 cal | Add 65-90% for marathon training\n\n## Macronutrient Distribution\n\n| Macro | Daily | % of Calories | Purpose |\n|-------|-------|---|---|\n| **Carbs** | 450-550g | 55-60% | Fuel & glycogen stores |\n| **Protein** | 110-135g | 14-16% | Recovery & adaptation |\n| **Fat** | 80-90g | 25-30% | Hormonal health & sustained energy |\n\n## Key Nutrition Strategies\n\n### **Carbohydrate Loading (3-7 days pre-race)**\n- Increase to 70-90g carbs/kg body weight\n- Taper training volume while maintaining intensity\n- Choose easily digestible carbs\n\n### **Daily Meal Framework**\n\n**Breakfast** (500-600 cal)\n- Oatmeal + banana + honey + Greek yogurt, or\n- Whole grain toast + eggs + berries\n\n**Mid-Morning Snack** (200 cal)\n- Banana + almond butter or sports drink + granola\n\n**Lunch** (700-800 cal)\n- Lean protein (chicken/fish) + brown rice/quinoa + vegetables + olive oil\n\n**Pre-Workout Snack** (200-300 cal, 60-90min before)\n- White bread + jam, or energy gel + water\n\n**Post-Workout** (400-500 cal, within 30-60min)\n- Chocolate milk, or protein + carbs (chicken sandwich, pasta)\n\n**Dinner** (600-700 cal)\n- Lean protein + sweet potato + vegetables\n\n**Evening Snack** (100-200 cal, if needed)\n- Greek yogurt + berries\n\n### **Hydration**\n- **Daily**: 3-4L water minimum\n- **During training**: 500-750mL/hour (with electrolytes on runs >90min)\n- **Post-workout**: 150% of fluid lost, over 4-6 hours\n\n### **Race Week Specifics**\n- Prioritize hydration & sodium intake\n- Stick to familiar foods (nothing new!)\n- Reduce fiber 24-48h before race\n\n**Would you like specific meal ideas or a detailed training week plan?**",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178 cm",
+        "weight": "68 kg",
+        "goal": "Marathon training - high-endurance performance with carbohydrate loading and pre/post-workout nutrition timing",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan spans exactly one full day with 4-5 meals/snacks",
+        "Total daily calories support high-endurance athlete needs (approximately 3000+ kcal)",
+        "Carbohydrates comprise 55-65% of total calories with strategic timing around training",
+        "Includes specific meal timing recommendations relative to workout sessions"
+      ],
+      "task_description": "Write acompact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a high-endurance athlete (marathon runner) requiring high calorie intake and carbohydrate loading with specific timing around training sessions"
+    },
+    "score": 3,
+    "reasoning": "The solution violates a mandatory requirement by failing to provide 'exact foods, portions, and timing' for a concrete one-day meal plan. While it offers excellent nutritional guidance, hydration strategies, and general frameworks, it presents a template with alternatives rather than a specific, executable daily plan. For example, breakfast is listed as 'Oatmeal + banana + honey + Greek yogurt, or Whole grain toast + eggs + berries' without specifying quantities, actual calorie totals, or which option constitutes the actual plan. The solution reads as educational guidance rather than a compact, concise one-day meal plan with actionable specifics. A proper response would specify: '7am Breakfast: 1 cup oatmeal (150g) + 1 banana (120g) + 1 tbsp honey (21g) + 200g Greek yogurt = 520 calories' with exact timing and macros for each meal."
+  },
+  {
+    "output": "# Nutrition Plan for Muscle Gain & Strength\n\n## Caloric Needs\n- **BMR**: ~1,800 calories\n- **TDEE** (moderate activity): ~2,700-2,900 calories\n- **Target intake**: **2,900-3,200 calories/day** (slight surplus for muscle gain)\n\n## Macronutrient Targets\n\n| Macro | Daily Amount | Per Meal |\n|-------|--------------|----------|\n| **Protein** | 140-170g (1.65-2g/kg) | 25-35g per meal |\n| **Carbs** | 360-400g (4.2-4.7g/kg) | 50-75g per meal |\n| **Fat** | 80-100g (0.95-1.2g/kg) | 15-25g per meal |\n\n## Sample Daily Eating Pattern (4-5 meals)\n\n**Breakfast**\n- 3 eggs + oats + banana + berries\n\n**Snack**\n- Greek yogurt + granola + honey\n\n**Lunch**\n- Chicken/beef (150g) + rice + vegetables + olive oil\n\n**Pre/Post-Workout**\n- Whey protein + fruit + white rice\n\n**Dinner**\n- Fish/lean meat (150g) + sweet potato + greens + fat source\n\n## Key Principles\n\u2705 Distribute protein evenly across 4-5 meals (optimal for MPS)  \n\u2705 Prioritize whole foods (90% of intake)  \n\u2705 Time carbs around workouts  \n\u2705 Stay hydrated (3-4L water daily)  \n\u2705 Track intake for 2 weeks to calibrate  \n\n**Adjust calories \u00b1200 based on weekly progress (target: 0.5-1kg gain/week)**",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "180 cm",
+        "weight": "85 kg",
+        "goal": "Muscle gain and strength development with optimal protein distribution for recovery",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan spans exactly 1 day with 4-5 meals distributed throughout the day",
+        "Protein is distributed across meals (minimum 25-35g per meal) totaling approximately 2.0-2.2g per kg of body weight",
+        "Includes specific timing of carbohydrates and micronutrients (iron, magnesium, zinc) around training to support muscle synthesis and recovery",
+        "Meals are concise and practical for a weightlifter's schedule"
+      ],
+      "task_description": "Write acompact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a strength-focused athlete (weightlifter) emphasizing protein distribution across meals and micronutrient timing for recovery and muscle synthesis"
+    },
+    "score": 3,
+    "reasoning": "The solution provides a solid framework for nutrition planning with accurate calculations and sound principles. However, it fundamentally fails the mandatory requirement of including 'meals with exact foods, portions, and timing.' The solution offers generic meal templates (e.g., '3 eggs + oats + banana + berries') without specific quantities, calorie counts per meal, or a concrete timeline for when each meal should be consumed. A 1-day meal plan requires a complete, actionable schedule with precise portions that can be immediately implemented. Additionally, the secondary criteria requiring specific micronutrient timing around training is not addressed. While the foundational nutrition science is sound, the deliverable does not meet the explicit requirements for a practical, executable meal plan."
+  },
+  {
+    "output": "# Nutrition Plan for Soccer Performance & Recovery\n\n## Daily Structure\n\n### **Breakfast (7:00am)** \u2014 2-3 hours before training\n- Oatmeal with banana, berries, and almond butter\n- Whole grain toast with avocado\n- Green tea or coffee\n- *Goal: Sustained energy release*\n\n### **Pre-Training Snack (9:30am)** \u2014 30 min before\n- Banana with handful of dates or energy bar\n- Small smoothie: plant-based milk, mango, spinach\n- *Goal: Quick glycogen top-up*\n\n### **Post-Training (11:30am)** \u2014 Within 30 min\n- Chickpea pasta with roasted vegetables and tahini sauce\n- Or: Rice bowl with tofu, beans, and greens\n- Electrolyte drink or coconut water\n- *Goal: Glycogen replenishment + protein*\n\n### **Lunch (1:00pm)**\n- Lentil or bean-based protein\n- Brown rice or quinoa (complex carbs)\n- Colorful vegetables\n- Olive oil-based dressing\n\n### **Afternoon Snack (4:00pm)** \u2014 Before evening match\n- Hummus with vegetables or crackers\n- Handful of nuts and dried fruit\n- Sports drink or banana\n- *Goal: Final energy boost*\n\n### **Post-Match (8:30pm)** \u2014 Within 30 min\n- Plant-based protein shake (pea/hemp protein)\n- Fruit with nuts\n- Hydrate well\n- *Goal: Recovery initiation*\n\n### **Dinner (9:00pm)**\n- Larger plant-based protein (tempeh, tofu, legumes)\n- Sweet potato or whole grains\n- Vegetables rich in antioxidants\n\n---\n\n## Key Targets\n- **Calories**: ~2,500-2,800/day (adjust based on intensity)\n- **Protein**: 90-110g daily (tofu, tempeh, legumes, nuts, seeds)\n- **Carbs**: 50-55% of calories (prioritize around training)\n- **Hydration**: 3-4L water + electrolytes on match days\n\n**Consider**: Plant-based protein powder, B12 supplementation, iron-rich foods (lentils, spinach)",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "183 cm",
+        "weight": "78 kg",
+        "goal": "Maintain energy and performance for soccer training (10am) and evening match (7pm) with optimal recovery",
+        "restrictions": "Vegetarian, no dairy"
+      },
+      "solution_criteria": [
+        "Meal plan includes 4-5 meals/snacks strategically timed around 10am training and 7pm match",
+        "Macronutrient balance emphasizes carbohydrates for sustained energy with adequate protein for recovery",
+        "Includes hydration guidance appropriate for match day demands",
+        "All meals comply with vegetarian and dairy-free restrictions"
+      ],
+      "task_description": "Write acompact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a sport-specific athlete (soccer player) needing balanced macronutrients with emphasis on sustained energy, hydration considerations, and meal timing around practice/competition windows"
+    },
+    "score": 3,
+    "reasoning": "The solution demonstrates strong conceptual understanding of athlete nutrition timing and successfully meets the secondary criteria (4-5 strategically timed meals, carb emphasis, hydration guidance, dietary restrictions). However, it fails all three mandatory requirements: it provides no daily caloric total, no macronutrient breakdown with specific numbers, and lacks exact portions/quantities for meals. The plan includes general guidance like '~2,500-2,800/day' and '50-55% carbs' but these are approximations without concrete daily totals or detailed macronutrient calculations. Phrases like 'handful of nuts', 'colorful vegetables', and 'Larger plant-based protein' do not constitute exact foods with portions. This is an automatic failure per the mandatory requirements criteria."
+  }
+]
