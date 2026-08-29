@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "178 cm",
+      "weight": "68 kg",
+      "goal": "Marathon training - high-endurance performance with carbohydrate loading and pre/post-workout nutrition timing",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan spans exactly one full day with 4-5 meals/snacks",
+      "Total daily calories support high-endurance athlete needs (approximately 3000+ kcal)",
+      "Carbohydrates comprise 55-65% of total calories with strategic timing around training",
+      "Includes specific meal timing recommendations relative to workout sessions"
+    ],
+    "task_description": "Write acompact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring high calorie intake and carbohydrate loading with specific timing around training sessions"
+  },
+  {
+    "prompt_inputs": {
+      "height": "180 cm",
+      "weight": "85 kg",
+      "goal": "Muscle gain and strength development with optimal protein distribution for recovery",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan spans exactly 1 day with 4-5 meals distributed throughout the day",
+      "Protein is distributed across meals (minimum 25-35g per meal) totaling approximately 2.0-2.2g per kg of body weight",
+      "Includes specific timing of carbohydrates and micronutrients (iron, magnesium, zinc) around training to support muscle synthesis and recovery",
+      "Meals are concise and practical for a weightlifter's schedule"
+    ],
+    "task_description": "Write acompact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength-focused athlete (weightlifter) emphasizing protein distribution across meals and micronutrient timing for recovery and muscle synthesis"
+  },
+  {
+    "prompt_inputs": {
+      "height": "183 cm",
+      "weight": "78 kg",
+      "goal": "Maintain energy and performance for soccer training (10am) and evening match (7pm) with optimal recovery",
+      "restrictions": "Vegetarian, no dairy"
+    },
+    "solution_criteria": [
+      "Meal plan includes 4-5 meals/snacks strategically timed around 10am training and 7pm match",
+      "Macronutrient balance emphasizes carbohydrates for sustained energy with adequate protein for recovery",
+      "Includes hydration guidance appropriate for match day demands",
+      "All meals comply with vegetarian and dairy-free restrictions"
+    ],
+    "task_description": "Write acompact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a sport-specific athlete (soccer player) needing balanced macronutrients with emphasis on sustained energy, hydration considerations, and meal timing around practice/competition windows"
+  }
+]
