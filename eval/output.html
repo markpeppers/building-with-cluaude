@@ -117,11 +117,11 @@
                 </div>
                 <div class="stat-box">
                     <div>Average Score</div>
-                    <div class="stat-value">2.1 / 10</div>
+                    <div class="stat-value">8.1 / 10</div>
                 </div>
                 <div class="stat-box">
                     <div>Pass Rate (≥7)</div>
-                    <div class="stat-value">0.0%</div>
+                    <div class="stat-value">80.0%</div>
                 </div>
             </div>
         </div>
@@ -143,349 +143,313 @@
                 <td>Testing with a short passage containing only 2-3 clear, well-defined topics</td>
                 <td class="prompt-inputs"><strong>content:</strong> This study examines the relationship between microplastic accumulation in marine sediments and its effects on benthic organisms. We collected sediment cores from five coastal regions and analyzed polymer composition using Fourier-transform infrared spectroscopy. Results indicate that microplastic concentrations correlate significantly with reduced biodiversity in amphipod populations, suggesting potential toxicological pathways through ingestion and bioaccumulation mechanisms.</td>
                 <td class="criteria">• Output is a valid JSON array of strings<br>• Array contains exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy<br>• Topics are concise and accurately reflect the passage content</td>
-                <td class="output"><pre># Topics in this study:
-
-1. **Microplastics** - the primary subject matter
-2. **Marine sediments** - the environment being studied
-3. **Benthic organisms** - the biological focus (bottom-dwelling creatures)
-4. **Polymer composition** - chemical analysis aspect
-5. **Fourier-transform infrared spectroscopy (FTIR)** - analytical methodology
-6. **Coastal regions** - geographic scope
-7. **Biodiversity** - ecological impact measured
-8. **Amphipods** - specific organism studied
-9. **Toxicology** - health/harm mechanisms
-10. **Bioaccumulation** - accumulation of contaminants in organisms
-
-## In brief:
-This research combines **environmental science, marine biology, chemistry, and toxicology** to investigate how plastic pollution affects ocean floor ecosystems.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">The solution fails all three mandatory requirements. First, it is not valid JSON - the output contains markdown headers, bold text, and prose rather than a properly formatted JSON array. Second, it includes extensive commentary beyond the JSON array (headers, explanatory text, and a summary paragraph), violating the requirement that the response contain 'JSON array and nothing else.' Third, while the secondary criteria specify 'exactly 3 distinct topics,' the solution provides 10 topics. Although the topics themselves are accurate and well-identified, the format and structure completely fail to meet the mandatory requirements.</td>
+                <td class="output"><pre>```json
+[
+  "microplastic accumulation",
+  "marine sediments",
+  "benthic organisms",
+  "sediment cores",
+  "coastal regions",
+  "polymer composition",
+  "Fourier-transform infrared spectroscopy",
+  "microplastic concentrations",
+  "biodiversity",
+  "amphipod populations",
+  "toxicological pathways",
+  "ingestion",
+  "bioaccumulation mechanisms"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-low">4</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON, contains only topic strings without commentary, and includes each topic mentioned in the article. However, it significantly fails the secondary criteria by providing 13 topics instead of the explicitly stated requirement of 'exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy.' The solution extracts every noun phrase rather than consolidating related concepts into the three primary topic areas specified in the criteria.</td>
             </tr>
         
             <tr>
                 <td>Testing with a passage containing overlapping or closely related topics to assess topic distinction</td>
                 <td class="prompt-inputs"><strong>content:</strong> This study examines the intersection of cognitive linguistics and semantic theory in understanding metaphorical language processing. We investigate how conceptual metaphors facilitate semantic mapping between abstract and concrete domains, while also exploring the role of embodied cognition in shaping metaphor comprehension. Our analysis reveals that metaphorical reasoning and analogical thinking operate through similar neural mechanisms, though they differ in their reliance on linguistic framing versus perceptual simulation. Additionally, we consider how semantic networks and conceptual blending contribute to the emergence of novel metaphorical expressions in discourse.</td>
                 <td class="criteria">• Extracts distinct topics while recognizing that some are closely related or overlapping (e.g., 'metaphorical language processing' vs 'metaphorical reasoning' as separate but related topics)<br>• Returns output as a JSON array of strings<br>• Identifies all major research areas discussed without over-merging related concepts into single entries</td>
-                <td class="output"><pre># Topics in This Study
-
-1. **Cognitive Linguistics** - The overarching framework for understanding language and cognition
-
-2. **Semantic Theory** - How meaning is constructed and understood
-
-3. **Metaphorical Language Processing** - How the brain processes and interprets metaphors
-
-4. **Conceptual Metaphors** - Abstract frameworks that structure our thinking
-
-5. **Semantic Mapping** - Connection between abstract and concrete domains
-
-6. **Embodied Cognition** - How physical experience influences understanding and comprehension
-
-7. **Metaphorical Reasoning** - Using metaphors as a thinking tool
-
-8. **Analogical Thinking** - Drawing comparisons to understand new concepts
-
-9. **Neural Mechanisms** - Brain processes underlying these cognitive functions
-
-10. **Linguistic Framing** - How language structure influences meaning
-
-11. **Perceptual Simulation** - Mental re-enactment of sensory experiences
-
-12. **Semantic Networks** - Interconnected systems of meaning
-
-13. **Conceptual Blending** - Merging of different conceptual spaces to create new meanings
-
-14. **Discourse Analysis** - How language functions in communication
-
----
-
-**In summary:** This is an interdisciplinary study combining neuroscience, linguistics, and cognitive science to explore how we understand and use metaphorical language.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">While the solution demonstrates excellent topic identification and appropriate granularity in distinguishing related concepts, it fundamentally fails to meet the mandatory requirements. The output must be a JSON array of strings containing only topic names, with nothing else in the response. Instead, the solution provides a markdown-formatted document with numbered entries, descriptions for each topic, and a summary paragraph. This is a complete violation of the specified output format requirements.</td>
-            </tr>
-        
-            <tr>
-                <td>Testing with a passage featuring domain-specific jargon from fields like quantum physics or molecular biology</td>
-                <td class="prompt-inputs"><strong>content:</strong> Recent advances in quantum entanglement have demonstrated non-local correlations through Bell test experiments using photonic qubits and superconducting circuits. The measurement of entanglement entropy in many-body systems reveals topological order in quantum spin liquids, while decoherence mechanisms involving phonon coupling and electromagnetic noise present significant challenges for quantum error correction codes. Furthermore, implementations of variational quantum algorithms on NISQ devices show promise for simulating molecular Hamiltonians in computational chemistry, particularly for calculating ground state energies of transition metal complexes using ansatz circuits based on unitary coupled-cluster theory.</td>
-                <td class="criteria">• Extracts all major technical concepts and phenomena mentioned (e.g., quantum entanglement, Bell tests, topological order, decoherence, quantum error correction, NISQ devices, variational quantum algorithms)<br>• Returns output as a JSON array of strings with no additional formatting or explanation<br>• Identifies domain-specific jargon accurately without oversimplifying or combining distinct topics</td>
-                <td class="output"><pre># Topics in this text:
-
-1. **Quantum Entanglement**
-   - Non-local correlations
-   - Bell test experiments
-   - Photonic qubits
-   - Superconducting circuits
-
-2. **Entanglement Entropy & Topological Order**
-   - Many-body systems
-   - Quantum spin liquids
-
-3. **Quantum Decoherence**
-   - Phonon coupling
-   - Electromagnetic noise
-   - Quantum error correction codes
-
-4. **Variational Quantum Algorithms**
-   - NISQ (Noisy Intermediate-Scale Quantum) devices
-   - Molecular Hamiltonians
-   - Computational chemistry
-
-5. **Quantum Chemistry Applications**
-   - Ground state energy calculations
-   - Transition metal complexes
-   - Unitary coupled-cluster theory
-   - Ansatz circuits
-
-This text covers fundamental quantum physics concepts alongside practical applications in quantum computing and chemistry.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">While the solution demonstrates excellent comprehension of the source material and identifies all relevant topics accurately, it catastrophically fails all three mandatory requirements. The output must be a JSON array of strings containing only topics with no additional formatting, explanation, or commentary. Instead, the solution provides a structured markdown document with hierarchical organization, nested subtopics, and a concluding summary. This is a fundamental format violation that makes the output unsuitable for the stated task, regardless of content quality.</td>
+                <td class="output"><pre>```json
+[
+  "cognitive linguistics",
+  "semantic theory",
+  "metaphorical language processing",
+  "conceptual metaphors",
+  "semantic mapping",
+  "abstract domains",
+  "concrete domains",
+  "embodied cognition",
+  "metaphor comprehension",
+  "metaphorical reasoning",
+  "analogical thinking",
+  "neural mechanisms",
+  "linguistic framing",
+  "perceptual simulation",
+  "semantic networks",
+  "conceptual blending",
+  "novel metaphorical expressions",
+  "discourse"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings, each entry is a topic without extra commentary, and the response contains only the JSON array. It also performs well on secondary criteria by identifying all major research areas and maintaining appropriate distinction between related concepts. The extraction is thorough and well-balanced, though a few entries are somewhat granular. The solution directly addresses the task of extracting topics from a scholarly article passage.</td>
             </tr>
         
             <tr>
                 <td>Testing with a passage that mentions multiple subtopics under one broader umbrella concept</td>
                 <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Within the broader field of deep learning, convolutional neural networks have demonstrated exceptional performance in computer vision tasks, enabling accurate image classification and object detection in medical imaging diagnostics. Simultaneously, recurrent neural networks and transformer architectures have become instrumental in natural language processing, facilitating significant improvements in machine translation, sentiment analysis, and question-answering systems. These neural network variants, while distinct in architecture and application, collectively represent the computational foundations driving modern AI innovation.</td>
                 <td class="criteria">• Extracts all major topics and subtopics including machine learning, deep learning, convolutional neural networks, computer vision, medical imaging, recurrent neural networks, transformers, and natural language processing<br>• Organizes extracted topics into a valid JSON array of strings<br>• Avoids extracting overly granular phrases or redundant entries while capturing the hierarchical structure of broader concepts and their specific subtopics</td>
-                <td class="output"><pre># Topics in this passage:
-
-1. **Machine Learning** - General advances and applications
-2. **Artificial Intelligence** - Broader field context
-3. **Deep Learning** - Subset of ML being discussed
-4. **Convolutional Neural Networks (CNNs)** - Architecture for computer vision
-5. **Computer Vision** - Image analysis tasks
-6. **Image Classification** - Specific CV application
-7. **Object Detection** - Specific CV application
-8. **Medical Imaging** - Domain application
-9. **Recurrent Neural Networks (RNNs)** - Architecture for sequential data
-10. **Transformer Architectures** - Modern neural network design
-11. **Natural Language Processing (NLP)** - Language understanding applications
-12. **Machine Translation** - NLP application
-13. **Sentiment Analysis** - NLP application
-14. **Question-Answering Systems** - NLP application
-
-**Main themes:** The passage discusses how different types of neural networks (CNNs, RNNs, Transformers) are applied to different domains (computer vision and natural language processing) to solve modern AI problems.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">The solution demonstrates excellent topic identification and understanding of the passage content. However, it catastrophically fails the mandatory requirements by not providing output as a JSON array of strings with no extra commentary. The response format is completely incorrect - it uses markdown formatting, numbered lists, and includes explanatory text when the specification explicitly requires ONLY a JSON array of strings. This is an automatic failure condition regardless of content quality.</td>
+                <td class="output"><pre>```json
+[
+  "machine learning",
+  "artificial intelligence",
+  "deep learning",
+  "convolutional neural networks",
+  "computer vision",
+  "image classification",
+  "object detection",
+  "medical imaging diagnostics",
+  "recurrent neural networks",
+  "transformer architectures",
+  "natural language processing",
+  "machine translation",
+  "sentiment analysis",
+  "question-answering systems",
+  "neural network architectures"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It meets the secondary criteria by extracting all major topics and subtopics explicitly mentioned in the passage, organizing them hierarchically (e.g., CNNs and RNNs as subtopics of deep learning, machine translation and sentiment analysis as subtopics of NLP). The inclusion of 'neural network architectures' is slightly redundant but not a significant deficiency. The granularity level is appropriate for a scholarly article, capturing both high-level concepts and important specific applications without being overly detailed.</td>
             </tr>
         
             <tr>
-                <td>Testing with a lengthy passage (500+ words) to assess scalability and topic extraction consistency</td>
-                <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have revolutionized natural language processing, enabling systems to achieve unprecedented accuracy in tasks such as sentiment analysis, machine translation, and question answering. The emergence of transformer-based architectures, particularly attention mechanisms, has fundamentally altered how neural networks process sequential data by allowing models to weigh the importance of different input elements dynamically. Transfer learning has become increasingly prevalent, where pre-trained models on large corpora are fine-tuned for specific downstream tasks, significantly reducing computational requirements and improving performance across diverse applications. Simultaneously, concerns regarding model interpretability have gained prominence in academic discourse, as deep learning systems often function as black boxes, making it difficult for practitioners to understand decision-making processes. Ethical considerations surrounding bias in training data have prompted researchers to develop debiasing techniques and fairness metrics to ensure equitable outcomes across demographic groups. The scalability of large language models presents both opportunities and challenges; while these models demonstrate remarkable few-shot learning capabilities and can generate coherent text across multiple domains, they also require substantial computational resources and raise questions about environmental sustainability. Researchers have explored knowledge distillation methods to compress large models into smaller, more efficient versions suitable for deployment on edge devices. Additionally, the integration of symbolic reasoning with neural approaches represents a promising frontier, combining the interpretability of rule-based systems with the pattern recognition strengths of deep learning. Multimodal learning, which processes information from multiple modalities such as text, images, and audio simultaneously, has opened new research directions for more robust and comprehensive understanding of complex phenomena. Finally, the development of prompt engineering as a practical skill has emerged as researchers seek to optimize interactions with pre-trained models through carefully crafted input instructions.</td>
-                <td class="criteria">• Extracts at least 10 distinct topics from the lengthy passage<br>• Returns output as a valid JSON array of strings<br>• Avoids redundancy and captures main topics comprehensively</td>
-                <td class="output"><pre># Topics in this Text
-
-1. **Machine Learning Advances** - Recent progress in ML and its applications
-
-2. **Natural Language Processing (NLP)** - Sentiment analysis, machine translation, question answering
-
-3. **Transformer Architectures** - Attention mechanisms and their impact on sequential data processing
-
-4. **Transfer Learning** - Pre-training and fine-tuning models for specific tasks
-
-5. **Model Interpretability** - Understanding black box decision-making in deep learning
-
-6. **Ethical AI & Bias** - Fairness metrics and debiasing techniques for equitable outcomes
-
-7. **Large Language Models** - Scalability, few-shot learning, and environmental concerns
-
-8. **Model Compression** - Knowledge distillation for efficient edge deployment
-
-9. **Neuro-Symbolic AI** - Combining symbolic reasoning with neural networks
-
-10. **Multimodal Learning** - Processing text, images, and audio together
-
-11. **Prompt Engineering** - Optimizing interactions with pre-trained models
-
-The text broadly covers the **state of modern AI and machine learning**, focusing on technical innovations, ethical considerations, and practical applications.</pre></td>
-                <td class="score-col"><span class="score score-low">3</span></td>
-                <td class="reasoning">The solution violates all three mandatory requirements. The task explicitly requires: (1) a JSON array of strings containing topics, (2) strings with only topic names without extra commentary, and (3) the response should contain the JSON array and nothing else. The provided solution is formatted as markdown with numbered items, includes parenthetical descriptions for each topic, and adds a concluding summary. While the topics themselves are accurate and comprehensive, the format is fundamentally incorrect. A compliant response would be a simple JSON array like: ["Machine Learning Advances", "Natural Language Processing", ...] with no additional text or formatting.</td>
+                <td>Testing with a passage featuring domain-specific jargon from fields like quantum physics or molecular biology</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in quantum entanglement have demonstrated non-local correlations through Bell test experiments using photonic qubits and superconducting circuits. The measurement of entanglement entropy in many-body systems reveals topological order in quantum spin liquids, while decoherence mechanisms involving phonon coupling and electromagnetic noise present significant challenges for quantum error correction codes. Furthermore, implementations of variational quantum algorithms on NISQ devices show promise for simulating molecular Hamiltonians in computational chemistry, particularly for calculating ground state energies of transition metal complexes using ansatz circuits based on unitary coupled-cluster theory.</td>
+                <td class="criteria">• Extracts all major technical concepts and phenomena mentioned (e.g., quantum entanglement, Bell tests, topological order, decoherence, quantum error correction, NISQ devices, variational quantum algorithms)<br>• Returns output as a JSON array of strings with no additional formatting or explanation<br>• Identifies domain-specific jargon accurately without oversimplifying or combining distinct topics</td>
+                <td class="output"><pre>```json
+[
+  "quantum entanglement",
+  "non-local correlations",
+  "Bell test experiments",
+  "photonic qubits",
+  "superconducting circuits",
+  "entanglement entropy",
+  "many-body systems",
+  "topological order",
+  "quantum spin liquids",
+  "decoherence mechanisms",
+  "phonon coupling",
+  "electromagnetic noise",
+  "quantum error correction codes",
+  "variational quantum algorithms",
+  "NISQ devices",
+  "molecular Hamiltonians",
+  "computational chemistry",
+  "ground state energies",
+  "transition metal complexes",
+  "ansatz circuits",
+  "unitary coupled-cluster theory"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">10</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it contains a valid JSON array of strings, each entry is a topic without extra commentary, and the response contains only the JSON array. Regarding secondary criteria, the solution extracts all major technical concepts mentioned in the passage with high accuracy and appropriate granularity. The domain-specific jargon is handled correctly—terms like 'ansatz circuits,' 'unitary coupled-cluster theory,' 'NISQ devices,' and 'topological order' are all preserved as distinct topics rather than oversimplified. The extraction is comprehensive and well-organized. No mandatory requirements are violated.</td>
             </tr>
         
             <tr>
                 <td>Testing with a passage containing implicit topics that require inference beyond explicitly stated keywords</td>
                 <td class="prompt-inputs"><strong>content:</strong> Recent advances in neuroimaging have revealed complex patterns of neural connectivity during cognitive tasks, with functional magnetic resonance imaging studies demonstrating that prefrontal cortex activation correlates strongly with working memory performance in healthy adults. However, longitudinal investigations in patients with mild cognitive impairment show progressive deterioration of these connectivity patterns, accompanied by compensatory activation in bilateral parietal regions. These findings suggest that early neurodegeneration may be detected through connectivity biomarkers before overt behavioral decline occurs, opening possibilities for intervention strategies targeting synaptic plasticity and neural reserve mechanisms.</td>
                 <td class="criteria">• Extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics (cognitive decline, neurodegeneration, biomarkers, neural plasticity, intervention strategies)<br>• Identifies topics that require inference from context and relationships between concepts rather than direct keyword matching<br>• Returns results as a valid JSON array of strings with no additional fields or metadata</td>
-                <td class="output"><pre># Topics in this Text
-
-1. **Neuroimaging techniques** - specifically functional magnetic resonance imaging (fMRI)
-
-2. **Neural connectivity** - patterns of brain region communication during cognitive tasks
-
-3. **Prefrontal cortex function** - its role in working memory
-
-4. **Working memory** - cognitive performance and its neural basis
-
-5. **Mild cognitive impairment (MCI)** - a clinical condition showing cognitive decline
-
-6. **Neurodegeneration** - progressive loss of neural structure/function
-
-7. **Longitudinal studies** - tracking changes over time in patient populations
-
-8. **Compensatory brain activation** - how the brain adapts when regions deteriorate
-
-9. **Parietal regions** - brain areas showing increased activation during decline
-
-10. **Biomarkers** - connectivity patterns as early diagnostic indicators
-
-11. **Synaptic plasticity** - the brain's ability to form new connections
-
-12. **Neural reserve** - cognitive resilience mechanisms
-
-13. **Clinical intervention strategies** - therapeutic approaches for cognitive decline
-
-**In summary:** This text covers neuroscience, cognitive neurology, brain imaging, and early detection/treatment of neurodegenerative disease.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">While the solution demonstrates excellent topic identification and understanding of the passage content, it fundamentally fails to meet the mandatory requirements. The task explicitly requires 'a JSON array of strings containing each topic' with 'only a topic without any extra commentary' and 'nothing else' in the response. The provided solution is formatted as markdown with descriptions, explanations, and summary text rather than a clean JSON array. For example, the correct format should be: ["Neuroimaging", "fMRI", "Neural connectivity", ...] not the current format with bullet points and descriptions. This is an automatic failure condition per the mandatory requirements.</td>
+                <td class="output"><pre>```json
+[
+  "neuroimaging",
+  "neural connectivity",
+  "cognitive tasks",
+  "functional magnetic resonance imaging",
+  "prefrontal cortex activation",
+  "working memory performance",
+  "healthy adults",
+  "longitudinal investigations",
+  "mild cognitive impairment",
+  "connectivity patterns",
+  "compensatory activation",
+  "parietal regions",
+  "neurodegeneration",
+  "connectivity biomarkers",
+  "behavioral decline",
+  "intervention strategies",
+  "synaptic plasticity",
+  "neural reserve mechanisms"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with no extra commentary or metadata. It successfully extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics requiring inference (neurodegeneration, connectivity biomarkers, intervention strategies, synaptic plasticity, neural reserve mechanisms). The extraction demonstrates contextual understanding of relationships between concepts. While a few entries are somewhat granular or contextual rather than core topics, this represents a minor deviation from ideal topic extraction rather than a failure to meet stated criteria. The solution appropriately balances comprehensiveness with relevance.</td>
             </tr>
         
             <tr>
-                <td>Testing with a passage containing cited authors, methodologies, and datasets as potential false positives</td>
-                <td class="prompt-inputs"><strong>content:</strong> This study employs a mixed-methods approach combining quantitative analysis using the STATA statistical package with qualitative interviews following Braun and Clarke's thematic analysis framework. We utilized the World Bank's Development Indicators dataset (2010-2020) alongside primary data collected from 150 participants across five regions. Building on Smith et al.'s (2019) theoretical model, our research investigates the relationship between institutional capacity, resource allocation mechanisms, and policy implementation outcomes. The methodology draws from institutional economics and organizational behavior literature, incorporating longitudinal regression analysis with fixed-effects specifications to control for temporal variation. Our sample included both public sector agencies and non-governmental organizations, enabling comparative assessment of governance structures and their influence on service delivery effectiveness.</td>
-                <td class="criteria">• Extracts substantive research topics (e.g., institutional capacity, policy implementation, governance structures) while excluding methodological tools (STATA, thematic analysis), cited authors (Smith et al., Braun and Clarke), and dataset names (World Bank Development Indicators)<br>• Returns output as a valid JSON array of strings<br>• Identifies 4-6 distinct topics without duplication</td>
-                <td class="output"><pre># Topics in This Text
-
-## **Methodological Topics**
-- Mixed-methods research design
-- Quantitative analysis (STATA statistical package)
-- Qualitative interviews
-- Thematic analysis (Braun and Clarke framework)
-- Longitudinal regression analysis
-- Fixed-effects specifications
-
-## **Data Sources**
-- World Bank Development Indicators dataset (2010-2020)
-- Primary data from 150 participants
-- Multi-regional sampling (five regions)
-
-## **Substantive Research Topics**
-- Institutional capacity
-- Resource allocation mechanisms
-- Policy implementation outcomes
-- Governance structures
-- Service delivery effectiveness
-
-## **Theoretical/Disciplinary Foundations**
-- Institutional economics
-- Organizational behavior
-- Smith et al.'s theoretical model (2019)
-
-## **Organizational Context**
-- Public sector agencies
-- Non-governmental organizations (NGOs)
-- Comparative governance analysis
-
----
-
-**In summary:** This is a study on **governance and policy implementation**, using a combination of statistical and interview-based methods to examine how institutions allocate resources and deliver services.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">The solution demonstrates strong understanding of which topics to extract and correctly excludes methodological/citation elements per the secondary criteria. However, it catastrophically fails the mandatory requirements by: (1) not returning a valid JSON array of strings as the primary output, (2) including extensive markdown formatting and explanatory text, and (3) directly violating the instruction that the response should contain only the JSON array. The correct format should be a simple JSON array like ["institutional capacity", "resource allocation mechanisms", "policy implementation outcomes", "governance structures", "service delivery effectiveness", "comparative organizational analysis"] with no additional text.</td>
+                <td>Testing with a lengthy passage (500+ words) to assess scalability and topic extraction consistency</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have revolutionized natural language processing, enabling systems to achieve unprecedented accuracy in tasks such as sentiment analysis, machine translation, and question answering. The emergence of transformer-based architectures, particularly attention mechanisms, has fundamentally altered how neural networks process sequential data by allowing models to weigh the importance of different input elements dynamically. Transfer learning has become increasingly prevalent, where pre-trained models on large corpora are fine-tuned for specific downstream tasks, significantly reducing computational requirements and improving performance across diverse applications. Simultaneously, concerns regarding model interpretability have gained prominence in academic discourse, as deep learning systems often function as black boxes, making it difficult for practitioners to understand decision-making processes. Ethical considerations surrounding bias in training data have prompted researchers to develop debiasing techniques and fairness metrics to ensure equitable outcomes across demographic groups. The scalability of large language models presents both opportunities and challenges; while these models demonstrate remarkable few-shot learning capabilities and can generate coherent text across multiple domains, they also require substantial computational resources and raise questions about environmental sustainability. Researchers have explored knowledge distillation methods to compress large models into smaller, more efficient versions suitable for deployment on edge devices. Additionally, the integration of symbolic reasoning with neural approaches represents a promising frontier, combining the interpretability of rule-based systems with the pattern recognition strengths of deep learning. Multimodal learning, which processes information from multiple modalities such as text, images, and audio simultaneously, has opened new research directions for more robust and comprehensive understanding of complex phenomena. Finally, the development of prompt engineering as a practical skill has emerged as researchers seek to optimize interactions with pre-trained models through carefully crafted input instructions.</td>
+                <td class="criteria">• Extracts at least 10 distinct topics from the lengthy passage<br>• Returns output as a valid JSON array of strings<br>• Avoids redundancy and captures main topics comprehensively</td>
+                <td class="output"><pre>```json
+[
+  "machine learning",
+  "natural language processing",
+  "sentiment analysis",
+  "machine translation",
+  "question answering",
+  "transformer-based architectures",
+  "attention mechanisms",
+  "neural networks",
+  "sequential data",
+  "transfer learning",
+  "pre-trained models",
+  "fine-tuning",
+  "downstream tasks",
+  "model interpretability",
+  "deep learning",
+  "bias in training data",
+  "debiasing techniques",
+  "fairness metrics",
+  "large language models",
+  "few-shot learning",
+  "text generation",
+  "computational resources",
+  "environmental sustainability",
+  "knowledge distillation",
+  "model compression",
+  "edge devices",
+  "symbolic reasoning",
+  "rule-based systems",
+  "pattern recognition",
+  "multimodal learning",
+  "text processing",
+  "image processing",
+  "audio processing",
+  "prompt engineering"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It exceeds the minimum threshold of 10 topics with 34 distinct items. The extraction is comprehensive and captures the main themes of the passage effectively. The few weaknesses are minor—some topics are inferred rather than explicitly stated as separate topics, and there is minimal redundancy. The solution demonstrates strong understanding of the source material and appropriate topic granularity for a scholarly article.</td>
             </tr>
         
             <tr>
                 <td>Testing with a passage mixing multiple disciplinary perspectives (e.g., economics + environmental science)</td>
                 <td class="prompt-inputs"><strong>content:</strong> The valuation of ecosystem services presents a complex intersection between ecological and economic frameworks. From an environmental science perspective, wetland ecosystems provide critical functions including water filtration, carbon sequestration, and biodiversity habitat, with studies demonstrating that one hectare can sequester approximately 1.5 metric tons of carbon annually. Conversely, economic analyses often employ contingent valuation methods and hedonic pricing models to assign monetary values to these services, typically ranging from $5,000 to $15,000 per hectare annually depending on geographic location and ecosystem type. Policy economists argue that internalizing these externalities through payment-for-ecosystem-services (PES) programs can create market-based incentives for conservation, while environmental scientists caution that commodifying nature risks oversimplifying complex ecological interdependencies and may undervalue services that lack direct market signals.</td>
                 <td class="criteria">• Extracts topics spanning both environmental science and economics domains<br>• Captures all major conceptual areas discussed in the passage<br>• Returns results as a JSON array of strings</td>
-                <td class="output"><pre># Topics in this passage:
-
-1. **Ecosystem Services Valuation** - The central theme of assigning value to natural ecological functions
-
-2. **Wetland Ecosystems** - Specific focus on wetland functions and characteristics
-
-3. **Environmental/Ecological Functions**
-   - Water filtration
-   - Carbon sequestration
-   - Biodiversity habitat
-
-4. **Environmental Science** - Scientific measurement and quantification of ecological processes
-
-5. **Economic Valuation Methods**
-   - Contingent valuation
-   - Hedonic pricing models
-
-6. **Environmental Economics** - The intersection of ecology and economics
-
-7. **Policy and Market-Based Conservation**
-   - Payment-for-Ecosystem-Services (PES) programs
-   - Market incentives for conservation
-
-8. **Externalities** - Environmental costs/benefits not reflected in market prices
-
-9. **Philosophical/Ethical Debate** - The tension between:
-   - Commodification of nature vs. conservation
-   - Economic quantification vs. ecological complexity
-
-10. **Geographic and Contextual Variation** - How values differ by location and ecosystem type
-
-**In summary**: This passage explores the tension between scientific and economic approaches to valuing nature, using wetlands and carbon sequestration as examples.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">The solution fails all three mandatory requirements. While the content quality is excellent and captures topics spanning both required domains, the format is fundamentally wrong. The task explicitly requires: (1) a JSON array of strings, (2) containing only topics without extra commentary, and (3) nothing else in the response. This solution provides markdown-formatted text with nested structures, explanatory text, and a summary paragraph. A correct response would be a simple JSON array like ["Ecosystem Services Valuation", "Wetland Ecosystems", "Carbon Sequestration", ...] with no additional content.</td>
+                <td class="output"><pre>```json
+[
+  "ecosystem services valuation",
+  "ecological frameworks",
+  "economic frameworks",
+  "wetland ecosystems",
+  "water filtration",
+  "carbon sequestration",
+  "biodiversity habitat",
+  "contingent valuation methods",
+  "hedonic pricing models",
+  "monetary valuation",
+  "externalities",
+  "payment-for-ecosystem-services (PES) programs",
+  "market-based incentives",
+  "conservation",
+  "commodification of nature",
+  "ecological interdependencies",
+  "market signals"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It meets the secondary criteria by spanning both domains and capturing major conceptual areas. The extraction is thorough and accurate, though some design choices (granularity level, grouping decisions) could be debated. The topics extracted are all legitimately present in the passage and represent substantive concepts discussed. Minor weaknesses exist in topic organization and completeness of thematic coverage, but these do not violate stated criteria.</td>
             </tr>
         
             <tr>
-                <td>Testing with a passage that has minimal topic diversity or repeats the same concept using different terminology</td>
-                <td class="prompt-inputs"><strong>content:</strong> This study examines the mechanisms of cellular apoptosis through programmed cell death pathways. The intrinsic pathway involves mitochondrial dysfunction and cytochrome c release, triggering caspase activation. Similarly, the extrinsic pathway utilizes death receptors to initiate the same caspase cascade. Both mechanisms of controlled cellular suicide converge on identical downstream effectors, suggesting that cellular demise through these distinct routes ultimately shares common molecular machinery. Understanding these pathways of regulated cell elimination has profound implications for cancer therapeutics, as malignant cells often evade programmed elimination through apoptotic suppression.</td>
-                <td class="criteria">• Recognizes that 'apoptosis,' 'programmed cell death,' 'cellular suicide,' 'controlled cellular elimination,' and 'regulated cell elimination' refer to the same concept and avoids excessive duplication<br>• Extracts distinct topics such as intrinsic pathway, extrinsic pathway, mitochondrial dysfunction, caspase activation, death receptors, and cancer therapeutics<br>• Returns results as a JSON array of strings with no duplicate or near-duplicate entries</td>
-                <td class="output"><pre># Topics in This Text
-
-1. **Cellular Apoptosis** - The main subject; programmed cell death in cells
-
-2. **Intrinsic Apoptosis Pathway** - Including:
-   - Mitochondrial dysfunction
-   - Cytochrome c release
-   - Caspase activation
-
-3. **Extrinsic Apoptosis Pathway** - Including:
-   - Death receptors
-   - Caspase cascade initiation
-
-4. **Molecular Mechanisms** - Specifically:
-   - Caspase activation and function
-   - Downstream effectors/signaling molecules
-   - Convergence of different pathways
-
-5. **Cancer Biology** - Specifically:
-   - Cancer therapeutics
-   - Apoptotic resistance/suppression in malignant cells
-   - How cancer cells evade programmed cell death
-
-**In summary:** This text covers the molecular biology of apoptosis and its relevance to cancer treatment.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">While the solution demonstrates excellent understanding of the content and properly identifies all relevant topics without duplication, it catastrophically fails all three mandatory requirements. The response must be a JSON array of strings containing only topic names with no additional commentary, formatting, or explanatory text. Instead, the solution provides a markdown-formatted document with nested bullet points, descriptions, and a summary. This is a fundamental format violation that makes the output unsuitable for programmatic use.</td>
+                <td>Testing with a passage containing cited authors, methodologies, and datasets as potential false positives</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study employs a mixed-methods approach combining quantitative analysis using the STATA statistical package with qualitative interviews following Braun and Clarke's thematic analysis framework. We utilized the World Bank's Development Indicators dataset (2010-2020) alongside primary data collected from 150 participants across five regions. Building on Smith et al.'s (2019) theoretical model, our research investigates the relationship between institutional capacity, resource allocation mechanisms, and policy implementation outcomes. The methodology draws from institutional economics and organizational behavior literature, incorporating longitudinal regression analysis with fixed-effects specifications to control for temporal variation. Our sample included both public sector agencies and non-governmental organizations, enabling comparative assessment of governance structures and their influence on service delivery effectiveness.</td>
+                <td class="criteria">• Extracts substantive research topics (e.g., institutional capacity, policy implementation, governance structures) while excluding methodological tools (STATA, thematic analysis), cited authors (Smith et al., Braun and Clarke), and dataset names (World Bank Development Indicators)<br>• Returns output as a valid JSON array of strings<br>• Identifies 4-6 distinct topics without duplication</td>
+                <td class="output"><pre>```json
+[
+  "mixed-methods approach",
+  "quantitative analysis",
+  "STATA statistical package",
+  "qualitative interviews",
+  "thematic analysis",
+  "World Bank Development Indicators",
+  "primary data collection",
+  "institutional capacity",
+  "resource allocation mechanisms",
+  "policy implementation outcomes",
+  "institutional economics",
+  "organizational behavior",
+  "longitudinal regression analysis",
+  "fixed-effects specifications",
+  "temporal variation",
+  "public sector agencies",
+  "non-governmental organizations",
+  "governance structures",
+  "service delivery effectiveness"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-low">4</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings with only topics and no extra commentary. However, it significantly fails the secondary criteria. The task explicitly states to exclude methodological tools, cited authors, and dataset names. The solution includes STATA, thematic analysis, longitudinal regression analysis, fixed-effects specifications, and World Bank Development Indicators—all of which should have been excluded. Additionally, the solution provides 19 topics when the criteria specify 4-6 distinct topics. While the solution does capture genuine substantive topics (institutional capacity, resource allocation mechanisms, policy implementation outcomes, governance structures, service delivery effectiveness, organizational behavior, institutional economics), the inclusion of methodological elements and excessive quantity represents a fundamental misunderstanding of the filtering requirements.</td>
             </tr>
         
             <tr>
                 <td>Testing with a passage from a humanities discipline (philosophy, history, literary analysis) versus STEM fields</td>
                 <td class="prompt-inputs"><strong>content:</strong> Hegel's phenomenology of spirit fundamentally reconceives the relationship between consciousness and historical development, arguing that self-consciousness emerges through a dialectical process of negation and synthesis rather than through immediate intuition. This framework challenges Cartesian epistemology by situating the subject within a temporal and social matrix where recognition by the other becomes constitutive of identity formation. The master-slave dialectic exemplifies this dynamic, demonstrating how domination paradoxically produces dependency and how genuine freedom requires mutual acknowledgment rather than unilateral control. Subsequent interpreters, from Marx to Sartre, have appropriated and transformed these insights to articulate theories of alienation, authenticity, and collective liberation, each emphasizing different dimensions of Hegel's systematic project.</td>
                 <td class="criteria">• Extracts all major philosophical concepts and theoretical frameworks mentioned (e.g., phenomenology, dialectics, self-consciousness, epistemology)<br>• Identifies key philosophical problems and relationships discussed (e.g., consciousness-history relationship, master-slave dynamics, recognition)<br>• Returns output as a valid JSON array of strings with no additional formatting or explanations</td>
-                <td class="output"><pre># Topics in This Passage
-
-## Primary Philosophical Themes
-- **Hegel's Phenomenology of Spirit** — the core work and its main arguments
-- **Consciousness and Historical Development** — how they relate and evolve together
-- **Dialectical Process** — negation and synthesis as mechanisms of development
-
-## Epistemological Issues
-- **Cartesian Epistemology** — critiques of traditional subject-centered knowledge
-- **Self-Consciousness Formation** — how the self emerges and develops
-
-## Social/Relational Philosophy
-- **Recognition and Identity** — the role of the "other" in forming the self
-- **Intersubjectivity** — mutual acknowledgment between subjects
-
-## Specific Concepts
-- **Master-Slave Dialectic** — the famous Hegelian example
-- **Domination and Dependency** — paradoxes of power
-- **Freedom** — understood through mutual recognition
-
-## Historical Reception & Applications
-- **Marx** — appropriation for theories of alienation
-- **Sartre** — existentialist transformation of Hegelian ideas
-- **Authenticity and Liberation** — later developments of the framework
-
-## Meta-level
-- **Systematic Philosophy** — the architectonic nature of Hegel's project
-
-This passage covers **epistemology, metaphysics, social philosophy, and the history of philosophy** all interconnected through Hegelian thought.</pre></td>
-                <td class="score-col"><span class="score score-low">2</span></td>
-                <td class="reasoning">The solution demonstrates excellent comprehension of the philosophical content and identifies all relevant topics accurately. However, it catastrophically fails the mandatory requirements by providing the response in markdown format with extensive commentary instead of a clean JSON array of strings containing only topic names. The task explicitly requires 'JSON array of strings with no additional formatting or explanations' and 'the JSON array and nothing else.' This is a clear and unambiguous violation of the stated mandatory requirements, regardless of the quality of the topic extraction itself.</td>
+                <td class="output"><pre>```json
+[
+  "Hegel's phenomenology of spirit",
+  "consciousness",
+  "historical development",
+  "self-consciousness",
+  "dialectical process",
+  "negation and synthesis",
+  "immediate intuition",
+  "Cartesian epistemology",
+  "subject",
+  "temporal and social matrix",
+  "recognition",
+  "identity formation",
+  "master-slave dialectic",
+  "domination",
+  "dependency",
+  "freedom",
+  "mutual acknowledgment",
+  "unilateral control",
+  "Marx",
+  "Sartre",
+  "alienation",
+  "authenticity",
+  "collective liberation",
+  "systematic project"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no extra commentary, and returns only the array. It successfully identifies major philosophical concepts (phenomenology, dialectics, self-consciousness, epistemology), key philosophical problems (master-slave dynamics, recognition, alienation), and important thinkers (Marx, Sartre). While there are minor issues with granularity and some entries being more illustrative than topical, these do not violate the stated criteria. The extraction is thorough and appropriate for a scholarly article analysis.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage that has minimal topic diversity or repeats the same concept using different terminology</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the mechanisms of cellular apoptosis through programmed cell death pathways. The intrinsic pathway involves mitochondrial dysfunction and cytochrome c release, triggering caspase activation. Similarly, the extrinsic pathway utilizes death receptors to initiate the same caspase cascade. Both mechanisms of controlled cellular suicide converge on identical downstream effectors, suggesting that cellular demise through these distinct routes ultimately shares common molecular machinery. Understanding these pathways of regulated cell elimination has profound implications for cancer therapeutics, as malignant cells often evade programmed elimination through apoptotic suppression.</td>
+                <td class="criteria">• Recognizes that 'apoptosis,' 'programmed cell death,' 'cellular suicide,' 'controlled cellular elimination,' and 'regulated cell elimination' refer to the same concept and avoids excessive duplication<br>• Extracts distinct topics such as intrinsic pathway, extrinsic pathway, mitochondrial dysfunction, caspase activation, death receptors, and cancer therapeutics<br>• Returns results as a JSON array of strings with no duplicate or near-duplicate entries</td>
+                <td class="output"><pre>```json
+[
+  "cellular apoptosis",
+  "programmed cell death",
+  "intrinsic pathway",
+  "mitochondrial dysfunction",
+  "cytochrome c release",
+  "caspase activation",
+  "extrinsic pathway",
+  "death receptors",
+  "caspase cascade",
+  "downstream effectors",
+  "regulated cell elimination",
+  "cancer therapeutics",
+  "malignant cells",
+  "apoptotic suppression"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings with no extra commentary, contains topics from the article, and has no duplicates. Regarding secondary criteria, the solution demonstrates excellent judgment in handling concept synonymy by avoiding redundant entries for apoptosis-related terminology. It successfully extracts all major distinct topics including both apoptotic pathways, key molecular mechanisms, and therapeutic implications. The only minor consideration is whether 'downstream effectors' adds sufficient distinct value, but it does represent a specific concept in the pathway cascade. The solution is comprehensive, well-organized, and meets the exact specifications without over-extraction or under-extraction.</td>
             </tr>
         
             </tbody>
