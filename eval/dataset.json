@@ -1,161 +1,122 @@
 [
   {
     "prompt_inputs": {
-      "height": "180 cm",
-      "weight": "72 kg",
-      "goal": "Marathon runner preparing for race day - maximize carbohydrates and hydration for high-endurance performance",
-      "restrictions": "None"
+      "content": "This study examines the relationship between microplastic accumulation in marine sediments and its effects on benthic organisms. We collected sediment cores from five coastal regions and analyzed polymer composition using Fourier-transform infrared spectroscopy. Results indicate that microplastic concentrations correlate significantly with reduced biodiversity in amphipod populations, suggesting potential toxicological pathways through ingestion and bioaccumulation mechanisms."
     },
     "solution_criteria": [
-      "Meal plan totals 3000+ calories with carbohydrates comprising 55-65% of total calories",
-      "Includes 4-5 eating occasions throughout the day with hydration guidance",
-      "All meals and snacks are practical, quick-to-prepare options suitable for an athlete's schedule"
+      "Output is a valid JSON array of strings",
+      "Array contains exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy",
+      "Topics are concise and accurately reflect the passage content"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring 3000+ calories with emphasis on carbohydrates and hydration"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a short passage containing only 2-3 clear, well-defined topics"
   },
   {
     "prompt_inputs": {
-      "height": "178 cm",
-      "weight": "85 kg",
-      "goal": "Build muscle and increase strength through weightlifting",
-      "restrictions": "None"
+      "content": "This study examines the intersection of cognitive linguistics and semantic theory in understanding metaphorical language processing. We investigate how conceptual metaphors facilitate semantic mapping between abstract and concrete domains, while also exploring the role of embodied cognition in shaping metaphor comprehension. Our analysis reveals that metaphorical reasoning and analogical thinking operate through similar neural mechanisms, though they differ in their reliance on linguistic framing versus perceptual simulation. Additionally, we consider how semantic networks and conceptual blending contribute to the emergence of novel metaphorical expressions in discourse."
     },
     "solution_criteria": [
-      "Meal plan contains exactly 1 day (breakfast, lunch, dinner, and optional snacks)",
-      "Total protein intake meets or exceeds 150g across all meals",
-      "Plan is organized into 3-4 larger meals rather than many small meals",
-      "All meals are practical and realistic for a single athlete to prepare"
+      "Extracts distinct topics while recognizing that some are closely related or overlapping (e.g., 'metaphorical language processing' vs 'metaphorical reasoning' as separate but related topics)",
+      "Returns output as a JSON array of strings",
+      "Identifies all major research areas discussed without over-merging related concepts into single entries"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a strength-focused athlete (weightlifter) requiring high protein intake (150g+) across fewer, larger meals"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing overlapping or closely related topics to assess topic distinction"
   },
   {
     "prompt_inputs": {
-      "height": "180",
-      "weight": "75",
-      "goal": "High-performance swimming training with 2 sessions daily (morning and evening)",
-      "restrictions": "Lactose intolerant, no high-fiber foods 2 hours before training"
+      "content": "Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Within the broader field of deep learning, convolutional neural networks have demonstrated exceptional performance in computer vision tasks, enabling accurate image classification and object detection in medical imaging diagnostics. Simultaneously, recurrent neural networks and transformer architectures have become instrumental in natural language processing, facilitating significant improvements in machine translation, sentiment analysis, and question-answering systems. These neural network variants, while distinct in architecture and application, collectively represent the computational foundations driving modern AI innovation."
     },
     "solution_criteria": [
-      "Meal plan covers all meals for one full day and is organized chronologically",
-      "All meals are easily digestible and suitable for a swimmer (low risk of cramping or GI distress during training)",
-      "Respects lactose intolerance and avoids high-fiber foods within 2 hours of training sessions",
-      "Provides adequate calories and macronutrients for an athlete of 75kg with dual training sessions"
+      "Extracts all major topics and subtopics including machine learning, deep learning, convolutional neural networks, computer vision, medical imaging, recurrent neural networks, transformers, and natural language processing",
+      "Organizes extracted topics into a valid JSON array of strings",
+      "Avoids extracting overly granular phrases or redundant entries while capturing the hierarchical structure of broader concepts and their specific subtopics"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a sport-specific constraint (swimmer) needing easily digestible meals that won't cause cramping during training"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage that mentions multiple subtopics under one broader umbrella concept"
   },
   {
     "prompt_inputs": {
-      "height": "178",
-      "weight": "72",
-      "goal": "endurance training recovery",
-      "restrictions": "vegan"
+      "content": "Recent advances in quantum entanglement have demonstrated non-local correlations through Bell test experiments using photonic qubits and superconducting circuits. The measurement of entanglement entropy in many-body systems reveals topological order in quantum spin liquids, while decoherence mechanisms involving phonon coupling and electromagnetic noise present significant challenges for quantum error correction codes. Furthermore, implementations of variational quantum algorithms on NISQ devices show promise for simulating molecular Hamiltonians in computational chemistry, particularly for calculating ground state energies of transition metal complexes using ansatz circuits based on unitary coupled-cluster theory."
     },
     "solution_criteria": [
-      "Meal plan contains complete amino acid profiles across all meals and snacks",
-      "Iron sources included with enhancers (vitamin C) to maximize bioavailability",
-      "All meals and snacks are vegan-compliant with no animal products",
-      "Plan is concise and covers exactly one full day (breakfast, lunch, dinner, and snacks)"
+      "Extracts all major technical concepts and phenomena mentioned (e.g., quantum entanglement, Bell tests, topological order, decoherence, quantum error correction, NISQ devices, variational quantum algorithms)",
+      "Returns output as a JSON array of strings with no additional formatting or explanation",
+      "Identifies domain-specific jargon accurately without oversimplifying or combining distinct topics"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with dietary restrictions (vegan athlete) ensuring complete amino acid profiles and iron bioavailability"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage featuring domain-specific jargon from fields like quantum physics or molecular biology"
   },
   {
     "prompt_inputs": {
-      "height": "178 cm",
-      "weight": "75 kg",
-      "goal": "Build muscle while maintaining lean physique",
-      "restrictions": "No dairy, vegetarian"
+      "content": "Recent advances in neuroimaging have revealed complex patterns of neural connectivity during cognitive tasks, with functional magnetic resonance imaging studies demonstrating that prefrontal cortex activation correlates strongly with working memory performance in healthy adults. However, longitudinal investigations in patients with mild cognitive impairment show progressive deterioration of these connectivity patterns, accompanied by compensatory activation in bilateral parietal regions. These findings suggest that early neurodegeneration may be detected through connectivity biomarkers before overt behavioral decline occurs, opening possibilities for intervention strategies targeting synaptic plasticity and neural reserve mechanisms."
     },
     "solution_criteria": [
-      "Meal plan spans exactly 1 day with 3+ meals",
-      "All ingredients are affordable and widely accessible",
-      "Meets protein requirements for muscle building (minimum 1.6g per kg body weight)",
-      "Accommodates vegetarian diet and dairy-free restrictions"
+      "Extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics (cognitive decline, neurodegeneration, biomarkers, neural plasticity, intervention strategies)",
+      "Identifies topics that require inference from context and relationships between concepts rather than direct keyword matching",
+      "Returns results as a valid JSON array of strings with no additional fields or metadata"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a budget-conscious athlete specifying affordable, accessible ingredients without compromising nutrition"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing implicit topics that require inference beyond explicitly stated keywords"
   },
   {
     "prompt_inputs": {
-      "height": "180",
-      "weight": "75",
-      "goal": "muscle gain and endurance training",
-      "restrictions": "peanut allergy, shellfish allergy, dairy allergy"
+      "content": "Recent advances in machine learning have revolutionized natural language processing, enabling systems to achieve unprecedented accuracy in tasks such as sentiment analysis, machine translation, and question answering. The emergence of transformer-based architectures, particularly attention mechanisms, has fundamentally altered how neural networks process sequential data by allowing models to weigh the importance of different input elements dynamically. Transfer learning has become increasingly prevalent, where pre-trained models on large corpora are fine-tuned for specific downstream tasks, significantly reducing computational requirements and improving performance across diverse applications. Simultaneously, concerns regarding model interpretability have gained prominence in academic discourse, as deep learning systems often function as black boxes, making it difficult for practitioners to understand decision-making processes. Ethical considerations surrounding bias in training data have prompted researchers to develop debiasing techniques and fairness metrics to ensure equitable outcomes across demographic groups. The scalability of large language models presents both opportunities and challenges; while these models demonstrate remarkable few-shot learning capabilities and can generate coherent text across multiple domains, they also require substantial computational resources and raise questions about environmental sustainability. Researchers have explored knowledge distillation methods to compress large models into smaller, more efficient versions suitable for deployment on edge devices. Additionally, the integration of symbolic reasoning with neural approaches represents a promising frontier, combining the interpretability of rule-based systems with the pattern recognition strengths of deep learning. Multimodal learning, which processes information from multiple modalities such as text, images, and audio simultaneously, has opened new research directions for more robust and comprehensive understanding of complex phenomena. Finally, the development of prompt engineering as a practical skill has emerged as researchers seek to optimize interactions with pre-trained models through carefully crafted input instructions."
     },
     "solution_criteria": [
-      "Meal plan covers all three meals plus snacks for one full day",
-      "All meals and snacks are free from peanuts, shellfish, and dairy with safe alternatives provided",
-      "Caloric and macronutrient content supports muscle gain and endurance goals for a 75kg athlete",
-      "Plan is concise and practical to prepare within a single day"
+      "Extracts at least 10 distinct topics from the lengthy passage",
+      "Returns output as a valid JSON array of strings",
+      "Avoids redundancy and captures main topics comprehensively"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with an athlete with food allergies (peanut, shellfish, dairy) requiring safe alternatives and substitutions"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a lengthy passage (500+ words) to assess scalability and topic extraction consistency"
   },
   {
     "prompt_inputs": {
-      "height": "180 cm",
-      "weight": "75 kg",
-      "goal": "Pre-competition day meal plan for a soccer match at 3 PM with optimal energy and performance",
-      "restrictions": "Vegetarian, no nuts"
+      "content": "The valuation of ecosystem services presents a complex intersection between ecological and economic frameworks. From an environmental science perspective, wetland ecosystems provide critical functions including water filtration, carbon sequestration, and biodiversity habitat, with studies demonstrating that one hectare can sequester approximately 1.5 metric tons of carbon annually. Conversely, economic analyses often employ contingent valuation methods and hedonic pricing models to assign monetary values to these services, typically ranging from $5,000 to $15,000 per hectare annually depending on geographic location and ecosystem type. Policy economists argue that internalizing these externalities through payment-for-ecosystem-services (PES) programs can create market-based incentives for conservation, while environmental scientists caution that commodifying nature risks oversimplifying complex ecological interdependencies and may undervalue services that lack direct market signals."
     },
     "solution_criteria": [
-      "Meal plan covers full day with 3-4 meals/snacks timed appropriately before 3 PM competition",
-      "Includes balanced macronutrients (carbohydrates for energy, protein for recovery, healthy fats) suitable for athletic performance",
-      "All meals comply with vegetarian diet and contain no nuts",
-      "Provides practical, easy-to-digest food options with clear timing relative to competition start time"
+      "Extracts topics spanning both environmental science and economics domains",
+      "Captures all major conceptual areas discussed in the passage",
+      "Returns results as a JSON array of strings"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a pre-competition day scenario requiring specific timing of meals for optimal performance and energy"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage mixing multiple disciplinary perspectives (e.g., economics + environmental science)"
   },
   {
     "prompt_inputs": {
-      "height": "180 cm",
-      "weight": "78 kg",
-      "goal": "recovery/rest day with reduced calories but high micronutrient density",
-      "restrictions": "vegetarian, no nuts"
+      "content": "This study employs a mixed-methods approach combining quantitative analysis using the STATA statistical package with qualitative interviews following Braun and Clarke's thematic analysis framework. We utilized the World Bank's Development Indicators dataset (2010-2020) alongside primary data collected from 150 participants across five regions. Building on Smith et al.'s (2019) theoretical model, our research investigates the relationship between institutional capacity, resource allocation mechanisms, and policy implementation outcomes. The methodology draws from institutional economics and organizational behavior literature, incorporating longitudinal regression analysis with fixed-effects specifications to control for temporal variation. Our sample included both public sector agencies and non-governmental organizations, enabling comparative assessment of governance structures and their influence on service delivery effectiveness."
     },
     "solution_criteria": [
-      "Meal plan covers full day (breakfast, lunch, dinner, snacks) with 4-6 meals",
-      "Calorie intake is 15-20% below athlete's estimated maintenance level",
-      "All meals are vegetarian and nut-free",
-      "Includes diverse micronutrient-dense foods (leafy greens, legumes, whole grains, seeds, dairy/eggs)"
+      "Extracts substantive research topics (e.g., institutional capacity, policy implementation, governance structures) while excluding methodological tools (STATA, thematic analysis), cited authors (Smith et al., Braun and Clarke), and dataset names (World Bank Development Indicators)",
+      "Returns output as a valid JSON array of strings",
+      "Identifies 4-6 distinct topics without duplication"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a recovery/rest day scenario requiring reduced calories but maintained micronutrient density"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing cited authors, methodologies, and datasets as potential false positives"
   },
   {
     "prompt_inputs": {
-      "height": "180 cm",
-      "weight": "78 kg",
-      "goal": "Build muscle while maintaining energy for high-intensity training",
-      "restrictions": "Vegetarian, no nuts"
+      "content": "This study examines the mechanisms of cellular apoptosis through programmed cell death pathways. The intrinsic pathway involves mitochondrial dysfunction and cytochrome c release, triggering caspase activation. Similarly, the extrinsic pathway utilizes death receptors to initiate the same caspase cascade. Both mechanisms of controlled cellular suicide converge on identical downstream effectors, suggesting that cellular demise through these distinct routes ultimately shares common molecular machinery. Understanding these pathways of regulated cell elimination has profound implications for cancer therapeutics, as malignant cells often evade programmed elimination through apoptotic suppression."
     },
     "solution_criteria": [
-      "All meals are batch-prep friendly with minimal cooking time per meal",
-      "Meal plan provides adequate protein (approximately 1.6g per kg bodyweight) from vegetarian sources",
-      "Includes exactly 4 meals/snacks spanning one full day",
-      "Each meal requires 15 minutes or less active cooking time"
+      "Recognizes that 'apoptosis,' 'programmed cell death,' 'cellular suicide,' 'controlled cellular elimination,' and 'regulated cell elimination' refer to the same concept and avoids excessive duplication",
+      "Extracts distinct topics such as intrinsic pathway, extrinsic pathway, mitochondrial dysfunction, caspase activation, death receptors, and cancer therapeutics",
+      "Returns results as a JSON array of strings with no duplicate or near-duplicate entries"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with an athlete preferring meal-prep efficiency (minimal cooking, batch-friendly meals for busy schedules)"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage that has minimal topic diversity or repeats the same concept using different terminology"
   },
   {
     "prompt_inputs": {
-      "height": "172 cm",
-      "weight": "62 kg",
-      "goal": "Build muscle and improve endurance for competitive soccer",
-      "restrictions": "Vegetarian, no nuts"
+      "content": "Hegel's phenomenology of spirit fundamentally reconceives the relationship between consciousness and historical development, arguing that self-consciousness emerges through a dialectical process of negation and synthesis rather than through immediate intuition. This framework challenges Cartesian epistemology by situating the subject within a temporal and social matrix where recognition by the other becomes constitutive of identity formation. The master-slave dialectic exemplifies this dynamic, demonstrating how domination paradoxically produces dependency and how genuine freedom requires mutual acknowledgment rather than unilateral control. Subsequent interpreters, from Marx to Sartre, have appropriated and transformed these insights to articulate theories of alienation, authenticity, and collective liberation, each emphasizing different dimensions of Hegel's systematic project."
     },
     "solution_criteria": [
-      "Meal plan spans exactly 1 day with 4-5 meals/snacks appropriately timed",
-      "Includes adequate protein (1.6-2.0g per kg body weight) to support muscle growth during adolescence",
-      "Incorporates calorie surplus (~300-500 kcal above maintenance) for growth and performance demands",
-      "All meals respect vegetarian and nut-free restrictions without substitution errors"
+      "Extracts all major philosophical concepts and theoretical frameworks mentioned (e.g., phenomenology, dialectics, self-consciousness, epistemology)",
+      "Identifies key philosophical problems and relationships discussed (e.g., consciousness-history relationship, master-slave dynamics, recognition)",
+      "Returns output as a valid JSON array of strings with no additional formatting or explanations"
     ],
-    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
-    "scenario": "Testing with a young adolescent athlete (14-16 years old) requiring growth-supporting nutrition alongside performance demands"
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage from a humanities discipline (philosophy, history, literary analysis) versus STEM fields"
   }
 ]

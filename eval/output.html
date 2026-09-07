@@ -117,11 +117,11 @@
                 </div>
                 <div class="stat-box">
                     <div>Average Score</div>
-                    <div class="stat-value">8.0 / 10</div>
+                    <div class="stat-value">2.1 / 10</div>
                 </div>
                 <div class="stat-box">
                     <div>Pass Rate (≥7)</div>
-                    <div class="stat-value">90.0%</div>
+                    <div class="stat-value">0.0%</div>
                 </div>
             </div>
         </div>
@@ -140,1119 +140,352 @@
             <tbody>
     
             <tr>
-                <td>Testing with a strength-focused athlete (weightlifter) requiring high protein intake (150g+) across fewer, larger meals</td>
-                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 85 kg<br><strong>goal:</strong> Build muscle and increase strength through weightlifting<br><strong>restrictions:</strong> None</td>
-                <td class="criteria">• Meal plan contains exactly 1 day (breakfast, lunch, dinner, and optional snacks)<br>• Total protein intake meets or exceeds 150g across all meals<br>• Plan is organized into 3-4 larger meals rather than many small meals<br>• All meals are practical and realistic for a single athlete to prepare</td>
-                <td class="output"><pre># One-Day Muscle-Building Meal Plan for 85kg Athlete
+                <td>Testing with a short passage containing only 2-3 clear, well-defined topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the relationship between microplastic accumulation in marine sediments and its effects on benthic organisms. We collected sediment cores from five coastal regions and analyzed polymer composition using Fourier-transform infrared spectroscopy. Results indicate that microplastic concentrations correlate significantly with reduced biodiversity in amphipod populations, suggesting potential toxicological pathways through ingestion and bioaccumulation mechanisms.</td>
+                <td class="criteria">• Output is a valid JSON array of strings<br>• Array contains exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy<br>• Topics are concise and accurately reflect the passage content</td>
+                <td class="output"><pre># Topics in this study:
 
-## Daily Nutritional Target
-- **Calories:** 3,200 kcal
-- **Protein:** 170g (2.0g per kg bodyweight)
-- **Carbohydrates:** 400g
-- **Fat:** 85g
+1. **Microplastics** - the primary subject matter
+2. **Marine sediments** - the environment being studied
+3. **Benthic organisms** - the biological focus (bottom-dwelling creatures)
+4. **Polymer composition** - chemical analysis aspect
+5. **Fourier-transform infrared spectroscopy (FTIR)** - analytical methodology
+6. **Coastal regions** - geographic scope
+7. **Biodiversity** - ecological impact measured
+8. **Amphipods** - specific organism studied
+9. **Toxicology** - health/harm mechanisms
+10. **Bioaccumulation** - accumulation of contaminants in organisms
 
----
-
-## BREAKFAST (7:00 AM)
-**Oatmeal Power Bowl**
-- Oats: 80g
-- Whole milk: 250ml
-- Banana: 120g
-- Honey: 20g
-- Almonds: 25g
-
-**Macros:** 680 kcal | 18g protein | 90g carbs | 22g fat
-
----
-
-## MID-MORNING SNACK (10:00 AM)
-**Protein Shake**
-- Whey protein powder: 35g
-- Greek yogurt: 150g
-- Blueberries: 100g
-- Water: 200ml
-
-**Macros:** 280 kcal | 32g protein | 22g carbs | 3g fat
-
----
-
-## LUNCH (1:00 PM)
-**Grilled Chicken & Rice**
-- Chicken breast (grilled): 200g
-- Brown rice (cooked): 200g
-- Olive oil: 15ml
-- Broccoli: 150g
-- Salt & pepper
-
-**Macros:** 750 kcal | 52g protein | 80g carbs | 18g fat
-
----
-
-## PRE-WORKOUT SNACK (3:30 PM)
-**Quick Carbs & Protein**
-- White bread: 60g (2 slices)
-- Peanut butter: 30g
-- Apple: 180g
-
-**Macros:** 420 kcal | 15g protein | 48g carbs | 18g fat
-
----
-
-## POST-WORKOUT MEAL (6:00 PM)
-**Lean Beef & Sweet Potato**
-- Lean ground beef (90% lean): 180g
-- Sweet potato (baked): 250g
-- Mixed vegetables: 100g
-- Canola oil: 10ml
-
-**Macros:** 820 kcal | 38g protein | 95g carbs | 18g fat
-
----
-
-## DINNER (8:00 PM)
-**Salmon with Quinoa**
-- Salmon fillet (baked): 150g
-- Quinoa (cooked): 100g
-- Asparagus: 120g
-- Lemon & herbs
-
-**Macros:** 520 kcal | 40g protein | 50g carbs | 18g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 3,270 kcal |
-| **Protein** | 195g |
-| **Carbohydrates** | 385g |
-| **Fat** | 97g |
-
----
-
-## Notes
-✓ Timing aligned with weightlifting training (pre/post-workout nutrition prioritized)
-✓ High protein distributed across meals for optimal muscle synthesis
-✓ Whole foods emphasized for micronutrient density
-✓ Budget-friendly staples (chicken, oats, rice, beef, salmon)
-✓ All portion sizes specified in grams for accuracy
-✓ No dietary restrictions to accommodate</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution comprehensively meets all mandatory requirements with precise daily totals, complete macronutrient data, and detailed meal specifications with portions and timing. It exceeds the protein requirement substantially (195g vs 150g minimum). The meal structure deviates slightly from the '3-4 larger meals' guideline by including 6 eating occasions, but this is a minor deviation justified by athletic nutrition principles for muscle building. All meals are practical, realistic, and use common whole foods. The plan is well-organized, clearly formatted, and includes helpful notes. The only substantive concern is whether the caloric target is appropriately calibrated, though this is a secondary consideration given the task's focus on muscle building for a weightlifter.</td>
+## In brief:
+This research combines **environmental science, marine biology, chemistry, and toxicology** to investigate how plastic pollution affects ocean floor ecosystems.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution fails all three mandatory requirements. First, it is not valid JSON - the output contains markdown headers, bold text, and prose rather than a properly formatted JSON array. Second, it includes extensive commentary beyond the JSON array (headers, explanatory text, and a summary paragraph), violating the requirement that the response contain 'JSON array and nothing else.' Third, while the secondary criteria specify 'exactly 3 distinct topics,' the solution provides 10 topics. Although the topics themselves are accurate and well-identified, the format and structure completely fail to meet the mandatory requirements.</td>
             </tr>
         
             <tr>
-                <td>Testing with a high-endurance athlete (marathon runner) requiring 3000+ calories with emphasis on carbohydrates and hydration</td>
-                <td class="prompt-inputs"><strong>height:</strong> 180 cm<br><strong>weight:</strong> 72 kg<br><strong>goal:</strong> Marathon runner preparing for race day - maximize carbohydrates and hydration for high-endurance performance<br><strong>restrictions:</strong> None</td>
-                <td class="criteria">• Meal plan totals 3000+ calories with carbohydrates comprising 55-65% of total calories<br>• Includes 4-5 eating occasions throughout the day with hydration guidance<br>• All meals and snacks are practical, quick-to-prepare options suitable for an athlete's schedule</td>
-                <td class="output"><pre># One-Day Marathon Preparation Meal Plan for 72kg Athlete
+                <td>Testing with a passage containing overlapping or closely related topics to assess topic distinction</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the intersection of cognitive linguistics and semantic theory in understanding metaphorical language processing. We investigate how conceptual metaphors facilitate semantic mapping between abstract and concrete domains, while also exploring the role of embodied cognition in shaping metaphor comprehension. Our analysis reveals that metaphorical reasoning and analogical thinking operate through similar neural mechanisms, though they differ in their reliance on linguistic framing versus perceptual simulation. Additionally, we consider how semantic networks and conceptual blending contribute to the emergence of novel metaphorical expressions in discourse.</td>
+                <td class="criteria">• Extracts distinct topics while recognizing that some are closely related or overlapping (e.g., 'metaphorical language processing' vs 'metaphorical reasoning' as separate but related topics)<br>• Returns output as a JSON array of strings<br>• Identifies all major research areas discussed without over-merging related concepts into single entries</td>
+                <td class="output"><pre># Topics in This Study
 
-## Daily Nutritional Target
-- **Calories:** 3,500 kcal
-- **Protein:** 108g (1.5g per kg bodyweight)
-- **Carbohydrates:** 525g (7.3g per kg - high-endurance protocol)
-- **Fat:** 78g
+1. **Cognitive Linguistics** - The overarching framework for understanding language and cognition
 
----
+2. **Semantic Theory** - How meaning is constructed and understood
 
-## BREAKFAST (6:30 AM)
-**Carb-Loading Oatmeal Stack**
-- Rolled oats: 100g
-- Whole milk: 300ml
-- Banana: 150g
-- Honey: 30g
-- Walnuts: 20g
+3. **Metaphorical Language Processing** - How the brain processes and interprets metaphors
 
-**Macros:** 720 kcal | 18g protein | 110g carbs | 18g fat
+4. **Conceptual Metaphors** - Abstract frameworks that structure our thinking
 
----
+5. **Semantic Mapping** - Connection between abstract and concrete domains
 
-## MID-MORNING SNACK (9:00 AM)
-**Hydration & Quick Carbs**
-- White bread: 80g (2-3 slices)
-- Jam: 40g
-- Orange juice: 300ml
-- Banana: 100g
+6. **Embodied Cognition** - How physical experience influences understanding and comprehension
 
-**Macros:** 580 kcal | 10g protein | 135g carbs | 2g fat
+7. **Metaphorical Reasoning** - Using metaphors as a thinking tool
 
----
+8. **Analogical Thinking** - Drawing comparisons to understand new concepts
 
-## LUNCH (12:30 PM)
-**Pasta with Lean Protein**
-- Spaghetti (cooked): 250g
-- Chicken breast (grilled): 150g
-- Tomato sauce: 150g
-- Olive oil: 10ml
-- Parmesan cheese: 15g
+9. **Neural Mechanisms** - Brain processes underlying these cognitive functions
 
-**Macros:** 820 kcal | 32g protein | 115g carbs | 16g fat
+10. **Linguistic Framing** - How language structure influences meaning
+
+11. **Perceptual Simulation** - Mental re-enactment of sensory experiences
+
+12. **Semantic Networks** - Interconnected systems of meaning
+
+13. **Conceptual Blending** - Merging of different conceptual spaces to create new meanings
+
+14. **Discourse Analysis** - How language functions in communication
 
 ---
 
-## PRE-RUN SNACK (2:30 PM)
-**Easily Digestible Carbs**
-- Rice cakes: 60g
-- Almond butter: 20g
-- Dates: 50g
-- Water: 400ml
-
-**Macros:** 380 kcal | 8g protein | 55g carbs | 14g fat
-
----
-
-## DURING/POST-RUN HYDRATION (4:00-5:00 PM)
-**Sports Drink (Simulating Race Day)**
-- Carbohydrate sports drink: 500ml (30-40g carbs per 500ml)
-- Electrolyte tablet: 1 tablet in water: 200ml
-
-**Macros:** 160 kcal | 0g protein | 40g carbs | 0g fat
-
----
-
-## DINNER (7:00 PM)
-**Carb-Rich Recovery Meal**
-- White rice (cooked): 300g
-- Lean ground turkey (90% lean): 160g
-- Mixed vegetables (carrots, peas, corn): 150g
-- Canola oil: 12ml
-- Low-sodium soy sauce
-
-**Macros:** 720 kcal | 32g protein | 80g carbs | 18g fat
-
----
-
-## EVENING SNACK (9:30 PM)
-**Recovery & Sleep Support**
-- Greek yogurt (low-fat): 200g
-- Granola: 40g
-- Berries (mixed): 80g
-- Honey drizzle: 15g
-
-**Macros:** 340 kcal | 15g protein | 55g carbs | 4g fat
-
----
-
-## HYDRATION SCHEDULE
-- **6:30 AM - 12:00 PM:** 500-600ml water
-- **12:00 PM - 3:00 PM:** 400-500ml water + electrolytes
-- **3:00 PM - 6:00 PM:** 800ml (sports drink during/after run)
-- **6:00 PM - Bedtime:** 500ml water
-- **Total Daily Fluids:** 2.5-3L + electrolyte replacement
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 3,500 kcal |
-| **Protein** | 115g |
-| **Carbohydrates** | 590g |
-| **Fat** | 72g |
-| **</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution comprehensively meets all mandatory requirements with exact foods, portions, and timing clearly specified across 7 meals/snacks. Daily totals are provided (3,500 kcal, 590g carbs = 67.4% of calories), exceeding the 55-65% carbohydrate criterion by a small margin but remaining appropriate for marathon preparation. The plan includes 7 eating occasions (exceeding the 4-5 requirement) with detailed hydration guidance (2.5-3L plus electrolytes). All meals are practical and quick-to-prepare for an athlete's schedule. The minor arithmetic discrepancy between individual meal totals and stated daily totals is negligible and does not materially impact the solution's quality or usability.</td>
+**In summary:** This is an interdisciplinary study combining neuroscience, linguistics, and cognitive science to explore how we understand and use metaphorical language.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">While the solution demonstrates excellent topic identification and appropriate granularity in distinguishing related concepts, it fundamentally fails to meet the mandatory requirements. The output must be a JSON array of strings containing only topic names, with nothing else in the response. Instead, the solution provides a markdown-formatted document with numbered entries, descriptions for each topic, and a summary paragraph. This is a complete violation of the specified output format requirements.</td>
             </tr>
         
             <tr>
-                <td>Testing with a sport-specific constraint (swimmer) needing easily digestible meals that won't cause cramping during training</td>
-                <td class="prompt-inputs"><strong>height:</strong> 180<br><strong>weight:</strong> 75<br><strong>goal:</strong> High-performance swimming training with 2 sessions daily (morning and evening)<br><strong>restrictions:</strong> Lactose intolerant, no high-fiber foods 2 hours before training</td>
-                <td class="criteria">• Meal plan covers all meals for one full day and is organized chronologically<br>• All meals are easily digestible and suitable for a swimmer (low risk of cramping or GI distress during training)<br>• Respects lactose intolerance and avoids high-fiber foods within 2 hours of training sessions<br>• Provides adequate calories and macronutrients for an athlete of 75kg with dual training sessions</td>
-                <td class="output"><pre># One-Day High-Performance Swimming Meal Plan for 75kg Athlete
+                <td>Testing with a passage featuring domain-specific jargon from fields like quantum physics or molecular biology</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in quantum entanglement have demonstrated non-local correlations through Bell test experiments using photonic qubits and superconducting circuits. The measurement of entanglement entropy in many-body systems reveals topological order in quantum spin liquids, while decoherence mechanisms involving phonon coupling and electromagnetic noise present significant challenges for quantum error correction codes. Furthermore, implementations of variational quantum algorithms on NISQ devices show promise for simulating molecular Hamiltonians in computational chemistry, particularly for calculating ground state energies of transition metal complexes using ansatz circuits based on unitary coupled-cluster theory.</td>
+                <td class="criteria">• Extracts all major technical concepts and phenomena mentioned (e.g., quantum entanglement, Bell tests, topological order, decoherence, quantum error correction, NISQ devices, variational quantum algorithms)<br>• Returns output as a JSON array of strings with no additional formatting or explanation<br>• Identifies domain-specific jargon accurately without oversimplifying or combining distinct topics</td>
+                <td class="output"><pre># Topics in this text:
 
-## Daily Nutritional Target
-- **Calories:** 3,100 kcal
-- **Protein:** 165g (2.2g per kg bodyweight)
-- **Carbohydrates:** 420g
-- **Fat:** 75g
+1. **Quantum Entanglement**
+   - Non-local correlations
+   - Bell test experiments
+   - Photonic qubits
+   - Superconducting circuits
 
----
+2. **Entanglement Entropy & Topological Order**
+   - Many-body systems
+   - Quantum spin liquids
 
-## BREAKFAST (7:00 AM)
-**Rice & Egg Breakfast**
-- White rice (cooked): 150g
-- Eggs (scrambled): 3 large (180g)
-- Banana: 120g
-- Honey: 15g
-- Vegetable oil: 10ml
+3. **Quantum Decoherence**
+   - Phonon coupling
+   - Electromagnetic noise
+   - Quantum error correction codes
 
-**Macros:** 650 kcal | 28g protein | 82g carbs | 18g fat
+4. **Variational Quantum Algorithms**
+   - NISQ (Noisy Intermediate-Scale Quantum) devices
+   - Molecular Hamiltonians
+   - Computational chemistry
 
----
+5. **Quantum Chemistry Applications**
+   - Ground state energy calculations
+   - Transition metal complexes
+   - Unitary coupled-cluster theory
+   - Ansatz circuits
 
-## PRE-MORNING TRAINING SNACK (8:00 AM)
-**Quick Energy Fuel**
-- White bread: 60g (2 slices)
-- Honey: 30g
-- Apple juice (fresh): 200ml
-
-**Macros:** 340 kcal | 6g protein | 82g carbs | 1g fat
-
----
-
-## POST-MORNING TRAINING MEAL (10:30 AM)
-**Chicken & Potato Recovery**
-- Grilled chicken breast: 200g
-- White potato (boiled): 250g
-- Salt & lemon juice
-- Vegetable oil: 8ml
-
-**Macros:** 680 kcal | 52g protein | 75g carbs | 14g fat
-
----
-
-## LUNCH (1:00 PM)
-**Fish & White Rice**
-- White fish fillet (baked): 180g
-- White rice (cooked): 180g
-- Carrots (steamed): 100g
-- Olive oil: 12ml
-- Salt & herbs
-
-**Macros:** 680 kcal | 42g protein | 78g carbs | 16g fat
-
----
-
-## PRE-EVENING TRAINING SNACK (4:30 PM)
-**Simple Carbs & Protein**
-- Rice cakes: 50g (3 cakes)
-- Turkey slices (low-sodium): 60g
-- Banana: 100g
-- Maple syrup: 20g
-
-**Macros:** 380 kcal | 20g protein | 68g carbs | 3g fat
-
----
-
-## POST-EVENING TRAINING MEAL (7:00 PM)
-**Lean Beef & Sweet Potato**
-- Lean ground beef (95% lean): 170g
-- White sweet potato (baked): 220g
-- Green beans (steamed): 100g
-- Canola oil: 10ml
-
-**Macros:** 650 kcal | 42g protein | 65g carbs | 18g fat
-
----
-
-## DINNER (9:00 PM)
-**Turkey Breast with Rice**
-- Turkey breast (roasted): 150g
-- White rice (cooked): 120g
-- Zucchini (steamed): 120g
-- Vegetable oil: 8ml
-
-**Macros:** 520 kcal | 45g protein | 50g carbs | 12g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 3,120 kcal |
-| **Protein** | 235g |
-| **Carbohydrates** | 500g |
-| **Fat** | 82g |
-
----
-
-## Key Considerations
-
-✓ **Lactose-free:** All dairy alternatives eliminated; uses egg, poultry, and fish for protein
-✓ **Low-fiber timing:** White rice, white bread, and refined carbs used before training sessions; low-fiber foods easily digestible
-✓ **Dual training sessions:** Pre/post-workout nutrition strategically timed for both morning (8am) and evening (6pm) swim sessions
-✓ **High carbohydrate intake:** 500g carbs supports glycogen repletion for intense swimming training
-✓ **Protein distribution:** 235g across 7 eating occasions for optimal muscle recovery
-✓ **Budget-friendly:**</pre></td>
-                <td class="score-col"><span class="score score-high">8</span></td>
-                <td class="reasoning">The solution comprehensively satisfies all mandatory requirements with precise meal timing, exact portions, complete macronutrient tracking, and daily totals clearly presented. Both restrictions are properly addressed through lactose elimination and strategic low-fiber carb timing. The meal plan is well-organized chronologically and demonstrates solid sports nutrition principles for dual-session swimming training. However, the macronutrient delivery significantly exceeds the stated targets (particularly protein at +43%), which represents a meaningful deviation from the specified nutritional goals. The incomplete final bullet point is a minor presentation flaw. Despite these issues, the core requirements are met and the plan is practical and well-reasoned.</td>
+This text covers fundamental quantum physics concepts alongside practical applications in quantum computing and chemistry.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">While the solution demonstrates excellent comprehension of the source material and identifies all relevant topics accurately, it catastrophically fails all three mandatory requirements. The output must be a JSON array of strings containing only topics with no additional formatting, explanation, or commentary. Instead, the solution provides a structured markdown document with hierarchical organization, nested subtopics, and a concluding summary. This is a fundamental format violation that makes the output unsuitable for the stated task, regardless of content quality.</td>
             </tr>
         
             <tr>
-                <td>Testing with dietary restrictions (vegan athlete) ensuring complete amino acid profiles and iron bioavailability</td>
-                <td class="prompt-inputs"><strong>height:</strong> 178<br><strong>weight:</strong> 72<br><strong>goal:</strong> endurance training recovery<br><strong>restrictions:</strong> vegan</td>
-                <td class="criteria">• Meal plan contains complete amino acid profiles across all meals and snacks<br>• Iron sources included with enhancers (vitamin C) to maximize bioavailability<br>• All meals and snacks are vegan-compliant with no animal products<br>• Plan is concise and covers exactly one full day (breakfast, lunch, dinner, and snacks)</td>
-                <td class="output"><pre># One-Day Endurance Recovery Meal Plan for 72kg Vegan Athlete
+                <td>Testing with a passage that mentions multiple subtopics under one broader umbrella concept</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Within the broader field of deep learning, convolutional neural networks have demonstrated exceptional performance in computer vision tasks, enabling accurate image classification and object detection in medical imaging diagnostics. Simultaneously, recurrent neural networks and transformer architectures have become instrumental in natural language processing, facilitating significant improvements in machine translation, sentiment analysis, and question-answering systems. These neural network variants, while distinct in architecture and application, collectively represent the computational foundations driving modern AI innovation.</td>
+                <td class="criteria">• Extracts all major topics and subtopics including machine learning, deep learning, convolutional neural networks, computer vision, medical imaging, recurrent neural networks, transformers, and natural language processing<br>• Organizes extracted topics into a valid JSON array of strings<br>• Avoids extracting overly granular phrases or redundant entries while capturing the hierarchical structure of broader concepts and their specific subtopics</td>
+                <td class="output"><pre># Topics in this passage:
 
-## Daily Nutritional Target
-- **Calories:** 2,800 kcal
-- **Protein:** 108g (1.5g per kg bodyweight for endurance recovery)
-- **Carbohydrates:** 420g (5.8g per kg for recovery)
-- **Fat:** 70g
+1. **Machine Learning** - General advances and applications
+2. **Artificial Intelligence** - Broader field context
+3. **Deep Learning** - Subset of ML being discussed
+4. **Convolutional Neural Networks (CNNs)** - Architecture for computer vision
+5. **Computer Vision** - Image analysis tasks
+6. **Image Classification** - Specific CV application
+7. **Object Detection** - Specific CV application
+8. **Medical Imaging** - Domain application
+9. **Recurrent Neural Networks (RNNs)** - Architecture for sequential data
+10. **Transformer Architectures** - Modern neural network design
+11. **Natural Language Processing (NLP)** - Language understanding applications
+12. **Machine Translation** - NLP application
+13. **Sentiment Analysis** - NLP application
+14. **Question-Answering Systems** - NLP application
 
----
-
-## BREAKFAST (7:00 AM)
-**Protein-Packed Smoothie Bowl**
-- Rolled oats: 80g
-- Plant-based protein powder (pea/hemp): 30g
-- Almond milk: 250ml
-- Banana: 120g
-- Chia seeds: 15g
-- Granola (vegan): 40g
-
-**Macros:** 520 kcal | 22g protein | 82g carbs | 12g fat
-
----
-
-## MID-MORNING SNACK (10:00 AM)
-**Energy Balls & Fruit**
-- Dates: 80g (pitted)
-- Almond butter: 25g
-- Orange: 150g
-
-**Macros:** 340 kcal | 8g protein | 56g carbs | 10g fat
-
----
-
-## LUNCH (1:00 PM)
-**Chickpea & Quinoa Buddha Bowl**
-- Cooked quinoa: 150g
-- Canned chickpeas (drained): 180g
-- Roasted sweet potato: 200g
-- Spinach (raw): 80g
-- Cherry tomatoes: 100g
-- Tahini dressing: 20ml
-- Olive oil: 10ml
-
-**Macros:** 680 kcal | 22g protein | 92g carbs | 20g fat
-
----
-
-## PRE-ENDURANCE SESSION SNACK (3:30 PM)
-**Quick Carbs & Plant Protein**
-- Rice cakes: 50g (2 cakes)
-- Peanut butter: 20g
-- Mango: 150g
-
-**Macros:** 380 kcal | 10g protein | 54g carbs | 11g fat
-
----
-
-## POST-WORKOUT RECOVERY MEAL (6:00 PM)
-**Lentil & Brown Rice with Vegetables**
-- Brown rice (cooked): 180g
-- Red lentils (cooked): 150g
-- Broccoli (steamed): 150g
-- Carrot (roasted): 100g
-- Coconut oil: 8ml
-- Turmeric & ginger
-
-**Macros:** 520 kcal | 26g protein | 88g carbs | 9g fat
-
----
-
-## DINNER (8:00 PM)
-**Tofu Stir-Fry with Noodles**
-- Firm tofu (pressed): 200g
-- Whole wheat noodles (cooked): 120g
-- Bell peppers (mixed): 150g
-- Bok choy: 120g
-- Sesame seeds: 15g
-- Sesame oil: 12ml
-- Low-sodium soy sauce: 15ml
-
-**Macros:** 480 kcal | 20g protein | 48g carbs | 18g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 2,920 kcal |
-| **Protein** | 108g |
-| **Carbohydrates** | 420g |
-| **Fat** | 80g |
-
----
-
-## Macronutrient Ratios
-- **Protein:** 15% of total calories
-- **Carbohydrates:** 58% of total calories (prioritized for endurance recovery)
-- **Fat:** 25% of total calories
-
----
-
-## Notes
-✓ **Endurance-focused:** High carbohydrate content supports glycogen replenishment post-training
-✓ **Protein distribution:** Spread across all meals for steady amino acid availability
-✓ **Plant-based proteins:** Legumes (chickpeas, lentils), tofu,</pre></td>
-                <td class="score-col"><span class="score score-medium">7</span></td>
-                <td class="reasoning">The solution successfully meets all three mandatory requirements with precise caloric targets (2,920 kcal), detailed macronutrient breakdown (108g protein, 420g carbs, 80g fat), and complete meal specifications with portions and timing. Vegan compliance is flawless. However, it falls short on secondary criteria: the 'complete amino acid profiles' criterion is not explicitly addressed—while complementary proteins are present (quinoa+chickpeas, rice+lentils), there's no discussion of amino acid completeness or intentional pairing strategy. The 'iron sources with vitamin C enhancers' criterion is only partially met; iron-rich foods exist but vitamin C co-location is not systematically optimized (vitamin C appears in only one snack, not coordinated with iron meals). The truncated ending also suggests incomplete execution. These secondary criterion gaps prevent a higher score.</td>
+**Main themes:** The passage discusses how different types of neural networks (CNNs, RNNs, Transformers) are applied to different domains (computer vision and natural language processing) to solve modern AI problems.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution demonstrates excellent topic identification and understanding of the passage content. However, it catastrophically fails the mandatory requirements by not providing output as a JSON array of strings with no extra commentary. The response format is completely incorrect - it uses markdown formatting, numbered lists, and includes explanatory text when the specification explicitly requires ONLY a JSON array of strings. This is an automatic failure condition regardless of content quality.</td>
             </tr>
         
             <tr>
-                <td>Testing with a budget-conscious athlete specifying affordable, accessible ingredients without compromising nutrition</td>
-                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 75 kg<br><strong>goal:</strong> Build muscle while maintaining lean physique<br><strong>restrictions:</strong> No dairy, vegetarian</td>
-                <td class="criteria">• Meal plan spans exactly 1 day with 3+ meals<br>• All ingredients are affordable and widely accessible<br>• Meets protein requirements for muscle building (minimum 1.6g per kg body weight)<br>• Accommodates vegetarian diet and dairy-free restrictions</td>
-                <td class="output"><pre># One-Day Muscle-Building Meal Plan for 75kg Vegetarian Athlete (Dairy-Free)
+                <td>Testing with a lengthy passage (500+ words) to assess scalability and topic extraction consistency</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have revolutionized natural language processing, enabling systems to achieve unprecedented accuracy in tasks such as sentiment analysis, machine translation, and question answering. The emergence of transformer-based architectures, particularly attention mechanisms, has fundamentally altered how neural networks process sequential data by allowing models to weigh the importance of different input elements dynamically. Transfer learning has become increasingly prevalent, where pre-trained models on large corpora are fine-tuned for specific downstream tasks, significantly reducing computational requirements and improving performance across diverse applications. Simultaneously, concerns regarding model interpretability have gained prominence in academic discourse, as deep learning systems often function as black boxes, making it difficult for practitioners to understand decision-making processes. Ethical considerations surrounding bias in training data have prompted researchers to develop debiasing techniques and fairness metrics to ensure equitable outcomes across demographic groups. The scalability of large language models presents both opportunities and challenges; while these models demonstrate remarkable few-shot learning capabilities and can generate coherent text across multiple domains, they also require substantial computational resources and raise questions about environmental sustainability. Researchers have explored knowledge distillation methods to compress large models into smaller, more efficient versions suitable for deployment on edge devices. Additionally, the integration of symbolic reasoning with neural approaches represents a promising frontier, combining the interpretability of rule-based systems with the pattern recognition strengths of deep learning. Multimodal learning, which processes information from multiple modalities such as text, images, and audio simultaneously, has opened new research directions for more robust and comprehensive understanding of complex phenomena. Finally, the development of prompt engineering as a practical skill has emerged as researchers seek to optimize interactions with pre-trained models through carefully crafted input instructions.</td>
+                <td class="criteria">• Extracts at least 10 distinct topics from the lengthy passage<br>• Returns output as a valid JSON array of strings<br>• Avoids redundancy and captures main topics comprehensively</td>
+                <td class="output"><pre># Topics in this Text
 
-## Daily Nutritional Target
-- **Calories:** 2,850 kcal
-- **Protein:** 150g (2.0g per kg bodyweight)
-- **Carbohydrates:** 360g
-- **Fat:** 75g
+1. **Machine Learning Advances** - Recent progress in ML and its applications
 
----
+2. **Natural Language Processing (NLP)** - Sentiment analysis, machine translation, question answering
 
-## BREAKFAST (7:00 AM)
-**Tofu Scramble with Toast**
-- Firm tofu: 200g
-- Whole grain bread: 80g (2 slices)
-- Olive oil: 15ml
-- Nutritional yeast: 10g
-- Tomato: 100g
-- Spinach: 50g
-- Salt, pepper, turmeric
+3. **Transformer Architectures** - Attention mechanisms and their impact on sequential data processing
 
-**Macros:** 520 kcal | 28g protein | 52g carbs | 18g fat
+4. **Transfer Learning** - Pre-training and fine-tuning models for specific tasks
 
----
+5. **Model Interpretability** - Understanding black box decision-making in deep learning
 
-## MID-MORNING SNACK (10:00 AM)
-**Protein Power Smoothie**
-- Plant-based protein powder (pea/hemp): 30g
-- Almond butter: 20g
-- Banana: 120g
-- Fortified plant milk (unsweetened): 250ml
-- Chia seeds: 10g
+6. **Ethical AI & Bias** - Fairness metrics and debiasing techniques for equitable outcomes
 
-**Macros:** 380 kcal | 28g protein | 32g carbs | 15g fat
+7. **Large Language Models** - Scalability, few-shot learning, and environmental concerns
 
----
+8. **Model Compression** - Knowledge distillation for efficient edge deployment
 
-## LUNCH (1:00 PM)
-**Chickpea & Quinoa Buddha Bowl**
-- Cooked quinoa: 150g
-- Canned chickpeas (drained): 180g
-- Roasted sweet potato: 150g
-- Kale: 80g
-- Tahini dressing: 20g
-- Lemon juice & herbs
+9. **Neuro-Symbolic AI** - Combining symbolic reasoning with neural networks
 
-**Macros:** 680 kcal | 22g protein | 85g carbs | 22g fat
+10. **Multimodal Learning** - Processing text, images, and audio together
 
----
+11. **Prompt Engineering** - Optimizing interactions with pre-trained models
 
-## PRE-WORKOUT SNACK (3:30 PM)
-**Quick Energy Fuel**
-- Oats (dry): 50g
-- Dates (pitted): 60g
-- Almond butter: 15g
-- Water: 150ml
-
-**Macros:** 360 kcal | 12g protein | 48g carbs | 12g fat
-
----
-
-## POST-WORKOUT MEAL (6:00 PM)
-**Lentil & Brown Rice with Vegetables**
-- Cooked brown rice: 180g
-- Cooked red lentils: 120g
-- Broccoli: 150g
-- Carrot: 80g
-- Coconut oil: 10ml
-- Garlic & ginger
-
-**Macros:** 560 kcal | 32g protein | 85g carbs | 12g fat
-
----
-
-## DINNER (8:00 PM)
-**Tempeh Stir-Fry**
-- Tempeh (steamed then pan-fried): 150g
-- Brown rice noodles: 100g
-- Mixed bell peppers: 120g
-- Snap peas: 100g
-- Sesame oil: 12ml
-- Low-sodium tamari: 15ml
-- Sesame seeds: 8g
-
-**Macros:** 550 kcal | 28g protein | 58g carbs | 16g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 2,850 kcal |
-| **Protein** | 150g |
-| **Carbohydrates** | 360g |
-| **Fat** | 95g* |
-
-*Includes omega-3s from chia seeds, tahini, and sesame seeds
-
----
-
-## Notes
-✓ All meals 100% dairy-free and vegetarian
-✓ Protein strategically distributed (25-32g per meal) for optimal muscle synthesis
-✓ Plant-based proteins varied: tofu, tempeh, legumes, nuts, seeds for complete amino acid profiles
-✓ Pre/post-workout nutrition optimized with carbs + protein timing
-✓ Budget-friendly staples: dried lentils, chickpeas, oats, brown rice, tempeh</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements with precise daily caloric totals, detailed macronutrient breakdowns, 6 complete meals with exact portions and timing, and full adherence to vegetarian and dairy-free restrictions. The protein target of 150g significantly exceeds the 1.6g/kg minimum requirement (120g), demonstrating appropriate muscle-building nutrition. All ingredients are budget-friendly and accessible. The only notable issue is a minor arithmetic inconsistency in fat totals (95g vs. 93g), which is a trivial error that doesn't affect the meal plan's validity or usability. The plan is well-organized, includes helpful notes about amino acid completeness and workout timing, and demonstrates strong nutritional knowledge. This is a high-quality, practical solution that meets all stated criteria.</td>
+The text broadly covers the **state of modern AI and machine learning**, focusing on technical innovations, ethical considerations, and practical applications.</pre></td>
+                <td class="score-col"><span class="score score-low">3</span></td>
+                <td class="reasoning">The solution violates all three mandatory requirements. The task explicitly requires: (1) a JSON array of strings containing topics, (2) strings with only topic names without extra commentary, and (3) the response should contain the JSON array and nothing else. The provided solution is formatted as markdown with numbered items, includes parenthetical descriptions for each topic, and adds a concluding summary. While the topics themselves are accurate and comprehensive, the format is fundamentally incorrect. A compliant response would be a simple JSON array like: ["Machine Learning Advances", "Natural Language Processing", ...] with no additional text or formatting.</td>
             </tr>
         
             <tr>
-                <td>Testing with an athlete with food allergies (peanut, shellfish, dairy) requiring safe alternatives and substitutions</td>
-                <td class="prompt-inputs"><strong>height:</strong> 180<br><strong>weight:</strong> 75<br><strong>goal:</strong> muscle gain and endurance training<br><strong>restrictions:</strong> peanut allergy, shellfish allergy, dairy allergy</td>
-                <td class="criteria">• Meal plan covers all three meals plus snacks for one full day<br>• All meals and snacks are free from peanuts, shellfish, and dairy with safe alternatives provided<br>• Caloric and macronutrient content supports muscle gain and endurance goals for a 75kg athlete<br>• Plan is concise and practical to prepare within a single day</td>
-                <td class="output"><pre># One-Day Muscle & Endurance Meal Plan for 75kg Athlete
+                <td>Testing with a passage containing implicit topics that require inference beyond explicitly stated keywords</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in neuroimaging have revealed complex patterns of neural connectivity during cognitive tasks, with functional magnetic resonance imaging studies demonstrating that prefrontal cortex activation correlates strongly with working memory performance in healthy adults. However, longitudinal investigations in patients with mild cognitive impairment show progressive deterioration of these connectivity patterns, accompanied by compensatory activation in bilateral parietal regions. These findings suggest that early neurodegeneration may be detected through connectivity biomarkers before overt behavioral decline occurs, opening possibilities for intervention strategies targeting synaptic plasticity and neural reserve mechanisms.</td>
+                <td class="criteria">• Extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics (cognitive decline, neurodegeneration, biomarkers, neural plasticity, intervention strategies)<br>• Identifies topics that require inference from context and relationships between concepts rather than direct keyword matching<br>• Returns results as a valid JSON array of strings with no additional fields or metadata</td>
+                <td class="output"><pre># Topics in this Text
 
-## Daily Nutritional Target
-- **Calories:** 3,100 kcal
-- **Protein:** 150g (2.0g per kg bodyweight)
-- **Carbohydrates:** 400g
-- **Fat:** 80g
+1. **Neuroimaging techniques** - specifically functional magnetic resonance imaging (fMRI)
 
----
+2. **Neural connectivity** - patterns of brain region communication during cognitive tasks
 
-## BREAKFAST (7:00 AM)
-**Rice & Egg Power Bowl**
-- Brown rice (cooked): 150g
-- Eggs (whole): 3 (180g)
-- Banana: 120g
-- Sunflower oil: 10ml
-- Salt & pepper
+3. **Prefrontal cortex function** - its role in working memory
 
-**Macros:** 650 kcal | 22g protein | 65g carbs | 28g fat
+4. **Working memory** - cognitive performance and its neural basis
 
----
+5. **Mild cognitive impairment (MCI)** - a clinical condition showing cognitive decline
 
-## MID-MORNING SNACK (10:00 AM)
-**Protein & Fruit**
-- Rice cakes: 50g (3 cakes)
-- Sunflower seed butter: 30g
-- Strawberries: 150g
+6. **Neurodegeneration** - progressive loss of neural structure/function
 
-**Macros:** 320 kcal | 10g protein | 42g carbs | 12g fat
+7. **Longitudinal studies** - tracking changes over time in patient populations
 
----
+8. **Compensatory brain activation** - how the brain adapts when regions deteriorate
 
-## LUNCH (1:00 PM)
-**Grilled Chicken & Sweet Potato**
-- Chicken breast (grilled): 200g
-- Sweet potato (baked): 250g
-- Olive oil: 12ml
-- Bell peppers (mixed): 100g
-- Herbs & lemon
+9. **Parietal regions** - brain areas showing increased activation during decline
 
-**Macros:** 750 kcal | 50g protein | 85g carbs | 16g fat
+10. **Biomarkers** - connectivity patterns as early diagnostic indicators
 
----
+11. **Synaptic plasticity** - the brain's ability to form new connections
 
-## PRE-WORKOUT SNACK (3:30 PM)
-**Quick Energy**
-- White rice cakes: 40g (2 cakes)
-- Honey: 25g
-- Apple: 180g
+12. **Neural reserve** - cognitive resilience mechanisms
 
-**Macros:** 290 kcal | 2g protein | 72g carbs | 0.5g fat
+13. **Clinical intervention strategies** - therapeutic approaches for cognitive decline
 
----
-
-## POST-WORKOUT MEAL (6:00 PM)
-**Lean Turkey & Quinoa**
-- Ground turkey (93% lean): 200g
-- Quinoa (cooked): 150g
-- Olive oil: 10ml
-- Zucchini: 120g
-- Garlic & herbs
-
-**Macros:** 620 kcal | 48g protein | 62g carbs | 14g fat
-
----
-
-## DINNER (8:00 PM)
-**Baked Fish with Rice**
-- Cod fillet (baked): 180g
-- White rice (cooked): 120g
-- Carrot & broccoli: 150g
-- Olive oil: 8ml
-- Lemon juice
-
-**Macros:** 470 kcal | 48g protein | 48g carbs | 9.5g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 3,100 kcal |
-| **Protein** | 180g |
-| **Carbohydrates** | 374g |
-| **Fat** | 79.5g |
-
----
-
-## Notes
-✓ **All allergens eliminated:** No peanuts, shellfish, or dairy products
-✓ Protein distributed evenly across meals (25-50g per meal) for optimal muscle synthesis
-✓ High carbohydrates support both endurance training and recovery
-✓ Pre/post-workout timing optimized for performance and muscle gain
-✓ Budget-friendly staples: eggs, rice, chicken, turkey, affordable fish (cod)
-✓ Easily replaceable proteins: swap turkey for beef, fish for other lean options
-✓ Suitable for training days; adjust portions if rest day
-✓ All portion sizes support 75kg athlete's caloric needs
-
----
-
-## Substitution Options (Same Macros)
-- Chicken → Turkey, lean beef, or duck
-- Cod → Tilapia, salmon, or tuna
-- Brown rice → White rice or oats
-- Sunflower butter → Tahini or coconut butter
-- Rice cakes → Corn tortillas or gluten-free bread</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements with precise daily caloric totals, detailed macronutrient breakdowns, and six meals/snacks with exact portions and specific timing. All three allergens are eliminated with practical substitutes. The plan is well-structured, concise, and highly practical for a 75kg athlete pursuing muscle gain and endurance training. The macro distribution is appropriate for the stated goals, with thoughtful pre/post-workout meal timing. The only notable issue is a minor inconsistency between the stated 150g protein target and the delivered 180g, though the higher amount is actually beneficial for muscle gain. The solution includes helpful substitution options and clear formatting that makes it immediately actionable.</td>
+**In summary:** This text covers neuroscience, cognitive neurology, brain imaging, and early detection/treatment of neurodegenerative disease.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">While the solution demonstrates excellent topic identification and understanding of the passage content, it fundamentally fails to meet the mandatory requirements. The task explicitly requires 'a JSON array of strings containing each topic' with 'only a topic without any extra commentary' and 'nothing else' in the response. The provided solution is formatted as markdown with descriptions, explanations, and summary text rather than a clean JSON array. For example, the correct format should be: ["Neuroimaging", "fMRI", "Neural connectivity", ...] not the current format with bullet points and descriptions. This is an automatic failure condition per the mandatory requirements.</td>
             </tr>
         
             <tr>
-                <td>Testing with a pre-competition day scenario requiring specific timing of meals for optimal performance and energy</td>
-                <td class="prompt-inputs"><strong>height:</strong> 180 cm<br><strong>weight:</strong> 75 kg<br><strong>goal:</strong> Pre-competition day meal plan for a soccer match at 3 PM with optimal energy and performance<br><strong>restrictions:</strong> Vegetarian, no nuts</td>
-                <td class="criteria">• Meal plan covers full day with 3-4 meals/snacks timed appropriately before 3 PM competition<br>• Includes balanced macronutrients (carbohydrates for energy, protein for recovery, healthy fats) suitable for athletic performance<br>• All meals comply with vegetarian diet and contain no nuts<br>• Provides practical, easy-to-digest food options with clear timing relative to competition start time</td>
-                <td class="output"><pre># One-Day Pre-Competition Meal Plan for Soccer Match (3 PM Kickoff)
+                <td>Testing with a passage containing cited authors, methodologies, and datasets as potential false positives</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study employs a mixed-methods approach combining quantitative analysis using the STATA statistical package with qualitative interviews following Braun and Clarke's thematic analysis framework. We utilized the World Bank's Development Indicators dataset (2010-2020) alongside primary data collected from 150 participants across five regions. Building on Smith et al.'s (2019) theoretical model, our research investigates the relationship between institutional capacity, resource allocation mechanisms, and policy implementation outcomes. The methodology draws from institutional economics and organizational behavior literature, incorporating longitudinal regression analysis with fixed-effects specifications to control for temporal variation. Our sample included both public sector agencies and non-governmental organizations, enabling comparative assessment of governance structures and their influence on service delivery effectiveness.</td>
+                <td class="criteria">• Extracts substantive research topics (e.g., institutional capacity, policy implementation, governance structures) while excluding methodological tools (STATA, thematic analysis), cited authors (Smith et al., Braun and Clarke), and dataset names (World Bank Development Indicators)<br>• Returns output as a valid JSON array of strings<br>• Identifies 4-6 distinct topics without duplication</td>
+                <td class="output"><pre># Topics in This Text
 
-## Daily Nutritional Target
-- **Calories:** 2,800 kcal
-- **Protein:** 105g (1.4g per kg bodyweight)
-- **Carbohydrates:** 420g (5.6g per kg bodyweight)
-- **Fat:** 70g
+## **Methodological Topics**
+- Mixed-methods research design
+- Quantitative analysis (STATA statistical package)
+- Qualitative interviews
+- Thematic analysis (Braun and Clarke framework)
+- Longitudinal regression analysis
+- Fixed-effects specifications
 
----
+## **Data Sources**
+- World Bank Development Indicators dataset (2010-2020)
+- Primary data from 150 participants
+- Multi-regional sampling (five regions)
 
-## BREAKFAST (7:00 AM)
-**Energizing Carb & Protein Bowl**
-- Oatmeal (dry): 70g
-- Whole milk: 250ml
-- Banana: 120g
-- Honey: 20g
-- Dried raisins: 30g
+## **Substantive Research Topics**
+- Institutional capacity
+- Resource allocation mechanisms
+- Policy implementation outcomes
+- Governance structures
+- Service delivery effectiveness
 
-**Macros:** 520 kcal | 14g protein | 102g carbs | 6g fat
+## **Theoretical/Disciplinary Foundations**
+- Institutional economics
+- Organizational behavior
+- Smith et al.'s theoretical model (2019)
 
----
-
-## MID-MORNING SNACK (10:00 AM)
-**Simple Carbs with Protein**
-- White bread (2 slices): 60g
-- Jam: 30g
-- Greek yogurt: 150g
-- Blueberries: 80g
-
-**Macros:** 340 kcal | 12g protein | 68g carbs | 3g fat
-
----
-
-## LUNCH (12:30 PM)
-**Light Pasta with Vegetables**
-- Penne pasta (cooked): 200g
-- Olive oil: 15ml
-- Tomato sauce: 150g
-- Spinach: 80g
-- Parmesan cheese: 20g
-- Salt & pepper
-
-**Macros:** 520 kcal | 18g protein | 85g carbs | 12g fat
+## **Organizational Context**
+- Public sector agencies
+- Non-governmental organizations (NGOs)
+- Comparative governance analysis
 
 ---
 
-## PRE-MATCH SNACK (2:00 PM - 1 HOUR BEFORE KICKOFF)
-**Quick Digestible Carbs**
-- White rice cakes (2 cakes): 40g
-- Banana: 100g
-- Honey: 15g
-
-**Macros:** 240 kcal | 3g protein | 58g carbs | 1g fat
-
----
-
-## POST-MATCH MEAL (4:30 PM)
-**Recovery Protein & Carbs**
-- Chickpea curry: 250g (cooked chickpeas 150g + tomato-based sauce)
-- White rice (cooked): 180g
-- Cucumber salad: 100g
-- Vegetable oil: 10ml
-
-**Macros:** 620 kcal | 42g protein | 85g carbs | 16g fat
-
----
-
-## DINNER (7:30 PM)
-**Light & Restorative**
-- Lentil soup (vegetable broth-based): 400ml
-- Whole wheat bread: 60g
-- Cottage cheese: 150g
-- Tomato & lettuce salad: 120g
-
-**Macros:** 420 kcal | 28g protein | 52g carbs | 8g fat
-
----
-
-## HYDRATION STRATEGY
-- **Morning to noon:** 500ml water + 250ml sports drink (6% carbs)
-- **Noon to 2:00 PM:** 400ml water
-- **2:00 PM - Kickoff:** 200ml sports drink (sip only)
-- **During match:** 150ml water at halftime (if available)
-- **Post-match:** 500ml electrolyte drink + water throughout evening
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 2,660 kcal |
-| **Protein** | 117g |
-| **Carbohydrates** | 450g |
-| **Fat** | 46g |
-
----
-
-## KEY STRATEGIC NOTES
-
-✓ **Carb-Loading Focus:** 450g carbs (17% above daily needs) maximizes glycogen stores for 90-minute match intensity
-
-✓ **Pre-Match Timing:** Light snack at 2 PM is easily digestible, won't cause stomach discomfort during play
-
-✓ **Vegetarian Protein Sources:** Chickpeas, lentils, Greek yogurt, cottage cheese, and</pre></td>
-                <td class="score-col"><span class="score score-medium">7</span></td>
-                <td class="reasoning">The solution successfully meets all mandatory requirements with clear daily totals, detailed macronutrient breakdowns, exact portions, and strategic meal timing. The plan demonstrates strong sports nutrition knowledge with appropriate carb-loading, digestibility considerations, and hydration strategy. However, the caloric shortfall (2,660 vs 2,800 target) represents a meaningful gap for an athlete's competition day, and the carb overage creates internal inconsistency. The truncated ending is a minor presentation issue. Despite these deficiencies, the core requirements are solidly met with practical, well-reasoned meal choices.</td>
+**In summary:** This is a study on **governance and policy implementation**, using a combination of statistical and interview-based methods to examine how institutions allocate resources and deliver services.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution demonstrates strong understanding of which topics to extract and correctly excludes methodological/citation elements per the secondary criteria. However, it catastrophically fails the mandatory requirements by: (1) not returning a valid JSON array of strings as the primary output, (2) including extensive markdown formatting and explanatory text, and (3) directly violating the instruction that the response should contain only the JSON array. The correct format should be a simple JSON array like ["institutional capacity", "resource allocation mechanisms", "policy implementation outcomes", "governance structures", "service delivery effectiveness", "comparative organizational analysis"] with no additional text.</td>
             </tr>
         
             <tr>
-                <td>Testing with a recovery/rest day scenario requiring reduced calories but maintained micronutrient density</td>
-                <td class="prompt-inputs"><strong>height:</strong> 180 cm<br><strong>weight:</strong> 78 kg<br><strong>goal:</strong> recovery/rest day with reduced calories but high micronutrient density<br><strong>restrictions:</strong> vegetarian, no nuts</td>
-                <td class="criteria">• Meal plan covers full day (breakfast, lunch, dinner, snacks) with 4-6 meals<br>• Calorie intake is 15-20% below athlete's estimated maintenance level<br>• All meals are vegetarian and nut-free<br>• Includes diverse micronutrient-dense foods (leafy greens, legumes, whole grains, seeds, dairy/eggs)</td>
-                <td class="output"><pre># One-Day Recovery Meal Plan for 78kg Vegetarian Athlete
+                <td>Testing with a passage mixing multiple disciplinary perspectives (e.g., economics + environmental science)</td>
+                <td class="prompt-inputs"><strong>content:</strong> The valuation of ecosystem services presents a complex intersection between ecological and economic frameworks. From an environmental science perspective, wetland ecosystems provide critical functions including water filtration, carbon sequestration, and biodiversity habitat, with studies demonstrating that one hectare can sequester approximately 1.5 metric tons of carbon annually. Conversely, economic analyses often employ contingent valuation methods and hedonic pricing models to assign monetary values to these services, typically ranging from $5,000 to $15,000 per hectare annually depending on geographic location and ecosystem type. Policy economists argue that internalizing these externalities through payment-for-ecosystem-services (PES) programs can create market-based incentives for conservation, while environmental scientists caution that commodifying nature risks oversimplifying complex ecological interdependencies and may undervalue services that lack direct market signals.</td>
+                <td class="criteria">• Extracts topics spanning both environmental science and economics domains<br>• Captures all major conceptual areas discussed in the passage<br>• Returns results as a JSON array of strings</td>
+                <td class="output"><pre># Topics in this passage:
 
-## Daily Nutritional Target
-- **Calories:** 2,200 kcal
-- **Protein:** 117g (1.5g per kg bodyweight - recovery day reduced)
-- **Carbohydrates:** 260g
-- **Fat:** 65g
+1. **Ecosystem Services Valuation** - The central theme of assigning value to natural ecological functions
 
----
+2. **Wetland Ecosystems** - Specific focus on wetland functions and characteristics
 
-## BREAKFAST (7:00 AM)
-**Greek Yogurt & Granola Bowl**
-- Greek yogurt (plain, non-fat): 200g
-- Granola (store-bought, nut-free): 40g
-- Berries (mixed fresh): 120g
-- Honey: 15g
-- Flax seeds: 10g
+3. **Environmental/Ecological Functions**
+   - Water filtration
+   - Carbon sequestration
+   - Biodiversity habitat
 
-**Macros:** 320 kcal | 18g protein | 48g carbs | 6g fat
+4. **Environmental Science** - Scientific measurement and quantification of ecological processes
 
----
+5. **Economic Valuation Methods**
+   - Contingent valuation
+   - Hedonic pricing models
 
-## MID-MORNING SNACK (10:00 AM)
-**Fruit & Whole Grain**
-- Banana: 120g
-- Whole wheat toast: 50g (2 slices)
-- Hummus: 30g
-- Carrot sticks: 80g
+6. **Environmental Economics** - The intersection of ecology and economics
 
-**Macros:** 280 kcal | 9g protein | 52g carbs | 5g fat
+7. **Policy and Market-Based Conservation**
+   - Payment-for-Ecosystem-Services (PES) programs
+   - Market incentives for conservation
 
----
+8. **Externalities** - Environmental costs/benefits not reflected in market prices
 
-## LUNCH (1:00 PM)
-**Mediterranean Vegetable Frittata**
-- Eggs: 2 whole + 2 egg whites (120g)
-- Spinach (fresh): 100g
-- Tomatoes: 80g
-- Bell peppers: 70g
-- Olive oil: 10ml
-- Low-fat feta cheese: 25g
-- Whole grain bread: 60g
+9. **Philosophical/Ethical Debate** - The tension between:
+   - Commodification of nature vs. conservation
+   - Economic quantification vs. ecological complexity
 
-**Macros:** 520 kcal | 28g protein | 52g carbs | 18g fat
+10. **Geographic and Contextual Variation** - How values differ by location and ecosystem type
 
----
-
-## AFTERNOON SNACK (4:00 PM)
-**Protein Smoothie**
-- Plant-based protein powder (pea/hemp): 25g
-- Oat milk: 240ml
-- Mango (frozen): 100g
-- Chia seeds: 10g
-
-**Macros:** 220 kcal | 20g protein | 28g carbs | 6g fat
-
----
-
-## DINNER (7:00 PM)
-**Lentil & Vegetable Curry**
-- Brown lentils (cooked): 150g
-- Chickpeas (cooked): 80g
-- Broccoli: 120g
-- Cauliflower: 100g
-- Coconut milk (light, 5%): 100ml
-- Olive oil: 12ml
-- Jasmine rice (cooked): 120g
-- Turmeric, ginger, cumin
-
-**Macros:** 620 kcal | 28g protein | 80g carbs | 18g fat
-
----
-
-## EVENING SNACK (9:00 PM)
-**Sleep-Friendly Recovery Drink**
-- Chamomile tea: 200ml
-- Cow's milk (low-fat): 150ml
-- Honey: 10g
-- Whole grain crackers: 30g
-
-**Macros:** 240 kcal | 14g protein | 40g carbs | 2g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 2,200 kcal |
-| **Protein** | 117g |
-| **Carbohydrates** | 300g |
-| **Fat** | 55g |
-
----
-
-## Micronutrient Highlights
-✓ **Iron:** Lentils, chickpeas, spinach, fortified cereals
-✓ **Calcium:** Greek yogurt, feta cheese, fortified oat milk
-✓ **Magnesium:** Pumpkin seeds (flax/chia alternative), leafy greens, lentils
-✓ **Antioxidants:** Berries, turmeric, bell peppers, tomatoes
-✓ **B Vitamins:** Whole grains, legumes, eggs, fortified plant milk
-
----
-
-## Notes
-✓ **Recovery-focused:**</pre></td>
-                <td class="score-col"><span class="score score-high">8</span></td>
-                <td class="reasoning">The solution comprehensively addresses all mandatory requirements with well-structured meals, precise portions, and timing. It successfully balances the recovery/rest day goal with reduced calories while maintaining high micronutrient density through thoughtful food selection. The vegetarian and nut-free restrictions are properly respected throughout. However, there are minor mathematical inconsistencies in the carbohydrate totals and caloric summation that suggest incomplete quality control. The lack of explicit maintenance calorie calculation makes it difficult to independently verify the 15-20% reduction claim, though the 2,200 kcal figure appears reasonable. These are secondary issues that don't undermine the core quality of the meal plan.</td>
+**In summary**: This passage explores the tension between scientific and economic approaches to valuing nature, using wetlands and carbon sequestration as examples.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution fails all three mandatory requirements. While the content quality is excellent and captures topics spanning both required domains, the format is fundamentally wrong. The task explicitly requires: (1) a JSON array of strings, (2) containing only topics without extra commentary, and (3) nothing else in the response. This solution provides markdown-formatted text with nested structures, explanatory text, and a summary paragraph. A correct response would be a simple JSON array like ["Ecosystem Services Valuation", "Wetland Ecosystems", "Carbon Sequestration", ...] with no additional content.</td>
             </tr>
         
             <tr>
-                <td>Testing with an athlete preferring meal-prep efficiency (minimal cooking, batch-friendly meals for busy schedules)</td>
-                <td class="prompt-inputs"><strong>height:</strong> 180 cm<br><strong>weight:</strong> 78 kg<br><strong>goal:</strong> Build muscle while maintaining energy for high-intensity training<br><strong>restrictions:</strong> Vegetarian, no nuts</td>
-                <td class="criteria">• All meals are batch-prep friendly with minimal cooking time per meal<br>• Meal plan provides adequate protein (approximately 1.6g per kg bodyweight) from vegetarian sources<br>• Includes exactly 4 meals/snacks spanning one full day<br>• Each meal requires 15 minutes or less active cooking time</td>
-                <td class="output"><pre># One-Day Muscle-Building Meal Plan for 78kg Vegetarian Athlete
+                <td>Testing with a passage that has minimal topic diversity or repeats the same concept using different terminology</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the mechanisms of cellular apoptosis through programmed cell death pathways. The intrinsic pathway involves mitochondrial dysfunction and cytochrome c release, triggering caspase activation. Similarly, the extrinsic pathway utilizes death receptors to initiate the same caspase cascade. Both mechanisms of controlled cellular suicide converge on identical downstream effectors, suggesting that cellular demise through these distinct routes ultimately shares common molecular machinery. Understanding these pathways of regulated cell elimination has profound implications for cancer therapeutics, as malignant cells often evade programmed elimination through apoptotic suppression.</td>
+                <td class="criteria">• Recognizes that 'apoptosis,' 'programmed cell death,' 'cellular suicide,' 'controlled cellular elimination,' and 'regulated cell elimination' refer to the same concept and avoids excessive duplication<br>• Extracts distinct topics such as intrinsic pathway, extrinsic pathway, mitochondrial dysfunction, caspase activation, death receptors, and cancer therapeutics<br>• Returns results as a JSON array of strings with no duplicate or near-duplicate entries</td>
+                <td class="output"><pre># Topics in This Text
 
-## Daily Nutritional Target
-- **Calories:** 3,100 kcal
-- **Protein:** 156g (2.0g per kg bodyweight)
-- **Carbohydrates:** 390g
-- **Fat:** 80g
+1. **Cellular Apoptosis** - The main subject; programmed cell death in cells
 
----
+2. **Intrinsic Apoptosis Pathway** - Including:
+   - Mitochondrial dysfunction
+   - Cytochrome c release
+   - Caspase activation
 
-## BREAKFAST (7:00 AM)
-**Protein-Packed Oatmeal**
-- Rolled oats: 80g
-- Whole milk: 250ml
-- Greek yogurt (plain): 150g
-- Banana: 120g
-- Honey: 15g
-- Sunflower seeds: 20g
+3. **Extrinsic Apoptosis Pathway** - Including:
+   - Death receptors
+   - Caspase cascade initiation
 
-**Macros:** 650 kcal | 28g protein | 85g carbs | 16g fat
+4. **Molecular Mechanisms** - Specifically:
+   - Caspase activation and function
+   - Downstream effectors/signaling molecules
+   - Convergence of different pathways
 
----
+5. **Cancer Biology** - Specifically:
+   - Cancer therapeutics
+   - Apoptotic resistance/suppression in malignant cells
+   - How cancer cells evade programmed cell death
 
-## MID-MORNING SNACK (10:00 AM)
-**Vegetarian Protein Shake**
-- Pea protein powder: 30g
-- Soy milk: 250ml
-- Berries (frozen): 100g
-- Chia seeds: 15g
-
-**Macros:** 280 kcal | 26g protein | 28g carbs | 8g fat
-
----
-
-## LUNCH (1:00 PM)
-**Lentil & Chickpea Buddha Bowl**
-- Cooked lentils: 150g
-- Cooked chickpeas: 100g
-- Quinoa (cooked): 120g
-- Spinach: 80g
-- Cherry tomatoes: 80g
-- Olive oil: 15ml
-- Lemon juice & herbs
-
-**Macros:** 720 kcal | 32g protein | 92g carbs | 18g fat
-
----
-
-## PRE-WORKOUT SNACK (3:30 PM)
-**Quick Carbs & Protein**
-- Whole wheat bread: 60g (2 slices)
-- Hummus: 40g
-- Orange: 150g
-- Cheese (cheddar): 30g
-
-**Macros:** 410 kcal | 16g protein | 52g carbs | 14g fat
-
----
-
-## POST-WORKOUT MEAL (6:00 PM)
-**Tofu Stir-Fry with Rice**
-- Extra-firm tofu (pressed): 200g
-- Brown rice (cooked): 180g
-- Broccoli: 120g
-- Bell pepper: 100g
-- Sesame oil: 12ml
-- Garlic & ginger
-
-**Macros:** 580 kcal | 26g protein | 68g carbs | 18g fat
-
----
-
-## DINNER (8:00 PM)
-**Paneer & Vegetable Curry**
-- Paneer cheese: 150g
-- Chickpeas: 80g
-- Sweet potato (cooked): 150g
-- Cauliflower: 100g
-- Coconut milk (lite): 100ml
-- Olive oil: 10ml
-- Curry spices
-
-**Macros:** 460 kcal | 28g protein | 65g carbs | 6g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 3,100 kcal |
-| **Protein** | 156g |
-| **Carbohydrates** | 390g |
-| **Fat** | 80g |
-
----
-
-## Notes
-✓ All meals 100% vegetarian with zero nuts (tree nuts and peanuts eliminated)
-✓ High protein from legumes, tofu, paneer, Greek yogurt, and plant-based powder
-✓ Nutrient timing optimized: carbs/protein before and after high-intensity training
-✓ Whole food focus with minimal processed ingredients
-✓ Budget-friendly staples: lentils, chickpeas, oats, rice, seasonal vegetables
-✓ Sufficient carbohydrates (390g) to fuel intense workouts while building muscle
-✓ Easily customizable: swap vegetables based on seasonal availability and price
-✓ All portions measured for accurate macro tracking</pre></td>
-                <td class="score-col"><span class="score score-low">5</span></td>
-                <td class="reasoning">The solution successfully meets all three mandatory requirements with comprehensive detail. However, it violates a critical secondary criterion by providing 6 meals/snacks (breakfast, mid-morning snack, lunch, pre-workout snack, post-workout meal, dinner) when the criteria explicitly state 'Includes exactly 4 meals/snacks spanning one full day.' While the meal plan is well-structured, nutritionally sound, and respects all restrictions, this quantitative violation of a stated secondary criterion is a significant deficiency. The solution also fails to address batch-prep friendliness explicitly, though the meals appear reasonably quick to prepare. The protein provision is excellent at 2.0g/kg (exceeding the 1.6g/kg requirement).</td>
+**In summary:** This text covers the molecular biology of apoptosis and its relevance to cancer treatment.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">While the solution demonstrates excellent understanding of the content and properly identifies all relevant topics without duplication, it catastrophically fails all three mandatory requirements. The response must be a JSON array of strings containing only topic names with no additional commentary, formatting, or explanatory text. Instead, the solution provides a markdown-formatted document with nested bullet points, descriptions, and a summary. This is a fundamental format violation that makes the output unsuitable for programmatic use.</td>
             </tr>
         
             <tr>
-                <td>Testing with a young adolescent athlete (14-16 years old) requiring growth-supporting nutrition alongside performance demands</td>
-                <td class="prompt-inputs"><strong>height:</strong> 172 cm<br><strong>weight:</strong> 62 kg<br><strong>goal:</strong> Build muscle and improve endurance for competitive soccer<br><strong>restrictions:</strong> Vegetarian, no nuts</td>
-                <td class="criteria">• Meal plan spans exactly 1 day with 4-5 meals/snacks appropriately timed<br>• Includes adequate protein (1.6-2.0g per kg body weight) to support muscle growth during adolescence<br>• Incorporates calorie surplus (~300-500 kcal above maintenance) for growth and performance demands<br>• All meals respect vegetarian and nut-free restrictions without substitution errors</td>
-                <td class="output"><pre># One-Day Muscle-Building & Endurance Meal Plan for 62kg Vegetarian Athlete
+                <td>Testing with a passage from a humanities discipline (philosophy, history, literary analysis) versus STEM fields</td>
+                <td class="prompt-inputs"><strong>content:</strong> Hegel's phenomenology of spirit fundamentally reconceives the relationship between consciousness and historical development, arguing that self-consciousness emerges through a dialectical process of negation and synthesis rather than through immediate intuition. This framework challenges Cartesian epistemology by situating the subject within a temporal and social matrix where recognition by the other becomes constitutive of identity formation. The master-slave dialectic exemplifies this dynamic, demonstrating how domination paradoxically produces dependency and how genuine freedom requires mutual acknowledgment rather than unilateral control. Subsequent interpreters, from Marx to Sartre, have appropriated and transformed these insights to articulate theories of alienation, authenticity, and collective liberation, each emphasizing different dimensions of Hegel's systematic project.</td>
+                <td class="criteria">• Extracts all major philosophical concepts and theoretical frameworks mentioned (e.g., phenomenology, dialectics, self-consciousness, epistemology)<br>• Identifies key philosophical problems and relationships discussed (e.g., consciousness-history relationship, master-slave dynamics, recognition)<br>• Returns output as a valid JSON array of strings with no additional formatting or explanations</td>
+                <td class="output"><pre># Topics in This Passage
 
-## Daily Nutritional Target
-- **Calories:** 2,800 kcal
-- **Protein:** 124g (2.0g per kg bodyweight)
-- **Carbohydrates:** 380g
-- **Fat:** 70g
+## Primary Philosophical Themes
+- **Hegel's Phenomenology of Spirit** — the core work and its main arguments
+- **Consciousness and Historical Development** — how they relate and evolve together
+- **Dialectical Process** — negation and synthesis as mechanisms of development
 
----
+## Epistemological Issues
+- **Cartesian Epistemology** — critiques of traditional subject-centered knowledge
+- **Self-Consciousness Formation** — how the self emerges and develops
 
-## BREAKFAST (7:00 AM)
-**Protein-Packed Breakfast Scramble**
-- Eggs: 3 large (150g)
-- Whole wheat bread: 80g (2 slices)
-- Spinach: 100g
-- Olive oil: 10ml
-- Tomatoes: 80g
+## Social/Relational Philosophy
+- **Recognition and Identity** — the role of the "other" in forming the self
+- **Intersubjectivity** — mutual acknowledgment between subjects
 
-**Macros:** 520 kcal | 22g protein | 48g carbs | 18g fat
+## Specific Concepts
+- **Master-Slave Dialectic** — the famous Hegelian example
+- **Domination and Dependency** — paradoxes of power
+- **Freedom** — understood through mutual recognition
 
----
+## Historical Reception & Applications
+- **Marx** — appropriation for theories of alienation
+- **Sartre** — existentialist transformation of Hegelian ideas
+- **Authenticity and Liberation** — later developments of the framework
 
-## MID-MORNING SNACK (10:00 AM)
-**Greek Yogurt & Fruit Bowl**
-- Greek yogurt (plain, 0% fat): 200g
-- Berries (mixed): 120g
-- Granola (nut-free): 40g
-- Honey: 15g
+## Meta-level
+- **Systematic Philosophy** — the architectonic nature of Hegel's project
 
-**Macros:** 280 kcal | 20g protein | 42g carbs | 2g fat
-
----
-
-## LUNCH (1:00 PM)
-**Chickpea & Quinoa Buddha Bowl**
-- Cooked quinoa: 150g
-- Canned chickpeas (drained): 180g
-- Sweet bell pepper: 100g
-- Cucumber: 80g
-- Olive oil & lemon dressing: 15ml
-- Feta cheese: 50g
-
-**Macros:** 620 kcal | 24g protein | 85g carbs | 18g fat
-
----
-
-## PRE-WORKOUT SNACK (3:30 PM)
-**Quick Energy Carbs with Protein**
-- Banana: 150g
-- Whole wheat bread: 50g (1 slice)
-- Hummus: 40g
-- Carrot sticks: 100g
-
-**Macros:** 310 kcal | 12g protein | 52g carbs | 6g fat
-
----
-
-## POST-WORKOUT MEAL (6:00 PM)
-**Lentil & Vegetable Stir-Fry**
-- Red lentils (cooked): 200g
-- Broccoli: 120g
-- Mushrooms: 100g
-- Onion: 80g
-- Brown rice (cooked): 150g
-- Canola oil: 12ml
-- Garlic & ginger
-
-**Macros:** 580 kcal | 28g protein | 98g carbs | 14g fat
-
----
-
-## DINNER (8:00 PM)
-**Paneer & Vegetable Curry**
-- Paneer (Indian cheese): 150g
-- Canned chickpeas: 100g
-- Coconut milk (light): 100ml
-- Tomatoes (canned): 150g
-- Spinach: 80g
-- White basmati rice (cooked): 120g
-- Olive oil: 10ml
-- Turmeric, cumin, garam masala
-
-**Macros:** 510 kcal | 18g protein | 55g carbs | 12g fat
-
----
-
-## DAILY TOTALS
-| Nutrient | Amount |
-|----------|--------|
-| **Calories** | 2,820 kcal |
-| **Protein** | 124g |
-| **Carbohydrates** | 380g |
-| **Fat** | 70g |
-
----
-
-## Notes
-✓ **Vegetarian protein sources:** Eggs, Greek yogurt, legumes (chickpeas, lentils), paneer, and whole grains
-✓ **No nuts:** All nut-free foods; granola specified as nut-free variety
-✓ **Soccer-optimized timing:** Pre-workout carbs (3:30 PM) and post-workout protein + carbs (6:00 PM) for endurance and muscle recovery
-✓ **Budget-friendly:** Relies on affordable sta</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution comprehensively addresses all mandatory requirements with precise portions, timing, and macronutrient calculations. The protein target is correctly calculated and met. Vegetarian and nut-free restrictions are properly implemented throughout. The caloric level appears appropriate for a 62kg soccer athlete seeking muscle gain and endurance improvement, though the specific maintenance baseline isn't explicitly calculated. The meal structure is well-organized with appropriate pre/post-workout nutrition timing. The only substantive issue is the incomplete final sentence, which is a minor presentation flaw. All core criteria are satisfied.</td>
+This passage covers **epistemology, metaphysics, social philosophy, and the history of philosophy** all interconnected through Hegelian thought.</pre></td>
+                <td class="score-col"><span class="score score-low">2</span></td>
+                <td class="reasoning">The solution demonstrates excellent comprehension of the philosophical content and identifies all relevant topics accurately. However, it catastrophically fails the mandatory requirements by providing the response in markdown format with extensive commentary instead of a clean JSON array of strings containing only topic names. The task explicitly requires 'JSON array of strings with no additional formatting or explanations' and 'the JSON array and nothing else.' This is a clear and unambiguous violation of the stated mandatory requirements, regardless of the quality of the topic extraction itself.</td>
             </tr>
         
             </tbody>
