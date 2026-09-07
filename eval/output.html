@@ -117,7 +117,7 @@
                 </div>
                 <div class="stat-box">
                     <div>Average Score</div>
-                    <div class="stat-value">7.8 / 10</div>
+                    <div class="stat-value">8.3 / 10</div>
                 </div>
                 <div class="stat-box">
                     <div>Pass Rate (≥7)</div>
@@ -187,8 +187,8 @@
     "Qs",
     "particle production",
     "small-x kinematic regime",
-    "color correlations",
-    "hadronization mechanisms",
+    "initial-state color correlations",
+    "final-state hadronization",
     "azimuthal anisotropy coefficients",
     "transverse momentum distributions",
     "hydrodynamic flow",
@@ -198,8 +198,8 @@
     "cold nuclear matter effects"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">8</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It successfully identifies major theoretical concepts and physics phenomena across the passage. The secondary criteria are largely met with comprehensive topic extraction and minimal redundancy. However, two minor issues exist: 'QCD' duplicates 'quantum chromodynamics' (though they could be argued as distinct references), and 'Qs' is listed separately despite being notation for an already-extracted concept. These are minor deficiencies that don't significantly impact the overall quality of the extraction.</td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. Regarding secondary criteria, it successfully extracts all major theoretical concepts (color glass condensate, perturbative/non-perturbative QCD, gluon saturation) and physics phenomena (jet quenching, hydrodynamic flow, hadronization). The solution identifies interconnected topics appropriately without significant redundancy. The only minor issue is the inclusion of both 'quantum chromodynamics' and 'QCD' as separate entries, which represents a very slight redundancy, though this is defensible since they appear as distinct forms in the text. Overall, the solution demonstrates strong understanding of the physics content and appropriate topic extraction methodology.</td>
             </tr>
         
             <tr>
@@ -210,22 +210,24 @@
 [
     "machine learning",
     "natural language processing",
-    "NLP",
     "deep neural networks",
     "transformer architectures",
     "sentiment analysis",
     "named entity recognition",
     "transfer learning",
     "pre-trained language models",
+    "benchmark datasets",
+    "computational resources",
     "attention mechanisms",
     "contextual embeddings",
+    "NLP systems",
     "bias mitigation",
     "interpretability",
     "large language models"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">8</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings with only topics and no extra commentary, and nothing else is included in the response. It successfully extracts both single-word and multi-word topics from the passage. The main deficiency is the inclusion of both 'natural language processing' and 'NLP' as separate entries, which represents redundancy rather than distinct topics. However, this is a minor issue in the context of the secondary criteria. The extraction is otherwise comprehensive and accurate.</td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it returns a valid JSON array of strings containing topics from the article with no extra commentary. It successfully extracts both single-word and multi-word topics, covers all major concepts discussed in the passage, and contains no duplicates. The inclusion of 'NLP systems' is a minor redundancy but doesn't violate any stated criteria. The extraction is comprehensive and accurate relative to the task requirements.</td>
             </tr>
         
             <tr>
@@ -306,12 +308,13 @@
     "neuroendocrine pathway",
     "threat response systems",
     "acute stress mechanisms",
-    "therapeutic interventions",
-    "evolutionary adaptations"
+    "stress-memory relationship",
+    "evolutionary adaptations",
+    "long-term cognitive health"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-medium">7</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON containing only strings with no extra commentary. It successfully extracts both explicit topics (neuroimaging, cortisol levels, hippocampus, anxiety disorders, memory consolidation) and implicit topics requiring inference (neuroendocrine pathway, evolutionary adaptations). However, there are minor deficiencies in topic selection: 'HPA axis' is redundant with 'hypothalamic-pituitary-adrenal axis', and some entries blur the line between topics and descriptive phrases. The inclusion of 'therapeutic interventions' is questionable as it's mentioned as evidence rather than established as a core topic. These are secondary criterion issues that don't violate mandatory requirements but represent suboptimal topic extraction.</td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. It successfully identifies both explicitly stated topics (neuroimaging, cortisol levels, hippocampal synaptic plasticity, anxiety disorders, memory consolidation, hippocampus) and implicit/inferred topics requiring reasoning (stress-memory relationship, neuroendocrine pathway, evolutionary adaptations). The inclusion of 'HPA axis' as an abbreviation is a thoughtful addition. The primary weakness is the inclusion of 'long-term cognitive health,' which functions more as an outcome or consequence rather than a substantive topic, creating a minor violation of the criterion to avoid non-topic descriptive phrases. The solution is otherwise thorough and well-executed.</td>
             </tr>
         
             <tr>
@@ -322,7 +325,7 @@
 [
     "neuroplasticity",
     "adolescent brains",
-    "critical developmental periods",
+    "developmental periods",
     "synaptic pruning",
     "learning outcomes",
     "environmental enrichment",
@@ -336,8 +339,37 @@
     "cognitive rehabilitation strategies"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">8</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. It correctly handles the 'neuroplasticity' deduplication requirement. The extraction is thorough and identifies 14 distinct topics covering mechanisms, populations, contexts, interventions, and applications. However, there is a minor omission of 'clinical applications' which is explicitly mentioned as a separate area of research implications. The secondary criteria are largely met with only minor gaps that don't significantly impact the overall quality of the extraction.</td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. Regarding secondary criteria, it successfully recognizes neuroplasticity as a single topic despite repetition, identifies related but distinct topics (synaptic pruning, environmental enrichment, stress effects, meditation, clinical applications), and extracts nearly all meaningful topics. The inclusion of 'cortisol levels' as a standalone topic is slightly questionable since it primarily serves as a supporting detail for the stress mechanism rather than an independent topic, but this is a minor issue. Overall, the solution demonstrates strong comprehension of topic extraction with only minor quibbles about topic granularity.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with an economics/policy article containing competing viewpoints on related topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> The debate over minimum wage policy reveals fundamental tensions in economic theory and empirical evidence. Proponents argue that raising the minimum wage reduces poverty and income inequality while stimulating consumer demand, citing studies from Seattle and San Francisco showing minimal employment losses post-increase. Conversely, critics contend that higher labor costs incentivize automation and reduce hiring of low-skilled workers, pointing to Congressional Budget Office analyses predicting job losses of 3.7 million from a $15 federal minimum. Both camps acknowledge trade-offs between wage adequacy and employment levels, yet diverge sharply on empirical magnitudes and policy priorities regarding labor market regulation, income support mechanisms, and regional economic variation.</td>
+                <td class="criteria">• Extracts all major topics discussed in the passage without omissions<br>• Returns output as a valid JSON array of strings<br>• Captures both competing viewpoints and their underlying concerns</td>
+                <td class="output"><pre>```json
+[
+    "minimum wage policy",
+    "economic theory",
+    "poverty",
+    "income inequality",
+    "consumer demand",
+    "employment losses",
+    "labor costs",
+    "automation",
+    "low-skilled workers",
+    "CBO",
+    "federal minimum wage",
+    "job losses",
+    "wage adequacy",
+    "employment levels",
+    "labor market regulation",
+    "income support mechanisms",
+    "regional economic variation"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics without extra commentary. It successfully captures competing viewpoints (proponents vs. critics) and their concerns. However, there are minor omissions of explicitly mentioned topics ('empirical evidence' and 'trade-offs') and one stylistic inconsistency (abbreviation vs. full names). These are secondary criterion issues that don't violate mandatory requirements but represent incomplete topic extraction.</td>
             </tr>
         
             <tr>
@@ -349,14 +381,13 @@
     "neuroimaging",
     "neurodegenerative diseases",
     "fMRI",
-    "functional MRI",
     "PET imaging",
     "amyloid-beta accumulation",
     "Alzheimer's disease",
     "AD",
     "DTI",
     "diffusion tensor imaging",
-    "white matter integrity loss",
+    "white matter integrity",
     "frontotemporal dementia",
     "FTD",
     "CSF biomarkers",
@@ -375,38 +406,7 @@
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-medium">6</span></td>
-                <td class="reasoning">The solution meets the mandatory requirements by providing a JSON array of strings containing topics with no extra commentary. However, it violates the secondary criterion explicitly stating 'Does not include duplicates or partial acronym expansions.' The solution includes both abbreviated and expanded forms of the same concepts (fMRI/functional MRI, AD/Alzheimer's disease, DTI/diffusion tensor imaging, FTD/frontotemporal dementia, p-tau/phosphorylated tau, NfL/neurofilament light chain, MCI/mild cognitive impairment), which constitutes duplication. While the extraction is comprehensive and captures both acronyms and broader concepts, the inclusion of redundant acronym-expansion pairs is a clear deficiency against stated criteria.</td>
-            </tr>
-        
-            <tr>
-                <td>Testing with an economics/policy article containing competing viewpoints on related topics</td>
-                <td class="prompt-inputs"><strong>content:</strong> The debate over minimum wage policy reveals fundamental tensions in economic theory and empirical evidence. Proponents argue that raising the minimum wage reduces poverty and income inequality while stimulating consumer demand, citing studies from Seattle and San Francisco showing minimal employment losses post-increase. Conversely, critics contend that higher labor costs incentivize automation and reduce hiring of low-skilled workers, pointing to Congressional Budget Office analyses predicting job losses of 3.7 million from a $15 federal minimum. Both camps acknowledge trade-offs between wage adequacy and employment levels, yet diverge sharply on empirical magnitudes and policy priorities regarding labor market regulation, income support mechanisms, and regional economic variation.</td>
-                <td class="criteria">• Extracts all major topics discussed in the passage without omissions<br>• Returns output as a valid JSON array of strings<br>• Captures both competing viewpoints and their underlying concerns</td>
-                <td class="output"><pre>```json
-[
-    "minimum wage policy",
-    "economic theory",
-    "poverty",
-    "income inequality",
-    "consumer demand",
-    "employment losses",
-    "labor costs",
-    "automation",
-    "low-skilled workers",
-    "Congressional Budget Office",
-    "CBO",
-    "federal minimum wage",
-    "wage adequacy",
-    "employment levels",
-    "labor market regulation",
-    "income support mechanisms",
-    "regional economic variation",
-    "empirical evidence",
-    "trade-offs"
-]
-```</pre></td>
-                <td class="score-col"><span class="score score-high">8</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics without commentary, and the response contains only the JSON array. It successfully captures competing viewpoints and their concerns across 19 topics. The main deficiency is the redundant 'CBO'/'Congressional Budget Office' entry and omission of specific geographic examples (Seattle, San Francisco) that are explicitly cited as evidence in the passage. These are secondary criteria issues that don't violate mandatory requirements but represent minor incompleteness in topic extraction.</td>
+                <td class="reasoning">The solution meets the mandatory requirements by providing a valid JSON array of strings containing topics from the article with no extra commentary. However, it violates the secondary criterion that explicitly states 'Does not include duplicates or partial acronym expansions.' The solution includes both acronyms and their full expansions as separate entries (7 instances of this duplication), which technically constitutes redundancy. While the extraction is comprehensive and includes both domain-specific terms and broader concepts, the inclusion of these paired acronym/expansion duplicates represents a significant deficiency against the stated criteria.</td>
             </tr>
         
             <tr>
@@ -427,7 +427,8 @@
     "cave bears",
     "coprolite microbiomes",
     "fossilized fecal matter",
-    "bacterial and fungal communities",
+    "bacterial communities",
+    "fungal communities",
     "Quaternary ecosystem dynamics",
     "paleodiet reconstruction",
     "radiometric dating",
@@ -437,8 +438,8 @@
     "Holocene extinctions"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-medium">7</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON containing only strings, with no extra commentary, and returns only the array. It successfully captures the major specialized terminology and niche topics required by the secondary criteria. However, there are minor deficiencies in topic selection—some entries are redundant synonyms rather than distinct topics, 'permafrost' is notably absent despite explicit mention, and a few entries represent general concepts rather than specific topics. These are secondary criterion issues that don't violate mandatory requirements but represent suboptimal topic extraction precision.</td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no extra commentary, and returns only the JSON array. It successfully extracts all major topics and specialized terminology mentioned in the criteria (paleogenomics, permafrost, metagenomic, coprolite microbiomes, Quaternary, Holocene, etc.). The extraction is thorough and captures both niche/obscure topics and common academic terms. While there are minor issues with granularity and some redundancy in the topic list, these do not constitute violations of the stated criteria and represent only minor deviations from optimal organization.</td>
             </tr>
         
             </tbody>
