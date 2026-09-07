@@ -117,11 +117,11 @@
                 </div>
                 <div class="stat-box">
                     <div>Average Score</div>
-                    <div class="stat-value">8.1 / 10</div>
+                    <div class="stat-value">7.3 / 10</div>
                 </div>
                 <div class="stat-box">
                     <div>Pass Rate (≥7)</div>
-                    <div class="stat-value">80.0%</div>
+                    <div class="stat-value">70.0%</div>
                 </div>
             </div>
         </div>
@@ -145,23 +145,23 @@
                 <td class="criteria">• Output is a valid JSON array of strings<br>• Array contains exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy<br>• Topics are concise and accurately reflect the passage content</td>
                 <td class="output"><pre>```json
 [
-  "microplastic accumulation",
-  "marine sediments",
-  "benthic organisms",
-  "sediment cores",
-  "coastal regions",
-  "polymer composition",
-  "Fourier-transform infrared spectroscopy",
-  "microplastic concentrations",
-  "biodiversity",
-  "amphipod populations",
-  "toxicological pathways",
-  "ingestion",
-  "bioaccumulation mechanisms"
+    "microplastic accumulation",
+    "marine sediments",
+    "benthic organisms",
+    "sediment cores",
+    "coastal regions",
+    "polymer composition",
+    "Fourier-transform infrared spectroscopy",
+    "microplastic concentrations",
+    "biodiversity",
+    "amphipod populations",
+    "toxicological pathways",
+    "ingestion",
+    "bioaccumulation mechanisms"
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-low">4</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON, contains only topic strings without commentary, and includes each topic mentioned in the article. However, it significantly fails the secondary criteria by providing 13 topics instead of the explicitly stated requirement of 'exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy.' The solution extracts every noun phrase rather than consolidating related concepts into the three primary topic areas specified in the criteria.</td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON, contains only topic strings without commentary, and includes each topic mentioned in the article. However, it significantly violates the secondary criteria by providing 13 distinct topics instead of the required 3 consolidated topics (microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy). The task explicitly asks for 'exactly 3 distinct topics' in the secondary criteria, which this solution fails to meet. While the individual topics are accurate and well-selected, the solution does not follow the specified constraint on topic consolidation.</td>
             </tr>
         
             <tr>
@@ -170,28 +170,27 @@
                 <td class="criteria">• Extracts distinct topics while recognizing that some are closely related or overlapping (e.g., 'metaphorical language processing' vs 'metaphorical reasoning' as separate but related topics)<br>• Returns output as a JSON array of strings<br>• Identifies all major research areas discussed without over-merging related concepts into single entries</td>
                 <td class="output"><pre>```json
 [
-  "cognitive linguistics",
-  "semantic theory",
-  "metaphorical language processing",
-  "conceptual metaphors",
-  "semantic mapping",
-  "abstract domains",
-  "concrete domains",
-  "embodied cognition",
-  "metaphor comprehension",
-  "metaphorical reasoning",
-  "analogical thinking",
-  "neural mechanisms",
-  "linguistic framing",
-  "perceptual simulation",
-  "semantic networks",
-  "conceptual blending",
-  "novel metaphorical expressions",
-  "discourse"
+    "cognitive linguistics",
+    "semantic theory",
+    "metaphorical language processing",
+    "conceptual metaphors",
+    "semantic mapping",
+    "abstract and concrete domains",
+    "embodied cognition",
+    "metaphor comprehension",
+    "metaphorical reasoning",
+    "analogical thinking",
+    "neural mechanisms",
+    "linguistic framing",
+    "perceptual simulation",
+    "semantic networks",
+    "conceptual blending",
+    "novel metaphorical expressions",
+    "discourse"
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings, each entry is a topic without extra commentary, and the response contains only the JSON array. It also performs well on secondary criteria by identifying all major research areas and maintaining appropriate distinction between related concepts. The extraction is thorough and well-balanced, though a few entries are somewhat granular. The solution directly addresses the task of extracting topics from a scholarly article passage.</td>
+                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings, each entry is a topic without extra commentary, and the response contains only the JSON array. Regarding secondary criteria, the extraction is thorough and recognizes the distinction between related concepts as required. The solution appropriately identifies all major research areas (cognitive linguistics, semantic theory, embodied cognition, conceptual blending, etc.). The two minor weaknesses are that 'abstract and concrete domains' functions more as a descriptive context than a standalone topic, and 'discourse' is somewhat tangential. However, these are marginal issues that don't significantly detract from an otherwise excellent extraction that meets all stated criteria.</td>
             </tr>
         
             <tr>
@@ -200,25 +199,26 @@
                 <td class="criteria">• Extracts all major topics and subtopics including machine learning, deep learning, convolutional neural networks, computer vision, medical imaging, recurrent neural networks, transformers, and natural language processing<br>• Organizes extracted topics into a valid JSON array of strings<br>• Avoids extracting overly granular phrases or redundant entries while capturing the hierarchical structure of broader concepts and their specific subtopics</td>
                 <td class="output"><pre>```json
 [
-  "machine learning",
-  "artificial intelligence",
-  "deep learning",
-  "convolutional neural networks",
-  "computer vision",
-  "image classification",
-  "object detection",
-  "medical imaging diagnostics",
-  "recurrent neural networks",
-  "transformer architectures",
-  "natural language processing",
-  "machine translation",
-  "sentiment analysis",
-  "question-answering systems",
-  "neural network architectures"
+    "machine learning",
+    "artificial intelligence",
+    "deep learning",
+    "convolutional neural networks",
+    "computer vision",
+    "image classification",
+    "object detection",
+    "medical imaging diagnostics",
+    "recurrent neural networks",
+    "transformer architectures",
+    "natural language processing",
+    "machine translation",
+    "sentiment analysis",
+    "question-answering systems",
+    "neural network variants",
+    "neural network architecture"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It meets the secondary criteria by extracting all major topics and subtopics explicitly mentioned in the passage, organizing them hierarchically (e.g., CNNs and RNNs as subtopics of deep learning, machine translation and sentiment analysis as subtopics of NLP). The inclusion of 'neural network architectures' is slightly redundant but not a significant deficiency. The granularity level is appropriate for a scholarly article, capturing both high-level concepts and important specific applications without being overly detailed.</td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. It successfully extracts all major topics explicitly mentioned (machine learning, artificial intelligence, deep learning, convolutional neural networks, computer vision, image classification, object detection, medical imaging diagnostics, recurrent neural networks, transformer architectures, natural language processing, machine translation, sentiment analysis, question-answering systems). However, it includes two entries ('neural network variants' and 'neural network architecture') that are somewhat redundant or overly abstract. These are not explicitly stated as distinct topics in the passage but rather serve as connective phrases. The secondary criteria ask to avoid 'overly granular phrases or redundant entries' - while these entries aren't severely problematic, they represent minor violations of this principle. The solution is strong overall but has minor deficiencies in adhering strictly to the secondary criteria.</td>
             </tr>
         
             <tr>
@@ -227,31 +227,31 @@
                 <td class="criteria">• Extracts all major technical concepts and phenomena mentioned (e.g., quantum entanglement, Bell tests, topological order, decoherence, quantum error correction, NISQ devices, variational quantum algorithms)<br>• Returns output as a JSON array of strings with no additional formatting or explanation<br>• Identifies domain-specific jargon accurately without oversimplifying or combining distinct topics</td>
                 <td class="output"><pre>```json
 [
-  "quantum entanglement",
-  "non-local correlations",
-  "Bell test experiments",
-  "photonic qubits",
-  "superconducting circuits",
-  "entanglement entropy",
-  "many-body systems",
-  "topological order",
-  "quantum spin liquids",
-  "decoherence mechanisms",
-  "phonon coupling",
-  "electromagnetic noise",
-  "quantum error correction codes",
-  "variational quantum algorithms",
-  "NISQ devices",
-  "molecular Hamiltonians",
-  "computational chemistry",
-  "ground state energies",
-  "transition metal complexes",
-  "ansatz circuits",
-  "unitary coupled-cluster theory"
+    "quantum entanglement",
+    "non-local correlations",
+    "Bell test experiments",
+    "photonic qubits",
+    "superconducting circuits",
+    "entanglement entropy",
+    "many-body systems",
+    "topological order",
+    "quantum spin liquids",
+    "decoherence mechanisms",
+    "phonon coupling",
+    "electromagnetic noise",
+    "quantum error correction codes",
+    "variational quantum algorithms",
+    "NISQ devices",
+    "molecular Hamiltonians",
+    "computational chemistry",
+    "ground state energies",
+    "transition metal complexes",
+    "ansatz circuits",
+    "unitary coupled-cluster theory"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">10</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it contains a valid JSON array of strings, each entry is a topic without extra commentary, and the response contains only the JSON array. Regarding secondary criteria, the solution extracts all major technical concepts mentioned in the passage with high accuracy and appropriate granularity. The domain-specific jargon is handled correctly—terms like 'ansatz circuits,' 'unitary coupled-cluster theory,' 'NISQ devices,' and 'topological order' are all preserved as distinct topics rather than oversimplified. The extraction is comprehensive and well-organized. No mandatory requirements are violated.</td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it contains a valid JSON array of strings, each string represents a single topic without extra commentary, and the response contains only the JSON array with no additional text. Regarding secondary criteria, the solution successfully extracts all major technical concepts and phenomena mentioned in the passage. The domain-specific jargon is identified accurately and distinct topics are not inappropriately combined. The extraction is thorough and well-organized. Minor weaknesses exist in the granularity of some topic selections, but these do not significantly detract from the overall quality of the extraction.</td>
             </tr>
         
             <tr>
@@ -260,28 +260,28 @@
                 <td class="criteria">• Extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics (cognitive decline, neurodegeneration, biomarkers, neural plasticity, intervention strategies)<br>• Identifies topics that require inference from context and relationships between concepts rather than direct keyword matching<br>• Returns results as a valid JSON array of strings with no additional fields or metadata</td>
                 <td class="output"><pre>```json
 [
-  "neuroimaging",
-  "neural connectivity",
-  "cognitive tasks",
-  "functional magnetic resonance imaging",
-  "prefrontal cortex activation",
-  "working memory performance",
-  "healthy adults",
-  "longitudinal investigations",
-  "mild cognitive impairment",
-  "connectivity patterns",
-  "compensatory activation",
-  "parietal regions",
-  "neurodegeneration",
-  "connectivity biomarkers",
-  "behavioral decline",
-  "intervention strategies",
-  "synaptic plasticity",
-  "neural reserve mechanisms"
+    "neuroimaging",
+    "neural connectivity",
+    "cognitive tasks",
+    "functional magnetic resonance imaging",
+    "prefrontal cortex activation",
+    "working memory performance",
+    "healthy adults",
+    "longitudinal investigations",
+    "mild cognitive impairment",
+    "connectivity patterns",
+    "compensatory activation",
+    "bilateral parietal regions",
+    "neurodegeneration",
+    "connectivity biomarkers",
+    "behavioral decline",
+    "intervention strategies",
+    "synaptic plasticity",
+    "neural reserve mechanisms"
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with no extra commentary or metadata. It successfully extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics requiring inference (neurodegeneration, connectivity biomarkers, intervention strategies, synaptic plasticity, neural reserve mechanisms). The extraction demonstrates contextual understanding of relationships between concepts. While a few entries are somewhat granular or contextual rather than core topics, this represents a minor deviation from ideal topic extraction rather than a failure to meet stated criteria. The solution appropriately balances comprehensiveness with relevance.</td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with no extra commentary or metadata. It meets the secondary criteria by identifying both explicitly stated topics and implicitly related concepts that require contextual inference. The extraction demonstrates understanding of the passage's key themes including neuroimaging methods, cognitive processes, pathological conditions, and therapeutic approaches. While there is some minor inconsistency in how topics are chunked (some as single words, others as phrases), this reflects reasonable editorial choices about what constitutes a meaningful 'topic' and does not detract from the overall quality of the extraction.</td>
             </tr>
         
             <tr>
@@ -290,44 +290,50 @@
                 <td class="criteria">• Extracts at least 10 distinct topics from the lengthy passage<br>• Returns output as a valid JSON array of strings<br>• Avoids redundancy and captures main topics comprehensively</td>
                 <td class="output"><pre>```json
 [
-  "machine learning",
-  "natural language processing",
-  "sentiment analysis",
-  "machine translation",
-  "question answering",
-  "transformer-based architectures",
-  "attention mechanisms",
-  "neural networks",
-  "sequential data",
-  "transfer learning",
-  "pre-trained models",
-  "fine-tuning",
-  "downstream tasks",
-  "model interpretability",
-  "deep learning",
-  "bias in training data",
-  "debiasing techniques",
-  "fairness metrics",
-  "large language models",
-  "few-shot learning",
-  "text generation",
-  "computational resources",
-  "environmental sustainability",
-  "knowledge distillation",
-  "model compression",
-  "edge devices",
-  "symbolic reasoning",
-  "rule-based systems",
-  "pattern recognition",
-  "multimodal learning",
-  "text processing",
-  "image processing",
-  "audio processing",
-  "prompt engineering"
+    "machine learning",
+    "natural language processing",
+    "sentiment analysis",
+    "machine translation",
+    "question answering",
+    "transformer-based architectures",
+    "attention mechanisms",
+    "neural networks",
+    "sequential data",
+    "transfer learning",
+    "pre-trained models",
+    "fine-tuning",
+    "downstream tasks",
+    "model interpretability",
+    "deep learning",
+    "black boxes",
+    "decision-making processes",
+    "ethical considerations",
+    "bias in training data",
+    "debiasing techniques",
+    "fairness metrics",
+    "demographic groups",
+    "large language models",
+    "scalability",
+    "few-shot learning",
+    "text generation",
+    "computational resources",
+    "environmental sustainability",
+    "knowledge distillation",
+    "model compression",
+    "edge devices",
+    "symbolic reasoning",
+    "rule-based systems",
+    "pattern recognition",
+    "multimodal learning",
+    "text",
+    "images",
+    "audio",
+    "prompt engineering",
+    "input instructions"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It exceeds the minimum threshold of 10 topics with 34 distinct items. The extraction is comprehensive and captures the main themes of the passage effectively. The few weaknesses are minor—some topics are inferred rather than explicitly stated as separate topics, and there is minimal redundancy. The solution demonstrates strong understanding of the source material and appropriate topic granularity for a scholarly article.</td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. It exceeds the minimum of 10 topics with 40 entries and avoids significant redundancy. The extraction is generally comprehensive and captures the main themes (transformers, transfer learning, interpretability, ethics, scalability, multimodal learning, prompt engineering). However, there are minor quality issues with a few overly specific or contextual entries that detract slightly from the overall precision. These issues are not severe enough to violate mandatory requirements but represent room for refinement in topic selection.</td>
             </tr>
         
             <tr>
@@ -336,27 +342,29 @@
                 <td class="criteria">• Extracts topics spanning both environmental science and economics domains<br>• Captures all major conceptual areas discussed in the passage<br>• Returns results as a JSON array of strings</td>
                 <td class="output"><pre>```json
 [
-  "ecosystem services valuation",
-  "ecological frameworks",
-  "economic frameworks",
-  "wetland ecosystems",
-  "water filtration",
-  "carbon sequestration",
-  "biodiversity habitat",
-  "contingent valuation methods",
-  "hedonic pricing models",
-  "monetary valuation",
-  "externalities",
-  "payment-for-ecosystem-services (PES) programs",
-  "market-based incentives",
-  "conservation",
-  "commodification of nature",
-  "ecological interdependencies",
-  "market signals"
+    "ecosystem services valuation",
+    "ecological frameworks",
+    "economic frameworks",
+    "wetland ecosystems",
+    "water filtration",
+    "carbon sequestration",
+    "biodiversity habitat",
+    "contingent valuation methods",
+    "hedonic pricing models",
+    "payment-for-ecosystem-services programs",
+    "PES programs",
+    "market-based incentives",
+    "conservation",
+    "externalities",
+    "commodification of nature",
+    "ecological interdependencies",
+    "market signals",
+    "environmental science",
+    "policy economics"
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It meets the secondary criteria by spanning both domains and capturing major conceptual areas. The extraction is thorough and accurate, though some design choices (granularity level, grouping decisions) could be debated. The topics extracted are all legitimately present in the passage and represent substantive concepts discussed. Minor weaknesses exist in topic organization and completeness of thematic coverage, but these do not violate stated criteria.</td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. It meets the secondary criteria by spanning both domains and capturing major conceptual areas. The only notable deficiency is the redundant inclusion of PES programs under two different names, which represents a minor quality issue rather than a failure to meet stated criteria. The topic extraction is otherwise thorough and well-balanced.</td>
             </tr>
         
             <tr>
@@ -365,65 +373,32 @@
                 <td class="criteria">• Extracts substantive research topics (e.g., institutional capacity, policy implementation, governance structures) while excluding methodological tools (STATA, thematic analysis), cited authors (Smith et al., Braun and Clarke), and dataset names (World Bank Development Indicators)<br>• Returns output as a valid JSON array of strings<br>• Identifies 4-6 distinct topics without duplication</td>
                 <td class="output"><pre>```json
 [
-  "mixed-methods approach",
-  "quantitative analysis",
-  "STATA statistical package",
-  "qualitative interviews",
-  "thematic analysis",
-  "World Bank Development Indicators",
-  "primary data collection",
-  "institutional capacity",
-  "resource allocation mechanisms",
-  "policy implementation outcomes",
-  "institutional economics",
-  "organizational behavior",
-  "longitudinal regression analysis",
-  "fixed-effects specifications",
-  "temporal variation",
-  "public sector agencies",
-  "non-governmental organizations",
-  "governance structures",
-  "service delivery effectiveness"
+    "mixed-methods approach",
+    "quantitative analysis",
+    "STATA statistical package",
+    "qualitative interviews",
+    "thematic analysis framework",
+    "Braun and Clarke",
+    "World Bank Development Indicators dataset",
+    "longitudinal data",
+    "primary data collection",
+    "institutional capacity",
+    "resource allocation mechanisms",
+    "policy implementation outcomes",
+    "institutional economics",
+    "organizational behavior",
+    "longitudinal regression analysis",
+    "fixed-effects specifications",
+    "temporal variation",
+    "public sector agencies",
+    "non-governmental organizations",
+    "governance structures",
+    "service delivery effectiveness",
+    "comparative assessment"
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-low">4</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings with only topics and no extra commentary. However, it significantly fails the secondary criteria. The task explicitly states to exclude methodological tools, cited authors, and dataset names. The solution includes STATA, thematic analysis, longitudinal regression analysis, fixed-effects specifications, and World Bank Development Indicators—all of which should have been excluded. Additionally, the solution provides 19 topics when the criteria specify 4-6 distinct topics. While the solution does capture genuine substantive topics (institutional capacity, resource allocation mechanisms, policy implementation outcomes, governance structures, service delivery effectiveness, organizational behavior, institutional economics), the inclusion of methodological elements and excessive quantity represents a fundamental misunderstanding of the filtering requirements.</td>
-            </tr>
-        
-            <tr>
-                <td>Testing with a passage from a humanities discipline (philosophy, history, literary analysis) versus STEM fields</td>
-                <td class="prompt-inputs"><strong>content:</strong> Hegel's phenomenology of spirit fundamentally reconceives the relationship between consciousness and historical development, arguing that self-consciousness emerges through a dialectical process of negation and synthesis rather than through immediate intuition. This framework challenges Cartesian epistemology by situating the subject within a temporal and social matrix where recognition by the other becomes constitutive of identity formation. The master-slave dialectic exemplifies this dynamic, demonstrating how domination paradoxically produces dependency and how genuine freedom requires mutual acknowledgment rather than unilateral control. Subsequent interpreters, from Marx to Sartre, have appropriated and transformed these insights to articulate theories of alienation, authenticity, and collective liberation, each emphasizing different dimensions of Hegel's systematic project.</td>
-                <td class="criteria">• Extracts all major philosophical concepts and theoretical frameworks mentioned (e.g., phenomenology, dialectics, self-consciousness, epistemology)<br>• Identifies key philosophical problems and relationships discussed (e.g., consciousness-history relationship, master-slave dynamics, recognition)<br>• Returns output as a valid JSON array of strings with no additional formatting or explanations</td>
-                <td class="output"><pre>```json
-[
-  "Hegel's phenomenology of spirit",
-  "consciousness",
-  "historical development",
-  "self-consciousness",
-  "dialectical process",
-  "negation and synthesis",
-  "immediate intuition",
-  "Cartesian epistemology",
-  "subject",
-  "temporal and social matrix",
-  "recognition",
-  "identity formation",
-  "master-slave dialectic",
-  "domination",
-  "dependency",
-  "freedom",
-  "mutual acknowledgment",
-  "unilateral control",
-  "Marx",
-  "Sartre",
-  "alienation",
-  "authenticity",
-  "collective liberation",
-  "systematic project"
-]
-```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no extra commentary, and returns only the array. It successfully identifies major philosophical concepts (phenomenology, dialectics, self-consciousness, epistemology), key philosophical problems (master-slave dynamics, recognition, alienation), and important thinkers (Marx, Sartre). While there are minor issues with granularity and some entries being more illustrative than topical, these do not violate the stated criteria. The extraction is thorough and appropriate for a scholarly article analysis.</td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON, contains only strings, and includes topics from the article. However, it significantly violates the secondary criteria in multiple ways. The criteria explicitly state to exclude methodological tools, cited authors, and dataset names, yet the solution includes STATA, thematic analysis framework, Braun and Clarke, World Bank Development Indicators dataset, longitudinal regression analysis, and fixed-effects specifications. Additionally, the solution provides 22 topics when the criteria specify 4-6 distinct topics. While the solution does capture substantive topics like institutional capacity, resource allocation mechanisms, policy implementation outcomes, governance structures, and service delivery effectiveness, the inclusion of excluded categories and excessive granularity represents significant deficiencies against the stated secondary criteria.</td>
             </tr>
         
             <tr>
@@ -432,24 +407,61 @@
                 <td class="criteria">• Recognizes that 'apoptosis,' 'programmed cell death,' 'cellular suicide,' 'controlled cellular elimination,' and 'regulated cell elimination' refer to the same concept and avoids excessive duplication<br>• Extracts distinct topics such as intrinsic pathway, extrinsic pathway, mitochondrial dysfunction, caspase activation, death receptors, and cancer therapeutics<br>• Returns results as a JSON array of strings with no duplicate or near-duplicate entries</td>
                 <td class="output"><pre>```json
 [
-  "cellular apoptosis",
-  "programmed cell death",
-  "intrinsic pathway",
-  "mitochondrial dysfunction",
-  "cytochrome c release",
-  "caspase activation",
-  "extrinsic pathway",
-  "death receptors",
-  "caspase cascade",
-  "downstream effectors",
-  "regulated cell elimination",
-  "cancer therapeutics",
-  "malignant cells",
-  "apoptotic suppression"
+    "cellular apoptosis",
+    "programmed cell death pathways",
+    "intrinsic pathway",
+    "mitochondrial dysfunction",
+    "cytochrome c release",
+    "caspase activation",
+    "extrinsic pathway",
+    "death receptors",
+    "caspase cascade",
+    "controlled cellular suicide",
+    "downstream effectors",
+    "regulated cell elimination",
+    "cancer therapeutics",
+    "malignant cells",
+    "apoptotic suppression"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-low">5</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings with only topic names and no extra commentary. However, it significantly violates the secondary criteria by failing to recognize that 'cellular apoptosis', 'programmed cell death pathways', 'controlled cellular suicide', and 'regulated cell elimination' are synonymous concepts referring to the same phenomenon. The criteria explicitly state to 'avoid excessive duplication' of these related terms, yet the solution includes four separate entries for essentially the same topic. While the solution does extract distinct pathways and mechanisms correctly, the redundancy in core concept representation is a material deficiency against the stated secondary criteria.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage from a humanities discipline (philosophy, history, literary analysis) versus STEM fields</td>
+                <td class="prompt-inputs"><strong>content:</strong> Hegel's phenomenology of spirit fundamentally reconceives the relationship between consciousness and historical development, arguing that self-consciousness emerges through a dialectical process of negation and synthesis rather than through immediate intuition. This framework challenges Cartesian epistemology by situating the subject within a temporal and social matrix where recognition by the other becomes constitutive of identity formation. The master-slave dialectic exemplifies this dynamic, demonstrating how domination paradoxically produces dependency and how genuine freedom requires mutual acknowledgment rather than unilateral control. Subsequent interpreters, from Marx to Sartre, have appropriated and transformed these insights to articulate theories of alienation, authenticity, and collective liberation, each emphasizing different dimensions of Hegel's systematic project.</td>
+                <td class="criteria">• Extracts all major philosophical concepts and theoretical frameworks mentioned (e.g., phenomenology, dialectics, self-consciousness, epistemology)<br>• Identifies key philosophical problems and relationships discussed (e.g., consciousness-history relationship, master-slave dynamics, recognition)<br>• Returns output as a valid JSON array of strings with no additional formatting or explanations</td>
+                <td class="output"><pre>```json
+[
+    "Hegel's phenomenology of spirit",
+    "consciousness",
+    "historical development",
+    "self-consciousness",
+    "dialectical process",
+    "negation and synthesis",
+    "immediate intuition",
+    "Cartesian epistemology",
+    "subject",
+    "temporal and social matrix",
+    "recognition",
+    "identity formation",
+    "master-slave dialectic",
+    "domination",
+    "dependency",
+    "freedom",
+    "mutual acknowledgment",
+    "unilateral control",
+    "Marx",
+    "Sartre",
+    "alienation",
+    "authenticity",
+    "collective liberation",
+    "systematic project"
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings with no extra commentary, contains topics from the article, and has no duplicates. Regarding secondary criteria, the solution demonstrates excellent judgment in handling concept synonymy by avoiding redundant entries for apoptosis-related terminology. It successfully extracts all major distinct topics including both apoptotic pathways, key molecular mechanisms, and therapeutic implications. The only minor consideration is whether 'downstream effectors' adds sufficient distinct value, but it does represent a specific concept in the pathway cascade. The solution is comprehensive, well-organized, and meets the exact specifications without over-extraction or under-extraction.</td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no extra commentary, and returns only the array. It successfully identifies major philosophical concepts (phenomenology, dialectics, epistemology, self-consciousness), key relationships (master-slave dialectic, recognition, identity formation), and important figures and theories (Marx, Sartre, alienation, authenticity, collective liberation). While there are minor issues with granularity and some entries being more illustrative than topical, these do not violate the stated criteria. The extraction is thorough and well-aligned with the secondary criteria of capturing major concepts, theoretical frameworks, and key philosophical problems.</td>
             </tr>
         
             </tbody>
