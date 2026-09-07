@@ -117,7 +117,7 @@
                 </div>
                 <div class="stat-box">
                     <div>Average Score</div>
-                    <div class="stat-value">8.5 / 10</div>
+                    <div class="stat-value">7.8 / 10</div>
                 </div>
                 <div class="stat-box">
                     <div>Pass Rate (≥7)</div>
@@ -145,18 +145,16 @@
                 <td class="criteria">• Extracts all major topics and movements mentioned (e.g., Enlightenment, scientific revolution, Neoclassicism, mercantilism)<br>• Returns output as a valid JSON array of strings<br>• Avoids extracting proper names of individuals as standalone topics unless they represent movements or concepts</td>
                 <td class="output"><pre>```json
 [
-    "Enlightenment period",
+    "Enlightenment",
     "reason",
     "empiricism",
     "secularism",
-    "Voltaire",
-    "Diderot",
     "ecclesiastical authority",
     "feudal hierarchies",
     "individual liberty",
     "rational critique",
     "scientific revolution",
-    "Newton's mechanical philosophy",
+    "mechanical philosophy",
     "Aristotelian cosmology",
     "mathematical frameworks",
     "natural phenomena",
@@ -166,12 +164,11 @@
     "Romanticism",
     "tradition versus innovation",
     "printing press",
-    "political upheavals",
-    "late eighteenth century"
+    "political upheavals"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-medium">7</span></td>
-                <td class="reasoning">The solution provides valid JSON and captures most major topics effectively. However, it violates a secondary criterion by extracting 'Voltaire' and 'Diderot' as standalone topics. The criteria explicitly state to 'avoid extracting proper names of individuals as standalone topics unless they represent movements or concepts,' and these philosophers do not represent movements or concepts—they are individual historical figures. While the solution demonstrates strong overall comprehension and includes legitimate topics like the major intellectual movements and key concepts, this violation of the secondary criteria prevents a higher score.</td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it provides a valid JSON array of strings containing topics from the passage, with no extraneous commentary, and returns only the JSON array. It successfully extracts major topics and movements while appropriately excluding individual proper names. The secondary criteria are largely met, with strong coverage of major intellectual and cultural movements. The only minor issue is occasional over-compounding of related concepts into single phrases, but this is a stylistic choice rather than an error and doesn't significantly detract from the extraction quality.</td>
             </tr>
         
             <tr>
@@ -187,20 +184,22 @@
     "perturbative QCD",
     "non-perturbative effects",
     "saturation momentum scale",
+    "Qs",
     "particle production",
     "small-x kinematic regime",
     "color correlations",
-    "hadronization",
+    "hadronization mechanisms",
     "azimuthal anisotropy coefficients",
     "transverse momentum distributions",
     "hydrodynamic flow",
     "jet quenching",
     "quark-gluon plasma",
+    "QCD",
     "cold nuclear matter effects"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">10</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. Regarding secondary criteria, it successfully extracts all major theoretical concepts (quantum chromodynamics, color glass condensate, perturbative/non-perturbative QCD) and physics phenomena (gluon saturation, hadronization, jet quenching, hydrodynamic flow). The 17 topics identified represent the key interconnected concepts without redundant duplication. The extraction is thorough and well-organized, capturing both foundational frameworks and specific observables mentioned in the passage. No violations of mandatory requirements are present.</td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It successfully identifies major theoretical concepts and physics phenomena across the passage. The secondary criteria are largely met with comprehensive topic extraction and minimal redundancy. However, two minor issues exist: 'QCD' duplicates 'quantum chromodynamics' (though they could be argued as distinct references), and 'Qs' is listed separately despite being notation for an already-extracted concept. These are minor deficiencies that don't significantly impact the overall quality of the extraction.</td>
             </tr>
         
             <tr>
@@ -211,13 +210,13 @@
 [
     "machine learning",
     "natural language processing",
+    "NLP",
     "deep neural networks",
     "transformer architectures",
     "sentiment analysis",
     "named entity recognition",
     "transfer learning",
     "pre-trained language models",
-    "benchmark datasets",
     "attention mechanisms",
     "contextual embeddings",
     "bias mitigation",
@@ -225,8 +224,8 @@
     "large language models"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings, each topic is presented without extra commentary, and the response contains only the JSON array. It also satisfies the secondary criteria by extracting both single and multi-word topics, maintaining no duplicates, and capturing the major themes from the passage. The 14 topics extracted are highly relevant and comprehensive. Minor topics like 'computational resources' or 'benchmark performance' could arguably be included, but their omission does not constitute a significant deficiency given that all primary topics are present.</td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings with only topics and no extra commentary, and nothing else is included in the response. It successfully extracts both single-word and multi-word topics from the passage. The main deficiency is the inclusion of both 'natural language processing' and 'NLP' as separate entries, which represents redundancy rather than distinct topics. However, this is a minor issue in the context of the secondary criteria. The extraction is otherwise comprehensive and accurate.</td>
             </tr>
         
             <tr>
@@ -240,9 +239,9 @@
     "carbon sinks",
     "biodiversity hotspots",
     "longitudinal study",
-    "rising water temperatures",
-    "altered precipitation patterns",
-    "microbial decomposition rates",
+    "water temperatures",
+    "precipitation patterns",
+    "microbial decomposition",
     "organic matter",
     "freshwater marshes",
     "nutrient cycling",
@@ -251,7 +250,7 @@
     "bacterial communities",
     "archaeal communities",
     "methane oxidation",
-    "denitrification processes",
+    "denitrification",
     "microbial diversity",
     "thermophilic taxa",
     "methane flux",
@@ -260,8 +259,8 @@
     "climate feedback mechanisms"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it provides a valid JSON array of strings containing topics from the passage with no extra commentary. Regarding secondary criteria, it successfully extracts all major scientific topics (climate change, wetlands, microbial decomposition, nutrient cycling, metagenomic analysis, greenhouse gas emissions, etc.). The inclusion of some mechanistic descriptors ('rising water temperatures', 'altered precipitation patterns') rather than purely topical concepts represents a minor deviation from the 'avoid generic/non-substantive topics' criterion, but these are still scientifically relevant to the passage. The solution demonstrates strong comprehensiveness and appropriate topic selection overall.</td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it provides a JSON array of strings containing topics from the article, with only topic names and no extra commentary. Regarding secondary criteria, it successfully extracts all major scientific topics (climate change, wetlands, carbon sinks, biodiversity, microbial decomposition, nutrient cycling, greenhouse gas emissions, metagenomic sequencing, methane oxidation, denitrification, etc.). The main deficiency is the inclusion of 'longitudinal study,' which is a methodological term describing how the research was conducted rather than a substantive scientific topic. This is a minor violation of the criterion to 'avoid including generic words or phrases that are not substantive topics.' However, this single inclusion does not significantly detract from an otherwise comprehensive and well-executed extraction.</td>
             </tr>
         
             <tr>
@@ -273,7 +272,7 @@
     "photosynthesis",
     "light energy",
     "chemical energy",
-    "glucose molecules",
+    "glucose",
     "chloroplasts",
     "light-dependent reactions",
     "ATP",
@@ -284,7 +283,7 @@
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article, with no extra commentary, and nothing else in the response. It successfully captures all primary topics mentioned (photosynthesis, light-dependent reactions, Calvin cycle, chloroplasts). The secondary criteria are also met—no redundancy or duplicates exist. The inclusion of secondary topics like ATP, NADPH, and glucose molecules is reasonable as they are explicitly mentioned in the passage, though one could argue whether these constitute 'primary' topics versus supporting details. However, since the task asks to 'extract topics' without specifying a hierarchy, including these mentioned items is defensible.</td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON containing only strings, includes all primary topics from the passage, contains no duplicates, and has no extra commentary. The array comprehensively captures the key concepts discussed. While some entries represent interpretations or combinations of terms rather than exact phrases from the text, this is reasonable topic extraction practice. The solution successfully fulfills the task as specified.</td>
             </tr>
         
             <tr>
@@ -303,15 +302,16 @@
     "hippocampus",
     "memory consolidation",
     "hypothalamic-pituitary-adrenal axis",
+    "HPA axis",
     "neuroendocrine pathway",
-    "stress-memory relationship",
     "threat response systems",
     "acute stress mechanisms",
+    "therapeutic interventions",
     "evolutionary adaptations"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it provides a valid JSON array of strings containing topics from the article, with no extra commentary, and returns only the JSON array. It successfully identifies both explicitly stated topics (neuroimaging, cortisol levels, hippocampus, anxiety disorders, memory consolidation) and implicit topics requiring reasoning (stress-memory relationship, neuroendocrine pathway, evolutionary adaptations). The extraction avoids including mere descriptive phrases and focuses on substantive topics. While a few minor topics could have been included, the solution demonstrates strong judgment in topic selection and meets the stated criteria comprehensively.</td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON containing only strings with no extra commentary. It successfully extracts both explicit topics (neuroimaging, cortisol levels, hippocampus, anxiety disorders, memory consolidation) and implicit topics requiring inference (neuroendocrine pathway, evolutionary adaptations). However, there are minor deficiencies in topic selection: 'HPA axis' is redundant with 'hypothalamic-pituitary-adrenal axis', and some entries blur the line between topics and descriptive phrases. The inclusion of 'therapeutic interventions' is questionable as it's mentioned as evidence rather than established as a core topic. These are secondary criterion issues that don't violate mandatory requirements but represent suboptimal topic extraction.</td>
             </tr>
         
             <tr>
@@ -348,14 +348,14 @@
 [
     "neuroimaging",
     "neurodegenerative diseases",
-    "functional MRI",
     "fMRI",
+    "functional MRI",
     "PET imaging",
     "amyloid-beta accumulation",
     "Alzheimer's disease",
     "AD",
-    "diffusion tensor imaging",
     "DTI",
+    "diffusion tensor imaging",
     "white matter integrity loss",
     "frontotemporal dementia",
     "FTD",
@@ -365,7 +365,7 @@
     "neurofilament light chain",
     "NfL",
     "early diagnostic indicators",
-    "multimodal neuroimaging approaches",
+    "multimodal neuroimaging",
     "machine learning algorithms",
     "diagnostic accuracy",
     "mild cognitive impairment",
@@ -375,7 +375,7 @@
 ]
 ```</pre></td>
                 <td class="score-col"><span class="score score-medium">6</span></td>
-                <td class="reasoning">The solution meets all mandatory requirements: it contains a valid JSON array of strings with topics only, no extra commentary, and returns only the JSON. However, it has a significant deficiency in the secondary criteria. The criterion explicitly states 'Does not include duplicates or partial acronym expansions,' yet the solution includes both full expansions (e.g., 'functional MRI', 'Alzheimer's disease', 'diffusion tensor imaging') and their corresponding acronyms (fMRI, AD, DTI) as separate entries. This represents a violation of the stated secondary criteria. Additionally, some extracted phrases are overly descriptive rather than topical, and the conceptual term 'biomarkers' is missing despite being explicitly mentioned in the text.</td>
+                <td class="reasoning">The solution meets the mandatory requirements by providing a JSON array of strings containing topics with no extra commentary. However, it violates the secondary criterion explicitly stating 'Does not include duplicates or partial acronym expansions.' The solution includes both abbreviated and expanded forms of the same concepts (fMRI/functional MRI, AD/Alzheimer's disease, DTI/diffusion tensor imaging, FTD/frontotemporal dementia, p-tau/phosphorylated tau, NfL/neurofilament light chain, MCI/mild cognitive impairment), which constitutes duplication. While the extraction is comprehensive and captures both acronyms and broader concepts, the inclusion of redundant acronym-expansion pairs is a clear deficiency against stated criteria.</td>
             </tr>
         
             <tr>
@@ -386,29 +386,27 @@
 [
     "minimum wage policy",
     "economic theory",
-    "empirical evidence",
-    "poverty reduction",
+    "poverty",
     "income inequality",
     "consumer demand",
     "employment losses",
-    "Seattle minimum wage study",
-    "San Francisco minimum wage study",
     "labor costs",
     "automation",
     "low-skilled workers",
     "Congressional Budget Office",
+    "CBO",
     "federal minimum wage",
-    "job losses",
     "wage adequacy",
     "employment levels",
     "labor market regulation",
     "income support mechanisms",
     "regional economic variation",
+    "empirical evidence",
     "trade-offs"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It meets the secondary criteria by capturing all major topics, representing both competing viewpoints (proponents vs. critics), and identifying their underlying concerns (poverty reduction, automation incentives, etc.). The extraction is thorough and well-organized. Minor weaknesses exist in granularity choices and slight redundancy, but these do not significantly detract from the overall quality or utility of the topic list.</td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics without commentary, and the response contains only the JSON array. It successfully captures competing viewpoints and their concerns across 19 topics. The main deficiency is the redundant 'CBO'/'Congressional Budget Office' entry and omission of specific geographic examples (Seattle, San Francisco) that are explicitly cited as evidence in the passage. These are secondary criteria issues that don't violate mandatory requirements but represent minor incompleteness in topic extraction.</td>
             </tr>
         
             <tr>
@@ -418,7 +416,7 @@
                 <td class="output"><pre>```json
 [
     "paleogenomics",
-    "ancient DNA sequencing",
+    "ancient DNA",
     "permafrost-preserved specimens",
     "phylogenetic relationships",
     "Pleistocene megafauna",
@@ -429,8 +427,7 @@
     "cave bears",
     "coprolite microbiomes",
     "fossilized fecal matter",
-    "bacterial communities",
-    "fungal communities",
+    "bacterial and fungal communities",
     "Quaternary ecosystem dynamics",
     "paleodiet reconstruction",
     "radiometric dating",
@@ -440,8 +437,8 @@
     "Holocene extinctions"
 ]
 ```</pre></td>
-                <td class="score-col"><span class="score score-high">9</span></td>
-                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is valid JSON containing only strings, presents topics without commentary, and contains only the JSON array. It demonstrates strong coverage of the source material, capturing all major specialized terminology and concepts from the passage. The secondary criteria are largely met with comprehensive extraction of both niche and common academic terms. The minor weaknesses involve some granularity choices that create slight redundancy, but these do not constitute omissions or failures to capture topics—they represent reasonable interpretive decisions about topic extraction. The solution is thorough and well-executed.</td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is valid JSON containing only strings, with no extra commentary, and returns only the array. It successfully captures the major specialized terminology and niche topics required by the secondary criteria. However, there are minor deficiencies in topic selection—some entries are redundant synonyms rather than distinct topics, 'permafrost' is notably absent despite explicit mention, and a few entries represent general concepts rather than specific topics. These are secondary criterion issues that don't violate mandatory requirements but represent suboptimal topic extraction precision.</td>
             </tr>
         
             </tbody>
