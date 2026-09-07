@@ -1,122 +1,124 @@
 [
   {
     "prompt_inputs": {
-      "content": "This study examines the relationship between microplastic accumulation in marine sediments and its effects on benthic organisms. We collected sediment cores from five coastal regions and analyzed polymer composition using Fourier-transform infrared spectroscopy. Results indicate that microplastic concentrations correlate significantly with reduced biodiversity in amphipod populations, suggesting potential toxicological pathways through ingestion and bioaccumulation mechanisms."
+      "content": "Recent advances in quantum chromodynamics have illuminated the behavior of gluon saturation in high-energy nuclear collisions, particularly within the color glass condensate framework. The interplay between perturbative QCD calculations and non-perturbative effects, mediated by the saturation momentum scale Qs, governs particle production in the small-x kinematic regime. Furthermore, the coupling between initial-state color correlations and final-state hadronization mechanisms presents substantial challenges for theoretical predictions, necessitating precision measurements of azimuthal anisotropy coefficients and transverse momentum distributions to disentangle competing contributions from hydrodynamic flow, jet quenching in the quark-gluon plasma, and cold nuclear matter effects."
+    },
+    "solution_criteria": [
+      "Extracts all major theoretical concepts and physics phenomena mentioned in the passage",
+      "Identifies overlapping and interconnected topics without redundant duplication",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a dense physics research passage containing overlapping theoretical concepts and technical jargon"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The Enlightenment period fundamentally reshaped European intellectual discourse through its emphasis on reason, empiricism, and secularism. Philosophers such as Voltaire and Diderot challenged ecclesiastical authority and feudal hierarchies, advocating for individual liberty and rational critique of established institutions. Simultaneously, the scientific revolution, exemplified by Newton's mechanical philosophy, displaced Aristotelian cosmology and introduced mathematical frameworks for understanding natural phenomena. These intellectual currents intersected with economic transformations as mercantilism gave way to proto-capitalist theories, while artistic movements including Neoclassicism and emerging Romanticism reflected broader cultural anxieties about tradition versus innovation. The printing press amplified these ideas across social strata, contributing to the eventual political upheavals of the late eighteenth century."
+    },
+    "solution_criteria": [
+      "Extracts all major topics and movements mentioned (e.g., Enlightenment, scientific revolution, Neoclassicism, mercantilism)",
+      "Returns output as a valid JSON array of strings",
+      "Avoids extracting proper names of individuals as standalone topics unless they represent movements or concepts"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a humanities article discussing historical events, cultural movements, and philosophical ideas"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in machine learning have demonstrated significant improvements in natural language processing tasks. Deep neural networks, particularly transformer architectures, have revolutionized sentiment analysis and named entity recognition. The integration of transfer learning with pre-trained language models has enabled researchers to achieve state-of-the-art results on benchmark datasets with minimal computational resources. Additionally, attention mechanisms and contextual embeddings have become fundamental components in modern NLP systems, while challenges remain in addressing bias mitigation and interpretability in large language models."
+    },
+    "solution_criteria": [
+      "Extracts both single-word topics (e.g., 'bias', 'interpretability') and multi-word phrases (e.g., 'natural language processing', 'transformer architectures', 'transfer learning')",
+      "Returns output as a JSON array of strings",
+      "Includes all major topics present in the passage without duplicates"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing single-word topics versus multi-word topic phrases"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Anthropogenic climate change has accelerated the decline of wetland ecosystems, which serve as critical carbon sinks and biodiversity hotspots. Our longitudinal study examined how rising water temperatures and altered precipitation patterns affect the microbial decomposition rates of organic matter in freshwater marshes, subsequently influencing nutrient cycling and greenhouse gas emissions. We employed metagenomic sequencing to characterize bacterial and archaeal communities involved in methane oxidation and denitrification processes. Results indicate that temperature increases of 3\u00b0C reduced microbial diversity by 42% and shifted community composition toward thermophilic taxa, while simultaneously increasing methane flux by 68%. These findings underscore the interconnected nature of hydrological change, microbial ecology, and climate feedback mechanisms in vulnerable ecosystems."
+    },
+    "solution_criteria": [
+      "Extracts all major scientific topics present in the passage (e.g., climate change, wetlands, microbial decomposition, nutrient cycling, metagenomic analysis, greenhouse gas emissions)",
+      "Returns results as a JSON array of strings",
+      "Avoids including generic words or phrases that are not substantive topics"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with an interdisciplinary passage mixing biology, ecology, and environmental science terminology"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Photosynthesis is the fundamental biochemical process by which plants convert light energy into chemical energy stored in glucose molecules. This process occurs primarily in the chloroplasts and involves two main stages: the light-dependent reactions that generate ATP and NADPH, and the Calvin cycle that fixes carbon dioxide into organic compounds."
     },
     "solution_criteria": [
       "Output is a valid JSON array of strings",
-      "Array contains exactly 3 distinct topics: microplastic accumulation, benthic organisms/effects, and polymer analysis/spectroscopy",
-      "Topics are concise and accurately reflect the passage content"
+      "Includes all primary topics mentioned in the passage (photosynthesis, light-dependent reactions, Calvin cycle, chloroplasts)",
+      "Does not include redundant or duplicate topic entries"
     ],
     "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a short passage containing only 2-3 clear, well-defined topics"
+    "scenario": "Testing with a short passage (2-3 sentences) with minimal topic diversity"
   },
   {
     "prompt_inputs": {
-      "content": "This study examines the intersection of cognitive linguistics and semantic theory in understanding metaphorical language processing. We investigate how conceptual metaphors facilitate semantic mapping between abstract and concrete domains, while also exploring the role of embodied cognition in shaping metaphor comprehension. Our analysis reveals that metaphorical reasoning and analogical thinking operate through similar neural mechanisms, though they differ in their reliance on linguistic framing versus perceptual simulation. Additionally, we consider how semantic networks and conceptual blending contribute to the emergence of novel metaphorical expressions in discourse."
+      "content": "Recent advances in neuroimaging have revealed that chronic stress exposure triggers sustained elevation of cortisol levels, which subsequently impairs hippocampal synaptic plasticity through glucocorticoid receptor signaling. This neurobiological mechanism explains the cognitive deficits observed in patients with prolonged anxiety disorders, as the hippocampus is critical for memory consolidation. Furthermore, therapeutic interventions targeting hypothalamic-pituitary-adrenal axis regulation have demonstrated efficacy in restoring cognitive function, suggesting that the stress-memory relationship operates through a unified neuroendocrine pathway. Interestingly, these findings parallel evolutionary adaptations in threat response systems, indicating that acute stress mechanisms may have been optimized for short-term survival at the cost of long-term cognitive health."
     },
     "solution_criteria": [
-      "Extracts distinct topics while recognizing that some are closely related or overlapping (e.g., 'metaphorical language processing' vs 'metaphorical reasoning' as separate but related topics)",
-      "Returns output as a JSON array of strings",
-      "Identifies all major research areas discussed without over-merging related concepts into single entries"
-    ],
-    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage containing overlapping or closely related topics to assess topic distinction"
-  },
-  {
-    "prompt_inputs": {
-      "content": "Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Within the broader field of deep learning, convolutional neural networks have demonstrated exceptional performance in computer vision tasks, enabling accurate image classification and object detection in medical imaging diagnostics. Simultaneously, recurrent neural networks and transformer architectures have become instrumental in natural language processing, facilitating significant improvements in machine translation, sentiment analysis, and question-answering systems. These neural network variants, while distinct in architecture and application, collectively represent the computational foundations driving modern AI innovation."
-    },
-    "solution_criteria": [
-      "Extracts all major topics and subtopics including machine learning, deep learning, convolutional neural networks, computer vision, medical imaging, recurrent neural networks, transformers, and natural language processing",
-      "Organizes extracted topics into a valid JSON array of strings",
-      "Avoids extracting overly granular phrases or redundant entries while capturing the hierarchical structure of broader concepts and their specific subtopics"
-    ],
-    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage that mentions multiple subtopics under one broader umbrella concept"
-  },
-  {
-    "prompt_inputs": {
-      "content": "Recent advances in quantum entanglement have demonstrated non-local correlations through Bell test experiments using photonic qubits and superconducting circuits. The measurement of entanglement entropy in many-body systems reveals topological order in quantum spin liquids, while decoherence mechanisms involving phonon coupling and electromagnetic noise present significant challenges for quantum error correction codes. Furthermore, implementations of variational quantum algorithms on NISQ devices show promise for simulating molecular Hamiltonians in computational chemistry, particularly for calculating ground state energies of transition metal complexes using ansatz circuits based on unitary coupled-cluster theory."
-    },
-    "solution_criteria": [
-      "Extracts all major technical concepts and phenomena mentioned (e.g., quantum entanglement, Bell tests, topological order, decoherence, quantum error correction, NISQ devices, variational quantum algorithms)",
-      "Returns output as a JSON array of strings with no additional formatting or explanation",
-      "Identifies domain-specific jargon accurately without oversimplifying or combining distinct topics"
-    ],
-    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage featuring domain-specific jargon from fields like quantum physics or molecular biology"
-  },
-  {
-    "prompt_inputs": {
-      "content": "Recent advances in neuroimaging have revealed complex patterns of neural connectivity during cognitive tasks, with functional magnetic resonance imaging studies demonstrating that prefrontal cortex activation correlates strongly with working memory performance in healthy adults. However, longitudinal investigations in patients with mild cognitive impairment show progressive deterioration of these connectivity patterns, accompanied by compensatory activation in bilateral parietal regions. These findings suggest that early neurodegeneration may be detected through connectivity biomarkers before overt behavioral decline occurs, opening possibilities for intervention strategies targeting synaptic plasticity and neural reserve mechanisms."
-    },
-    "solution_criteria": [
-      "Extracts both explicitly stated topics (neuroimaging, fMRI, prefrontal cortex, working memory) and implicitly related topics (cognitive decline, neurodegeneration, biomarkers, neural plasticity, intervention strategies)",
-      "Identifies topics that require inference from context and relationships between concepts rather than direct keyword matching",
-      "Returns results as a valid JSON array of strings with no additional fields or metadata"
-    ],
-    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage containing implicit topics that require inference beyond explicitly stated keywords"
-  },
-  {
-    "prompt_inputs": {
-      "content": "Recent advances in machine learning have revolutionized natural language processing, enabling systems to achieve unprecedented accuracy in tasks such as sentiment analysis, machine translation, and question answering. The emergence of transformer-based architectures, particularly attention mechanisms, has fundamentally altered how neural networks process sequential data by allowing models to weigh the importance of different input elements dynamically. Transfer learning has become increasingly prevalent, where pre-trained models on large corpora are fine-tuned for specific downstream tasks, significantly reducing computational requirements and improving performance across diverse applications. Simultaneously, concerns regarding model interpretability have gained prominence in academic discourse, as deep learning systems often function as black boxes, making it difficult for practitioners to understand decision-making processes. Ethical considerations surrounding bias in training data have prompted researchers to develop debiasing techniques and fairness metrics to ensure equitable outcomes across demographic groups. The scalability of large language models presents both opportunities and challenges; while these models demonstrate remarkable few-shot learning capabilities and can generate coherent text across multiple domains, they also require substantial computational resources and raise questions about environmental sustainability. Researchers have explored knowledge distillation methods to compress large models into smaller, more efficient versions suitable for deployment on edge devices. Additionally, the integration of symbolic reasoning with neural approaches represents a promising frontier, combining the interpretability of rule-based systems with the pattern recognition strengths of deep learning. Multimodal learning, which processes information from multiple modalities such as text, images, and audio simultaneously, has opened new research directions for more robust and comprehensive understanding of complex phenomena. Finally, the development of prompt engineering as a practical skill has emerged as researchers seek to optimize interactions with pre-trained models through carefully crafted input instructions."
-    },
-    "solution_criteria": [
-      "Extracts at least 10 distinct topics from the lengthy passage",
+      "Extracts explicitly stated topics (neuroimaging, cortisol, hippocampus, anxiety disorders, memory consolidation)",
+      "Identifies implicit/inferred topics requiring reasoning (stress-memory relationship, neuroendocrine mechanisms, evolutionary psychology)",
       "Returns output as a valid JSON array of strings",
-      "Avoids redundancy and captures main topics comprehensively"
+      "Avoids including non-topic words or phrases that merely describe relationships between topics"
     ],
     "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a lengthy passage (500+ words) to assess scalability and topic extraction consistency"
+    "scenario": "Testing with a passage containing implicit topics that require inference versus explicitly stated topics"
   },
   {
     "prompt_inputs": {
-      "content": "The valuation of ecosystem services presents a complex intersection between ecological and economic frameworks. From an environmental science perspective, wetland ecosystems provide critical functions including water filtration, carbon sequestration, and biodiversity habitat, with studies demonstrating that one hectare can sequester approximately 1.5 metric tons of carbon annually. Conversely, economic analyses often employ contingent valuation methods and hedonic pricing models to assign monetary values to these services, typically ranging from $5,000 to $15,000 per hectare annually depending on geographic location and ecosystem type. Policy economists argue that internalizing these externalities through payment-for-ecosystem-services (PES) programs can create market-based incentives for conservation, while environmental scientists caution that commodifying nature risks oversimplifying complex ecological interdependencies and may undervalue services that lack direct market signals."
+      "content": "This study examines neuroplasticity in adolescent brains, particularly focusing on how neuroplasticity manifests during critical developmental periods. We investigated synaptic pruning mechanisms and their relationship to learning outcomes. The research on neuroplasticity reveals that environmental enrichment enhances neural adaptation, while stress impairs neuroplasticity through elevated cortisol levels. Our findings suggest that understanding neuroplasticity is essential for developing effective educational interventions. Additionally, we explored how meditation practices influence neuroplasticity by promoting dendritic growth. The implications for neuroplasticity research extend to clinical applications in treating developmental disorders and optimizing cognitive rehabilitation strategies."
     },
     "solution_criteria": [
-      "Extracts topics spanning both environmental science and economics domains",
-      "Captures all major conceptual areas discussed in the passage",
-      "Returns results as a JSON array of strings"
-    ],
-    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage mixing multiple disciplinary perspectives (e.g., economics + environmental science)"
-  },
-  {
-    "prompt_inputs": {
-      "content": "This study employs a mixed-methods approach combining quantitative analysis using the STATA statistical package with qualitative interviews following Braun and Clarke's thematic analysis framework. We utilized the World Bank's Development Indicators dataset (2010-2020) alongside primary data collected from 150 participants across five regions. Building on Smith et al.'s (2019) theoretical model, our research investigates the relationship between institutional capacity, resource allocation mechanisms, and policy implementation outcomes. The methodology draws from institutional economics and organizational behavior literature, incorporating longitudinal regression analysis with fixed-effects specifications to control for temporal variation. Our sample included both public sector agencies and non-governmental organizations, enabling comparative assessment of governance structures and their influence on service delivery effectiveness."
-    },
-    "solution_criteria": [
-      "Extracts substantive research topics (e.g., institutional capacity, policy implementation, governance structures) while excluding methodological tools (STATA, thematic analysis), cited authors (Smith et al., Braun and Clarke), and dataset names (World Bank Development Indicators)",
+      "Extracts all distinct topics mentioned, recognizing that 'neuroplasticity' appears in multiple contexts and variations but should be represented once",
       "Returns output as a valid JSON array of strings",
-      "Identifies 4-6 distinct topics without duplication"
+      "Identifies related but distinct topics such as synaptic pruning, environmental enrichment, stress effects, meditation, and clinical applications"
     ],
     "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage containing cited authors, methodologies, and datasets as potential false positives"
+    "scenario": "Testing with a passage where topics appear multiple times in different contexts or variations"
   },
   {
     "prompt_inputs": {
-      "content": "This study examines the mechanisms of cellular apoptosis through programmed cell death pathways. The intrinsic pathway involves mitochondrial dysfunction and cytochrome c release, triggering caspase activation. Similarly, the extrinsic pathway utilizes death receptors to initiate the same caspase cascade. Both mechanisms of controlled cellular suicide converge on identical downstream effectors, suggesting that cellular demise through these distinct routes ultimately shares common molecular machinery. Understanding these pathways of regulated cell elimination has profound implications for cancer therapeutics, as malignant cells often evade programmed elimination through apoptotic suppression."
+      "content": "Recent advances in neuroimaging have significantly enhanced our understanding of neurodegenerative diseases. Functional MRI (fMRI) studies combined with PET imaging reveal distinct patterns of amyloid-beta accumulation in Alzheimer's disease (AD), while DTI (diffusion tensor imaging) demonstrates white matter integrity loss in frontotemporal dementia (FTD). Furthermore, CSF biomarkers including phosphorylated tau (p-tau) and neurofilament light chain (NfL) show promise as early diagnostic indicators. The integration of these multimodal neuroimaging approaches with machine learning algorithms has improved diagnostic accuracy for mild cognitive impairment (MCI) progression prediction, offering potential for early intervention strategies in neurodegenerative conditions."
     },
     "solution_criteria": [
-      "Recognizes that 'apoptosis,' 'programmed cell death,' 'cellular suicide,' 'controlled cellular elimination,' and 'regulated cell elimination' refer to the same concept and avoids excessive duplication",
-      "Extracts distinct topics such as intrinsic pathway, extrinsic pathway, mitochondrial dysfunction, caspase activation, death receptors, and cancer therapeutics",
-      "Returns results as a JSON array of strings with no duplicate or near-duplicate entries"
+      "Extracts all domain-specific acronyms and abbreviations as distinct topics (fMRI, PET, AD, DTI, FTD, CSF, p-tau, NfL, MCI)",
+      "Includes broader conceptual topics beyond acronyms (neuroimaging, neurodegenerative diseases, biomarkers, machine learning)",
+      "Returns results as a JSON array of strings",
+      "Does not include duplicates or partial acronym expansions"
     ],
     "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage that has minimal topic diversity or repeats the same concept using different terminology"
+    "scenario": "Testing with a passage containing domain-specific acronyms and abbreviations that represent distinct topics"
   },
   {
     "prompt_inputs": {
-      "content": "Hegel's phenomenology of spirit fundamentally reconceives the relationship between consciousness and historical development, arguing that self-consciousness emerges through a dialectical process of negation and synthesis rather than through immediate intuition. This framework challenges Cartesian epistemology by situating the subject within a temporal and social matrix where recognition by the other becomes constitutive of identity formation. The master-slave dialectic exemplifies this dynamic, demonstrating how domination paradoxically produces dependency and how genuine freedom requires mutual acknowledgment rather than unilateral control. Subsequent interpreters, from Marx to Sartre, have appropriated and transformed these insights to articulate theories of alienation, authenticity, and collective liberation, each emphasizing different dimensions of Hegel's systematic project."
+      "content": "The debate over minimum wage policy reveals fundamental tensions in economic theory and empirical evidence. Proponents argue that raising the minimum wage reduces poverty and income inequality while stimulating consumer demand, citing studies from Seattle and San Francisco showing minimal employment losses post-increase. Conversely, critics contend that higher labor costs incentivize automation and reduce hiring of low-skilled workers, pointing to Congressional Budget Office analyses predicting job losses of 3.7 million from a $15 federal minimum. Both camps acknowledge trade-offs between wage adequacy and employment levels, yet diverge sharply on empirical magnitudes and policy priorities regarding labor market regulation, income support mechanisms, and regional economic variation."
     },
     "solution_criteria": [
-      "Extracts all major philosophical concepts and theoretical frameworks mentioned (e.g., phenomenology, dialectics, self-consciousness, epistemology)",
-      "Identifies key philosophical problems and relationships discussed (e.g., consciousness-history relationship, master-slave dynamics, recognition)",
-      "Returns output as a valid JSON array of strings with no additional formatting or explanations"
+      "Extracts all major topics discussed in the passage without omissions",
+      "Returns output as a valid JSON array of strings",
+      "Captures both competing viewpoints and their underlying concerns"
     ],
     "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
-    "scenario": "Testing with a passage from a humanities discipline (philosophy, history, literary analysis) versus STEM fields"
+    "scenario": "Testing with an economics/policy article containing competing viewpoints on related topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in paleogenomics have enabled the sequencing of ancient DNA from permafrost-preserved specimens, revealing unexpected phylogenetic relationships among Pleistocene megafauna. This work integrates cutting-edge metagenomic approaches with traditional morphological analysis to reconstruct the evolutionary history of woolly mammoths and cave bears. Additionally, the study of coprolite microbiomes\u2014fossilized fecal matter containing bacterial and fungal communities\u2014provides unprecedented insights into Quaternary ecosystem dynamics and paleodiet reconstruction. These methodologies, combined with radiometric dating and stratigraphic correlation, have fundamentally challenged previous assumptions about human-megafauna coexistence during the Last Glacial Maximum and subsequent Holocene extinctions."
+    },
+    "solution_criteria": [
+      "Extracts all major topics and specialized terminology (paleogenomics, permafrost, metagenomic, coprolite microbiomes, Quaternary, Holocene, etc.)",
+      "Returns output as a valid JSON array of strings",
+      "Captures both niche/obscure topics and common academic terms without omission"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing niche or obscure topics alongside common academic terminology"
   }
 ]
